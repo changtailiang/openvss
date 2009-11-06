@@ -1,0 +1,13 @@
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VdStream.dll
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VdStream.pdb
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VdDshow.dll
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VdDshow.pdb
+D:\my_dvs\trunk\VsCamera\stream\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\stream\obj\Debug\VdStream.VideoStreamSetupPage.resources
+D:\my_dvs\trunk\VsCamera\stream\obj\Debug\stream.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\stream\obj\Debug\VdStream.dll
+D:\my_dvs\trunk\VsCamera\stream\obj\Debug\VdStream.pdb
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\stream\bin\Debug\VkImage.pdb

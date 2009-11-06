@@ -1,0 +1,14 @@
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsMediaEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsMediaEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\Interop.WMEncoderLib.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VeWmvLib.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsImage.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VsImage.pdb
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\bin\Debug\VeWmvLib.pdb
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\obj\Debug\VsMediaEncoder.VsMediaEncoderSetupPage.resources
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\obj\Debug\VsMediaEncoder.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\obj\Debug\VsMediaEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsMediaEncoder\obj\Debug\VsMediaEncoder.pdb

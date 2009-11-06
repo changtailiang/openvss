@@ -1,0 +1,8 @@
+bin\Release\Tiger.Video.VFW.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Tiger.Video.VFW.dll
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\VeAviLib.dll
+bin\Debug\VeAviLib.pdb
+obj\Debug\VeAviLib.dll
+obj\Debug\VeAviLib.pdb

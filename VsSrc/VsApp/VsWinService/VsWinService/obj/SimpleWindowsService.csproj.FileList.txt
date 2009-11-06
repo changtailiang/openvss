@@ -1,0 +1,16 @@
+bin\Debug\SimpleWindowsService.exe
+bin\Debug\SimpleWindowsService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\SimpleWindowsService.SimpleService.resources
+obj\Debug\SimpleWindowsService.csproj.GenerateResource.Cache
+obj\Debug\SimpleWindowsService.exe
+obj\Debug\SimpleWindowsService.pdb
+obj\Debug\SimpleWindowsService.ProjectInstaller.resources
+bin\Release\SimpleWindowsService.exe
+bin\Release\SimpleWindowsService.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\SimpleWindowsService.ProjectInstaller.resources
+obj\Release\SimpleWindowsService.SimpleService.resources
+obj\Release\SimpleWindowsService.csproj.GenerateResource.Cache
+obj\Release\SimpleWindowsService.exe
+obj\Release\SimpleWindowsService.pdb

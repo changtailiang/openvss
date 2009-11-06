@@ -1,0 +1,224 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC7205B8-5E45-42AE-85FC-135C75F41D7A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vs.Playback</RootNamespace>
+    <AssemblyName>VsPlayback</AssemblyName>
+    <ApplicationIcon>isys.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\VsBin\VsEnterprise\VsClient\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\VsBin\VsBinclient\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VLanControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\VsBin\VLanControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Vs.Core.SystemInfo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\VsBin\Vs.Core.SystemInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Vs.Utility.NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.Nolme.Core, Version=1.0.3585.35491, Culture=neutral, PublicKeyToken=a1de16ef1ed02851, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\VsBin\Vs.Utility.Nolme.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vs.Utility.Nolme.Win32, Version=1.0.3585.35483, Culture=neutral, PublicKeyToken=b714ddfe5ea17292, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\VsBin\Vs.Utility.Nolme.Win32.dll</HintPath>
+    </Reference>
+    <Reference Include="Vs.Utility.Nolme.WinForms, Version=1.0.3582.18894, Culture=neutral, PublicKeyToken=d00fa8d8643bab2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\VsBin\Vs.Utility.Nolme.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Vs.Utility.Nolme.Xml, Version=1.0.3585.35490, Culture=neutral, PublicKeyToken=e333186505a5d0be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\VsBin\Vs.Utility.Nolme.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigData.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="VsAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsAboutBox.Designer.cs">
+      <DependentUpon>VsAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsChartModel.cs" />
+    <Compile Include="VsChartPresent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsChartPresent.designer.cs">
+      <DependentUpon>VsChartPresent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsCoreEngine.cs" />
+    <Compile Include="VsIDataConnect.cs" />
+    <Compile Include="VsIPlayer.cs" />
+    <Compile Include="VsLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsLogin.Designer.cs">
+      <DependentUpon>VsLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsPlayback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsPlayback.designer.cs">
+      <DependentUpon>VsPlayback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsSplasher.cs" />
+    <Compile Include="VsTimePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsTimePeriod.designer.cs">
+      <DependentUpon>VsTimePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="VsAboutBox.resx">
+      <DependentUpon>VsAboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChartPresent.resx">
+      <DependentUpon>VsChartPresent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsLogin.resx">
+      <DependentUpon>VsLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsPlayback.resx">
+      <DependentUpon>VsPlayback.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsTimePeriod.resx">
+      <DependentUpon>VsTimePeriod.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsVlcPlayer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VsVlcPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="VsServiceConnect.cs" />
+    <Compile Include="VsVlcPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsVlcPlayer.Designer.cs">
+      <DependentUpon>VsVlcPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\VsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="isys.ico" />
+    <None Include="Resources\control_start_blue.png" />
+    <None Include="Resources\control_rewind_blue.png" />
+    <None Include="Resources\control_repeat_blue.png" />
+    <None Include="Resources\control_play_blue.png" />
+    <None Include="Resources\control_pause_blue.png" />
+    <None Include="Resources\control_fastforward_blue.png" />
+    <None Include="Resources\control_end_blue.png" />
+    <None Include="Resources\control_stop_blue.png" />
+    <None Include="Resources\isys_color.bmp" />
+    <None Include="Resources\isyscolor.bmp" />
+    <None Include="Web References\VsService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\VsService\Service.disco" />
+    <None Include="Web References\VsService\Service.wsdl" />
+    <None Include="Web References\VsService\VsCamera1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\VsService\VsFileURL1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\VsService\VsMotion1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/vsservice/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\VsService\</RelPath>
+      <UpdateFromURL>http://localhost/vsservice/Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>VsClient_VsService_VsService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

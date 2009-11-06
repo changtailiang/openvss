@@ -1,0 +1,11 @@
+bin\Debug\VdJpeg.dll
+bin\Debug\VdJpeg.pdb
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdJpeg.JPEGSourcePage.resources
+obj\Debug\jpeg.csproj.GenerateResource.Cache
+obj\Debug\VdJpeg.dll
+obj\Debug\VdJpeg.pdb

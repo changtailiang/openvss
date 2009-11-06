@@ -1,0 +1,1 @@
+﻿class MediaReference {	private var bRate:Number = 0;	private var href:String = "";	function MediaReference(rate:Number, href:String) {		this.bRate = rate;		this.href = href;	};	public function getBitrate() {		return bRate;	}		public function getHref() {		return href;	}}

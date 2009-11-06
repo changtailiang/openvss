@@ -1,0 +1,10 @@
+D:\my_dvs\trunk\VsEncoder\VsEncoder\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\VkEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\VkEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\NLog.dll
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\VkImage.pdb
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\NLog.pdb
+D:\my_dvs\trunk\VsEncoder\VsEncoder\bin\Debug\NLog.xml
+D:\my_dvs\trunk\VsEncoder\VsEncoder\obj\Debug\VkEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsEncoder\obj\Debug\VkEncoder.pdb

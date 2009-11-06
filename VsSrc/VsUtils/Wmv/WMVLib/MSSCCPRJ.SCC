@@ -1,0 +1,5 @@
+SCC = This is a source code control file
+
+[WMVLib.csproj]
+SCC_Aux_Path = http://codebetter.com/VaultService|:1
+SCC_Project_Name = $/Brendan/MovieMaker/ClassLibrary1

@@ -1,0 +1,13 @@
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\multisource\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\multisource\obj\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\multisource\obj\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\multisource\bin\Debug\VkImage.pdb

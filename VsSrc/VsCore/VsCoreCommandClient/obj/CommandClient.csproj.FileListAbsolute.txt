@@ -1,0 +1,11 @@
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\bin\Debug\CommandClient.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\bin\Debug\CommandClient.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\obj\Debug\CommandClient.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\obj\Debug\CommandClient.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\CommandClient\bin\Debug\CommandClient.XML
+D:\my_dvs\trunk\VsMixerClient\CommandClient\bin\Debug\CommandClient.dll
+D:\my_dvs\trunk\VsMixerClient\CommandClient\bin\Debug\CommandClient.pdb
+D:\my_dvs\trunk\VsMixerClient\CommandClient\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsMixerClient\CommandClient\obj\Debug\CommandClient.dll
+D:\my_dvs\trunk\VsMixerClient\CommandClient\obj\Debug\CommandClient.pdb

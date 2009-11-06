@@ -1,0 +1,13 @@
+bin\Debug\VdMultisource.dll
+bin\Debug\VdMultisource.pdb
+bin\Debug\VdJpeg.dll
+bin\Debug\VdMjpeg.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdJpeg.pdb
+bin\Debug\VdMjpeg.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdMultisource.dll
+obj\Debug\VdMultisource.pdb

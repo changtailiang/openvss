@@ -1,0 +1,5 @@
+D:\my_dvs\trunk\VsCamera\dshow\bin\Debug\VdDshow.dll
+D:\my_dvs\trunk\VsCamera\dshow\bin\Debug\VdDshow.pdb
+D:\my_dvs\trunk\VsCamera\dshow\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\dshow\obj\Debug\VdDshow.dll
+D:\my_dvs\trunk\VsCamera\dshow\obj\Debug\VdDshow.pdb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsDbDeleteApp", "VsDbDeleteApp\VsDbDeleteApp.csproj", "{686C7E2D-6973-469B-928F-A91253B11306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsCoreDbDelete", "..\..\VsCore\VsCoreDbDelete\VsCoreDbDelete\VsCoreDbDelete.csproj", "{54D4EB4C-2F35-4E84-82A3-EB31196A8416}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{686C7E2D-6973-469B-928F-A91253B11306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686C7E2D-6973-469B-928F-A91253B11306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686C7E2D-6973-469B-928F-A91253B11306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{686C7E2D-6973-469B-928F-A91253B11306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D4EB4C-2F35-4E84-82A3-EB31196A8416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D4EB4C-2F35-4E84-82A3-EB31196A8416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D4EB4C-2F35-4E84-82A3-EB31196A8416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D4EB4C-2F35-4E84-82A3-EB31196A8416}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

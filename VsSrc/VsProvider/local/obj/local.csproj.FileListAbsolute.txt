@@ -1,0 +1,13 @@
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VdLocal.dll
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VdLocal.pdb
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VdDshow.dll
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VdDshow.pdb
+D:\my_dvs\trunk\VsCamera\local\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\local\obj\Debug\VdLocal.CaptureDeviceSetupPage.resources
+D:\my_dvs\trunk\VsCamera\local\obj\Debug\local.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\local\obj\Debug\VdLocal.dll
+D:\my_dvs\trunk\VsCamera\local\obj\Debug\VdLocal.pdb
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\local\bin\Debug\VkImage.pdb

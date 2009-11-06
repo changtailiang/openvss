@@ -1,0 +1,11 @@
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\jpeg\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\jpeg\obj\Debug\VdJpeg.JPEGSourcePage.resources
+D:\my_dvs\trunk\VsCamera\jpeg\obj\Debug\jpeg.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\jpeg\obj\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\jpeg\obj\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\jpeg\bin\Debug\VkImage.pdb

@@ -1,0 +1,13 @@
+bin\debug\MSR.LST.Net.Rtp.dll
+bin\debug\MSR.LST.Net.Rtp.pdb
+bin\debug\LSTCommon.dll
+bin\debug\NetworkingBasics.dll
+bin\debug\Interop.NETCONLib.dll
+bin\debug\Interop.NetFwTypeLib.dll
+bin\debug\LSTCommon.pdb
+bin\debug\NetworkingBasics.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\MSR.LST.Net.Rtp.Installation.resources
+obj\Debug\MSR.LST.Net.Rtp.csproj.GenerateResource.Cache
+obj\Debug\MSR.LST.Net.Rtp.dll
+obj\Debug\MSR.LST.Net.Rtp.pdb
