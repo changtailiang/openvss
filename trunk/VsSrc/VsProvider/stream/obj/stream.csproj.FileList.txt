@@ -1,0 +1,13 @@
+bin\Debug\VdStream.dll
+bin\Debug\VdStream.pdb
+bin\Debug\VdDshow.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdDshow.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdStream.VideoStreamSetupPage.resources
+obj\Debug\stream.csproj.GenerateResource.Cache
+obj\Debug\VdStream.dll
+obj\Debug\VdStream.pdb

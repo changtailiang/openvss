@@ -1,0 +1,49 @@
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\bin\Debug\ConsoleServer.exe
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\bin\Debug\ConsoleServer.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\bin\Debug\CommandServer.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\bin\Debug\CommandServer.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\bin\Debug\CommandServer.xml
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\obj\Debug\ConsoleServer.exe
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\ConsoleServer\obj\Debug\ConsoleServer.pdb
+C:\Documents and Settings\kom\Desktop\Source\VsMiixerServer\ConsoleServer\obj\Debug\ConsoleServer.exe
+C:\Documents and Settings\kom\Desktop\Source\VsMiixerServer\ConsoleServer\obj\Debug\ConsoleServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\ConsoleServer.exe
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\ConsoleServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\CommandServer.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VdRtpStream.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkAnalysis.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkEncoder.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkMotionDetector.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VsAviEncoder.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VsCore.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\Interop.NETCONLib.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\Interop.NetFwTypeLib.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\MSR.LST.Net.Rtp.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\NLog.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\MySql.Data.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VeAviLib.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\NetworkingBasics.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\LSTCommon.dll
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkAnalysis.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkEncoder.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VsAviEncoder.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\MSR.LST.Net.Rtp.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkMotionDetector.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VdRtpStream.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\NLog.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\NLog.xml
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\MySql.Data.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VsCore.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VeAviLib.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\VkImage.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\NetworkingBasics.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\LSTCommon.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\CommandServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\bin\Debug\CommandServer.xml
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\obj\Debug\ConsoleServer.exe
+D:\my_dvs\trunk\VsMiixerServer\ConsoleServer\obj\Debug\ConsoleServer.pdb

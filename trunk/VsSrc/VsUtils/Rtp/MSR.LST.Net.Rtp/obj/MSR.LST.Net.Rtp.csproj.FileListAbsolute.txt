@@ -1,0 +1,39 @@
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.pdb
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\LSTCommon.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\Interop.NETCONLib.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\Interop.NetFwTypeLib.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\LSTCommon.pdb
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.pdb
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\ResolveAssemblyReference.cache
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.Installation.resources
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.csproj.GenerateResource.Cache
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.dll
+D:\my_conferencexp\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.pdb
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.pdb
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\LSTCommon.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\Interop.NETCONLib.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\Interop.NetFwTypeLib.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\LSTCommon.pdb
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.pdb
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.Installation.resources
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.csproj.GenerateResource.Cache
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.dll
+D:\my_dev\MyConferenceXP\ConferenceXP\Source Code\October2006\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.pdb
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\MSR.LST.Net.Rtp.pdb
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\LSTCommon.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\Interop.NETCONLib.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\Interop.NetFwTypeLib.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\LSTCommon.pdb
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\bin\debug\NetworkingBasics.pdb
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.Installation.resources
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.dll
+D:\my_dvs\trunk\VsStream\MSR.LST.Net.Rtp\obj\Debug\MSR.LST.Net.Rtp.pdb

@@ -1,0 +1,17 @@
+bin\Debug\VdBosch.dll
+bin\Debug\VdBosch.pdb
+bin\Debug\VdJpeg.dll
+bin\Debug\VdMjpeg.dll
+bin\Debug\VdMultisource.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdJpeg.pdb
+bin\Debug\VdMultisource.pdb
+bin\Debug\VdMjpeg.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdBosch.BoschCameraSetupPage.resources
+obj\Debug\bosch.csproj.GenerateResource.Cache
+obj\Debug\VdBosch.dll
+obj\Debug\VdBosch.pdb

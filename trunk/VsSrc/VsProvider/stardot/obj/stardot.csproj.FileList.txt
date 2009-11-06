@@ -1,0 +1,16 @@
+bin\Debug\VdStardot.dll
+bin\Debug\VdStardot.pdb
+bin\Debug\VdJpeg.dll
+bin\Debug\VdMjpeg.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdJpeg.pdb
+bin\Debug\VdMjpeg.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdStardot.StardotExpress6SetupPage.resources
+obj\Debug\VdStardot.StardotNetCamSetupPage.resources
+obj\Debug\stardot.csproj.GenerateResource.Cache
+obj\Debug\VdStardot.dll
+obj\Debug\VdStardot.pdb

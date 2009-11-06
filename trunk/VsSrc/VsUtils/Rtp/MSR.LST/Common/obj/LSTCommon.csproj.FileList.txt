@@ -1,0 +1,15 @@
+bin\debug\LSTCommon.dll
+bin\debug\LSTCommon.pdb
+bin\debug\Interop.NETCONLib.dll
+bin\debug\Interop.NetFwTypeLib.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.NetFwTypeLib.dll
+obj\Debug\LSTCommon.csproj.ResolveComReference.cache
+obj\Debug\MSR.LST.UI_Components.pause_enabled.bmp
+obj\Debug\MSR.LST.UI_Components.play_enabled.bmp
+obj\Debug\MSR.LST.UI_Components.record_enabled.bmp
+obj\Debug\MSR.LST.UI_Components.stop_enabled.bmp
+obj\Debug\MSR.LST.MediaControlButton.resources
+obj\Debug\LSTCommon.csproj.GenerateResource.Cache
+obj\Debug\LSTCommon.dll
+obj\Debug\LSTCommon.pdb

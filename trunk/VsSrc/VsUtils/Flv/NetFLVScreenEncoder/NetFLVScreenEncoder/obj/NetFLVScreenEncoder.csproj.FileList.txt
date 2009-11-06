@@ -1,0 +1,10 @@
+bin\Release\NetFLVScreenEncoder.dll
+bin\Release\NetFLVScreenEncoder.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\NetFLVScreenEncoder.dll
+obj\Release\NetFLVScreenEncoder.pdb
+bin\Debug\NetFLVScreenEncoder.dll
+bin\Debug\NetFLVScreenEncoder.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\NetFLVScreenEncoder.dll
+obj\Debug\NetFLVScreenEncoder.pdb

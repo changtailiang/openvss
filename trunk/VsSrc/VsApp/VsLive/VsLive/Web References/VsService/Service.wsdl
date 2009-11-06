@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.vsa-srv.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.vsa-srv.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.vsa-srv.com/">
+      <s:element name="add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="showFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="showFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showFilesResult" type="tns:ArrayOfVsFileURL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVsFileURL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VsFileURL" nillable="true" type="tns:VsFileURL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VsFileURL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilesName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilesID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilesURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="showTables">
+        <s:complexType />
+      </s:element>
+      <s:element name="showTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showTablesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="show">
+        <s:complexType />
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult" type="tns:VsFileURL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCamAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCamAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCamAllResult" type="tns:ArrayOfVsCamera" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVsCamera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VsCamera" nillable="true" type="tns:VsCamera" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VsCamera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCamHasMotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCamHasMotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCamHasMotionResult" type="tns:ArrayOfVsCamera" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCamHasMotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCamHasMotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCamHasMotionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsPeriod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsPeriodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMotionOfCamAsPeriodResult" type="tns:ArrayOfVsMotion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVsMotion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VsMotion" nillable="true" type="tns:VsMotion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VsMotion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MotionID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="processor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="r_algo_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="r_detail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getMotionOfAllAsPeriod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfAllAsPeriodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMotionOfAllAsPeriodResult" type="tns:ArrayOfVsMotion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMotionOfCamAsDayResult" type="tns:ArrayOfVsMotion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsHour">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsHourResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMotionOfCamAsHourResult" type="tns:ArrayOfVsMotion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsLast">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMotionOfCamAsLastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMotionOfCamAsLastResult" type="tns:VsMotion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTimeOfLastMotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTimeOfLastMotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getTimeOfLastMotionResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFileUrlOfMotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="motionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="motionDateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFileUrlOfMotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFileUrlOfMotionResult" type="tns:VsFileURL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getNumberOfMotionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionInDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionInDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNumberOfMotionInDayResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getNumberOfMotionInMonth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionInMonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNumberOfMotionInMonthResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionInYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeBegin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfMotionInYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNumberOfMotionInYearResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCamConfigToString">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCamConfigToStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCamConfigToStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCamConfigToByte">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCamConfigToByteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCamConfigToByteResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMyHost">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMyHostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMyHostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getConfig">
+        <s:complexType />
+      </s:element>
+      <s:element name="getConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="addSoapIn">
+    <wsdl:part name="parameters" element="tns:add" />
+  </wsdl:message>
+  <wsdl:message name="addSoapOut">
+    <wsdl:part name="parameters" element="tns:addResponse" />
+  </wsdl:message>
+  <wsdl:message name="showFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:showFiles" />
+  </wsdl:message>
+  <wsdl:message name="showFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:showFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="showTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:showTables" />
+  </wsdl:message>
+  <wsdl:message name="showTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:showTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCamAllSoapIn">
+    <wsdl:part name="parameters" element="tns:getCamAll" />
+  </wsdl:message>
+  <wsdl:message name="getCamAllSoapOut">
+    <wsdl:part name="parameters" element="tns:getCamAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCamHasMotionSoapIn">
+    <wsdl:part name="parameters" element="tns:getCamHasMotion" />
+  </wsdl:message>
+  <wsdl:message name="getCamHasMotionSoapOut">
+    <wsdl:part name="parameters" element="tns:getCamHasMotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCamHasMotionSoapIn">
+    <wsdl:part name="parameters" element="tns:isCamHasMotion" />
+  </wsdl:message>
+  <wsdl:message name="isCamHasMotionSoapOut">
+    <wsdl:part name="parameters" element="tns:isCamHasMotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsPeriodSoapIn">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsPeriod" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsPeriodSoapOut">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfAllAsPeriodSoapIn">
+    <wsdl:part name="parameters" element="tns:getMotionOfAllAsPeriod" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfAllAsPeriodSoapOut">
+    <wsdl:part name="parameters" element="tns:getMotionOfAllAsPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsDaySoapIn">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsDay" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsDaySoapOut">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsHourSoapIn">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsHour" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsHourSoapOut">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsLastSoapIn">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsLast" />
+  </wsdl:message>
+  <wsdl:message name="getMotionOfCamAsLastSoapOut">
+    <wsdl:part name="parameters" element="tns:getMotionOfCamAsLastResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTimeOfLastMotionSoapIn">
+    <wsdl:part name="parameters" element="tns:getTimeOfLastMotion" />
+  </wsdl:message>
+  <wsdl:message name="getTimeOfLastMotionSoapOut">
+    <wsdl:part name="parameters" element="tns:getTimeOfLastMotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFileUrlOfMotionSoapIn">
+    <wsdl:part name="parameters" element="tns:getFileUrlOfMotion" />
+  </wsdl:message>
+  <wsdl:message name="getFileUrlOfMotionSoapOut">
+    <wsdl:part name="parameters" element="tns:getFileUrlOfMotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotion" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInDaySoapIn">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInDay" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInDaySoapOut">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInMonth" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInYearSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInYear" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfMotionInYearSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumberOfMotionInYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCamConfigToStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getCamConfigToString" />
+  </wsdl:message>
+  <wsdl:message name="getCamConfigToStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getCamConfigToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCamConfigToByteSoapIn">
+    <wsdl:part name="parameters" element="tns:getCamConfigToByte" />
+  </wsdl:message>
+  <wsdl:message name="getCamConfigToByteSoapOut">
+    <wsdl:part name="parameters" element="tns:getCamConfigToByteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMyHostSoapIn">
+    <wsdl:part name="parameters" element="tns:getMyHost" />
+  </wsdl:message>
+  <wsdl:message name="getMyHostSoapOut">
+    <wsdl:part name="parameters" element="tns:getMyHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="getConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:getConfig" />
+  </wsdl:message>
+  <wsdl:message name="getConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:getConfigResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VsServiceSoap">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:addSoapIn" />
+      <wsdl:output message="tns:addSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="showFiles">
+      <wsdl:input message="tns:showFilesSoapIn" />
+      <wsdl:output message="tns:showFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="showTables">
+      <wsdl:input message="tns:showTablesSoapIn" />
+      <wsdl:output message="tns:showTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCamAll">
+      <wsdl:input message="tns:getCamAllSoapIn" />
+      <wsdl:output message="tns:getCamAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCamHasMotion">
+      <wsdl:input message="tns:getCamHasMotionSoapIn" />
+      <wsdl:output message="tns:getCamHasMotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCamHasMotion">
+      <wsdl:input message="tns:isCamHasMotionSoapIn" />
+      <wsdl:output message="tns:isCamHasMotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsPeriod">
+      <wsdl:input message="tns:getMotionOfCamAsPeriodSoapIn" />
+      <wsdl:output message="tns:getMotionOfCamAsPeriodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfAllAsPeriod">
+      <wsdl:input message="tns:getMotionOfAllAsPeriodSoapIn" />
+      <wsdl:output message="tns:getMotionOfAllAsPeriodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsDay">
+      <wsdl:input message="tns:getMotionOfCamAsDaySoapIn" />
+      <wsdl:output message="tns:getMotionOfCamAsDaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsHour">
+      <wsdl:input message="tns:getMotionOfCamAsHourSoapIn" />
+      <wsdl:output message="tns:getMotionOfCamAsHourSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsLast">
+      <wsdl:input message="tns:getMotionOfCamAsLastSoapIn" />
+      <wsdl:output message="tns:getMotionOfCamAsLastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeOfLastMotion">
+      <wsdl:input message="tns:getTimeOfLastMotionSoapIn" />
+      <wsdl:output message="tns:getTimeOfLastMotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFileUrlOfMotion">
+      <wsdl:input message="tns:getFileUrlOfMotionSoapIn" />
+      <wsdl:output message="tns:getFileUrlOfMotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotion">
+      <wsdl:input message="tns:getNumberOfMotionSoapIn" />
+      <wsdl:output message="tns:getNumberOfMotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInDay">
+      <wsdl:input message="tns:getNumberOfMotionInDaySoapIn" />
+      <wsdl:output message="tns:getNumberOfMotionInDaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInMonth">
+      <wsdl:input message="tns:getNumberOfMotionInMonthSoapIn" />
+      <wsdl:output message="tns:getNumberOfMotionInMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInYear">
+      <wsdl:input message="tns:getNumberOfMotionInYearSoapIn" />
+      <wsdl:output message="tns:getNumberOfMotionInYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToString">
+      <wsdl:input message="tns:getCamConfigToStringSoapIn" />
+      <wsdl:output message="tns:getCamConfigToStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToByte">
+      <wsdl:input message="tns:getCamConfigToByteSoapIn" />
+      <wsdl:output message="tns:getCamConfigToByteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMyHost">
+      <wsdl:input message="tns:getMyHostSoapIn" />
+      <wsdl:output message="tns:getMyHostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getConfig">
+      <wsdl:input message="tns:getConfigSoapIn" />
+      <wsdl:output message="tns:getConfigSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VsServiceSoap" type="tns:VsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="add">
+      <soap:operation soapAction="http://www.vsa-srv.com/add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showFiles">
+      <soap:operation soapAction="http://www.vsa-srv.com/showFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showTables">
+      <soap:operation soapAction="http://www.vsa-srv.com/showTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://www.vsa-srv.com/show" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://www.vsa-srv.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamAll">
+      <soap:operation soapAction="http://www.vsa-srv.com/getCamAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamHasMotion">
+      <soap:operation soapAction="http://www.vsa-srv.com/getCamHasMotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCamHasMotion">
+      <soap:operation soapAction="http://www.vsa-srv.com/isCamHasMotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsPeriod">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfAllAsPeriod">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMotionOfAllAsPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsDay">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsHour">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsLast">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsLast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeOfLastMotion">
+      <soap:operation soapAction="http://www.vsa-srv.com/getTimeOfLastMotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFileUrlOfMotion">
+      <soap:operation soapAction="http://www.vsa-srv.com/getFileUrlOfMotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotion">
+      <soap:operation soapAction="http://www.vsa-srv.com/getNumberOfMotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInDay">
+      <soap:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInMonth">
+      <soap:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInYear">
+      <soap:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToString">
+      <soap:operation soapAction="http://www.vsa-srv.com/getCamConfigToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToByte">
+      <soap:operation soapAction="http://www.vsa-srv.com/getCamConfigToByte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyHost">
+      <soap:operation soapAction="http://www.vsa-srv.com/getMyHost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConfig">
+      <soap:operation soapAction="http://www.vsa-srv.com/getConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VsServiceSoap12" type="tns:VsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="add">
+      <soap12:operation soapAction="http://www.vsa-srv.com/add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showFiles">
+      <soap12:operation soapAction="http://www.vsa-srv.com/showFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showTables">
+      <soap12:operation soapAction="http://www.vsa-srv.com/showTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://www.vsa-srv.com/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://www.vsa-srv.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamAll">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getCamAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamHasMotion">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getCamHasMotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCamHasMotion">
+      <soap12:operation soapAction="http://www.vsa-srv.com/isCamHasMotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsPeriod">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsPeriod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfAllAsPeriod">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMotionOfAllAsPeriod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsDay">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsHour">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsHour" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotionOfCamAsLast">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMotionOfCamAsLast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeOfLastMotion">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getTimeOfLastMotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFileUrlOfMotion">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getFileUrlOfMotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotion">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getNumberOfMotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInDay">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInMonth">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfMotionInYear">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getNumberOfMotionInYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToString">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getCamConfigToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCamConfigToByte">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getCamConfigToByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyHost">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getMyHost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConfig">
+      <soap12:operation soapAction="http://www.vsa-srv.com/getConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VsService">
+    <wsdl:port name="VsServiceSoap" binding="tns:VsServiceSoap">
+      <soap:address location="http://localhost/vsservice/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VsServiceSoap12" binding="tns:VsServiceSoap12">
+      <soap12:address location="http://localhost/vsservice/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

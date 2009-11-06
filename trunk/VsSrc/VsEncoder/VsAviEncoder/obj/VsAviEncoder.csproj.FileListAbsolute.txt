@@ -1,0 +1,17 @@
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\obj\Debug\VkAviEncoder.VkAviEncoderSetupPage.resources
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\obj\Debug\VsAviEncoder.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\obj\Debug\VsAviEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VsAviEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VsAviEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\Interop.WMEncoderLib.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\NLog.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VeAviLib.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VkEncoder.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VeAviLib.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VkImage.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\VkEncoder.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\NLog.pdb
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\bin\Debug\NLog.xml
+D:\my_dvs\trunk\VsEncoder\VsAviEncoder\obj\Debug\VsAviEncoder.dll

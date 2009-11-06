@@ -1,0 +1,13 @@
+bin\Debug\VdLocal.dll
+bin\Debug\VdLocal.pdb
+bin\Debug\VdDshow.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdDshow.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdLocal.CaptureDeviceSetupPage.resources
+obj\Debug\local.csproj.GenerateResource.Cache
+obj\Debug\VdLocal.dll
+obj\Debug\VdLocal.pdb

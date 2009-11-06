@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19AF3083-E106-4892-B544-C724897FA436}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vs.Monitor</RootNamespace>
+    <AssemblyName>VsMonitor</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>isys.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\VsBin\VsEnterprise\VsServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\VsBin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vs.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.Analyzer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.Encoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.Image, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.Provider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.Server, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Core.SystemInfo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VsAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsAboutBox.Designer.cs">
+      <DependentUpon>VsAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsCamera\VsAnalyzerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsSplasherView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsSplasherView.Designer.cs">
+      <DependentUpon>VsSplasherView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsTreeviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsTreeviewControl.Designer.cs">
+      <DependentUpon>VsTreeviewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsLiveviewTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsLiveviewTool.Designer.cs">
+      <DependentUpon>VsLiveviewTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsRecordSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsRecordSetting.Designer.cs">
+      <DependentUpon>VsRecordSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsGeneralSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsGeneralSetting.Designer.cs">
+      <DependentUpon>VsGeneralSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsSettingTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsSettingTool.Designer.cs">
+      <DependentUpon>VsSettingTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsSingleViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsSingleViewer.Designer.cs">
+      <DependentUpon>VsSingleViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsCamera\VsAnalyzerSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsAnalyzerSettings.designer.cs">
+      <DependentUpon>VsAnalyzerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsCamera\VsCameraDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsCameraDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsCameraInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsCameraPropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsCameraSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsEncoderSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsCamera\VsEncoderSettings.designer.cs">
+      <DependentUpon>VsEncoderSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsChannel\VsChannelDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsChannel\VsChannelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsChannel\VsChannelGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VsChannel\VsChannelStructure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsMultiViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VsMultiViewer.Designer.cs">
+      <DependentUpon>VsMultiViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsAlarmControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsAlarmControl.Designer.cs">
+      <DependentUpon>VsAlarmControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VsChannel\VsDialogWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsChannel\VsIDialogWizard.cs" />
+    <Compile Include="VsMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsMonitor.Designer.cs">
+      <DependentUpon>VsMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsAboutBox.resx">
+      <DependentUpon>VsAboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsSplasherView.resx">
+      <DependentUpon>VsSplasherView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsTreeviewControl.resx">
+      <DependentUpon>VsTreeviewControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsGeneralSetting.resx">
+      <DependentUpon>VsGeneralSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsLiveviewTool.resx">
+      <DependentUpon>VsLiveviewTool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsRecordSetting.resx">
+      <DependentUpon>VsRecordSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsSettingTool.resx">
+      <DependentUpon>VsSettingTool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsSingleViewer.resx">
+      <DependentUpon>VsSingleViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsCamera\VsCameraDescription.resx">
+      <DependentUpon>VsCameraDescription.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsCamera\VsCameraInfo.resx">
+      <DependentUpon>VsCameraInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsCamera\VsCameraPropertiesDialog.resx">
+      <DependentUpon>VsCameraPropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsCamera\VsCameraSettings.resx">
+      <DependentUpon>VsCameraSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChannel\VsChannelDescription.resx">
+      <DependentUpon>VsChannelDescription.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChannel\VsChannelGrid.resx">
+      <DependentUpon>VsChannelGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChannel\VsChannelStructure.resx">
+      <DependentUpon>VsChannelStructure.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsMultiViewer.resx">
+      <DependentUpon>VsMultiViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsAlarmControl.resx">
+      <DependentUpon>VsAlarmControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChannel\VsDialogWizard.resx">
+      <DependentUpon>VsDialogWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsMonitor.resx">
+      <DependentUpon>VsMonitor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsChannel\VsPageWizard.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VsPropertyControl.resx">
+      <DependentUpon>VsPropertyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="VsChannel\VsPageWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VsPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VsPropertyControl.Designer.cs">
+      <DependentUpon>VsPropertyControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isys.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_channel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_multi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_single.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isys_color.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="isys.ico" />
+    <None Include="Resources\001_01.png" />
+    <None Include="Resources\001_02.png" />
+    <None Include="Resources\001_03.png" />
+    <None Include="Resources\001_04.png" />
+    <None Include="Resources\001_05.png" />
+    <None Include="Resources\001_06.png" />
+    <None Include="Resources\001_07.png" />
+    <None Include="Resources\001_08.png" />
+    <None Include="Resources\001_09.png" />
+    <None Include="Resources\001_10.png" />
+    <None Include="Resources\001_11.png" />
+    <None Include="Resources\001_12.png" />
+    <None Include="Resources\001_13.png" />
+    <None Include="Resources\001_14.png" />
+    <None Include="Resources\001_15.png" />
+    <None Include="Resources\001_16.png" />
+    <None Include="Resources\001_17.png" />
+    <None Include="Resources\001_18.png" />
+    <None Include="Resources\001_19.png" />
+    <None Include="Resources\001_20.png" />
+    <None Include="Resources\001_21.png" />
+    <None Include="Resources\001_22.png" />
+    <None Include="Resources\001_23.png" />
+    <None Include="Resources\001_24.png" />
+    <None Include="Resources\001_25.png" />
+    <None Include="Resources\001_26.png" />
+    <None Include="Resources\001_27.png" />
+    <None Include="Resources\001_28.png" />
+    <None Include="Resources\001_29.png" />
+    <None Include="Resources\001_30.png" />
+    <None Include="Resources\001_31.png" />
+    <None Include="Resources\001_32.png" />
+    <None Include="Resources\001_33.png" />
+    <None Include="Resources\001_34.png" />
+    <None Include="Resources\001_35.png" />
+    <None Include="Resources\001_36.png" />
+    <None Include="Resources\001_37.png" />
+    <None Include="Resources\001_38.png" />
+    <None Include="Resources\001_39.png" />
+    <None Include="Resources\001_40.png" />
+    <None Include="Resources\001_41.png" />
+    <None Include="Resources\001_42.png" />
+    <None Include="Resources\001_43.png" />
+    <None Include="Resources\001_44.png" />
+    <None Include="Resources\001_45.png" />
+    <None Include="Resources\001_46.png" />
+    <None Include="Resources\001_47.png" />
+    <None Include="Resources\001_48.png" />
+    <None Include="Resources\001_49.png" />
+    <None Include="Resources\001_50.png" />
+    <None Include="Resources\001_51.png" />
+    <None Include="Resources\001_52.png" />
+    <None Include="Resources\001_53.png" />
+    <None Include="Resources\001_54.png" />
+    <None Include="Resources\001_55.png" />
+    <None Include="Resources\001_56.png" />
+    <None Include="Resources\001_57.png" />
+    <None Include="Resources\001_58.png" />
+    <None Include="Resources\001_59.png" />
+    <None Include="Resources\001_60.png" />
+    <Content Include="Resources\isys.ico" />
+    <None Include="Resources\isyscolor.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

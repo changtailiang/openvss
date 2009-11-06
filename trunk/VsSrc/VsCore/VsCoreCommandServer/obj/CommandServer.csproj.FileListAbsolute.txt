@@ -1,0 +1,11 @@
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\CommandServer\bin\Debug\CommandServer.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\CommandServer\bin\Debug\CommandServer.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\CommandServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\CommandServer\obj\Debug\CommandServer.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandServer\CommandServer\obj\Debug\CommandServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\bin\Debug\CommandServer.dll
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\bin\Debug\CommandServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\obj\Debug\CommandServer.dll
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\obj\Debug\CommandServer.pdb
+D:\my_dvs\trunk\VsMiixerServer\CommandServer\bin\Debug\CommandServer.XML

@@ -1,0 +1,17 @@
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdPixord.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdPixord.pdb
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\pixord\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\pixord\obj\Debug\VdPixord.PixordCameraSetupPage.resources
+D:\my_dvs\trunk\VsCamera\pixord\obj\Debug\pixord.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\pixord\obj\Debug\VdPixord.dll
+D:\my_dvs\trunk\VsCamera\pixord\obj\Debug\VdPixord.pdb
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\pixord\bin\Debug\VkImage.pdb

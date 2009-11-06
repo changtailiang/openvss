@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?define ProductName="MySQL Connector Net $(var.Version)"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="5FD88490-011C-4df1-B886-F298D955171B" Name="$(var.ProductName)" Manufacturer="MySQL AB"
+           Version="$(var.Version)" Language="1033">
+    <Package Compressed="yes" InstallerVersion="200"/>
+
+    <Property Id="ARPURLINFOABOUT" Value="http://www.mysql.com" />
+    <Property Id="ARPURLUPDATEINFO" Value="http://dev.mysql.com"/>
+
+    <Media Id="1" EmbedCab="yes" Cabinet="ConnectorNet.cab" CompressionLevel="high" />
+
+    <Condition Message="You must have Administrative rights on this machine to install [ProductName].">
+      <![CDATA[ Privileged  ]]>
+    </Condition>
+
+    <!-- First make sure that .NET 2.0 is installed -->
+    <PropertyRef Id="NETFRAMEWORK20"/>
+    <Condition Message="The .NET Framework 2.0 must be installed before installing this package.">Installed OR NETFRAMEWORK20</Condition>
+
+    <!-- now make sure that we don't have an old version still around -->
+    <Property Id="OLDVERSION">
+      <RegistrySearch Id="Ver5081" Key="Software\MySQL AB\MySQL Connector/Net 5.0.8.1" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver507" Key="Software\MySQL AB\MySQL Connector/Net 5.0.7" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver506" Key="Software\MySQL AB\MySQL Connector/Net 5.0.6" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver505" Key="Software\MySQL AB\MySQL Connector/Net 5.0.5" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver504" Key="Software\MySQL AB\MySQL Connector/Net 5.0.4" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver503" Key="Software\MySQL AB\MySQL Connector/Net 5.0.3" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver502" Key="Software\MySQL AB\MySQL Connector/Net 5.0.2" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver501" Key="Software\MySQL AB\MySQL Connector/Net 5.0.1" Name="Location" Root="HKLM" Type="raw"/>
+      <RegistrySearch Id="Ver500" Key="Software\MySQL AB\MySQL Connector/Net 5.0.0" Name="Location" Root="HKLM" Type="raw"/>
+    </Property>
+    <Condition Message="A previous version of Connector/Net 5.0 or higher is already installed.  Please uninstall that version first.">Not OLDVERSION</Condition>
+
+    <!-- Our directory structure -->
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='CompanyDir' Name='MySQL'>
+          <Directory Id='INSTALLDIR' Name='$(var.ProductName)'>
+            <Directory Id='Binaries' Name='Binaries'>
+              <Directory Id='BinNet20' Name='.NET 2.0'/>
+            </Directory>
+            <Directory Id='DocsDir' Name='Documentation'/>
+            <Directory Id='DriverDir' Name='Driver'/>
+            <Directory Id='SampleDir' Name='Samples'/>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder" Name="PMFolder">
+        <Directory Id='PMCompanyDir' Name='MySQL'>
+          <Directory Id="ShortCutDir" Name="$(var.ProductName)"/>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id='DocsDir'>
+      <Component Id="Docs" Guid="8f9d25c7-1eba-4391-b764-eb1f7d39243e">
+        <File Id="CoreCHM" Name="MySql.Data.chm" Source="..\Documentation\Output\MySql.Data.chm" DiskId="1" />
+        <File Id="docs2" Name="COL_Master.HxC" Source="..\Documentation\CollectionFiles\COL_Master.HxC" DiskId="1"/>
+        <File Id="docs3" Name="COL_Master.HxT" Source="..\Documentation\CollectionFiles\COL_Master.HxT" DiskId="1"/>
+        <File Id="docs4" Name="COL_Master_A.HxK" Source="..\Documentation\CollectionFiles\COL_Master_A.HxK" DiskId="1"/>
+        <File Id="docs5" Name="COL_Master_F.HxK" Source="..\Documentation\CollectionFiles\COL_Master_F.HxK" DiskId="1"/>
+        <File Id="docs6" Name="COL_Master_K.HxK" Source="..\Documentation\CollectionFiles\COL_Master_K.HxK" DiskId="1"/>
+        <File Id="docs7" Name="COL_Master_N.HxK" Source="..\Documentation\CollectionFiles\COL_Master_N.HxK" DiskId="1"/>
+        <File Id="docs8" Name="MySql.Data.HxS" Source="..\Documentation\Output\MySql.Data.HxS" DiskId="1"/>
+        <File Id="H2Reg.ini" Name="help.cmd" Source="Binary\h2reg.ini" DiskId="1"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id='DocsFeature' Display='4' Level='1' Title='Documentation' Description='Documentation'>
+      <ComponentRef Id='Docs'/>
+    </Feature>
+
+    <FeatureRef Id='Core.Feature'/>
+    <FeatureRef Id="WebProviders"/>
+    <FeatureRef Id="CompactFramework"/>
+    <Feature Id='VSIntegration' Level='1' Display='10'
+             Title='Visual Studio Integration' Description='DDEX and Server Explorer Integration'>
+      <FeatureRef Id='VS2005Int'/>
+      <FeatureRef Id='VS2008Int'/>
+    </Feature>
+    <FeatureRef Id="Samples"/>
+
+    <Binary Id="H2Reg" SourceFile="Binary\H2Reg.exe"/>
+    <Property Id="WIXUI_INSTALLDIR" Value='INSTALLDIR'/>
+    <!-- Remove the license agreement dialog -->
+    <UIRef Id="WixUI_MySQL"/>
+    <WixVariable Id="WixUIBannerBmp" Value="Bitmaps/BannrBmp.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="Bitmaps/DlgBmp.bmp"/>
+
+    <Icon Id="ChangeLogIcon" SourceFile="Bitmaps\document.ico"/>
+
+    <InstallExecuteSequence>
+      <Custom Action='RegisterHelp' After="InstallFiles">(&amp;DocsFeature=3) AND NOT(!DocsFeature=3)</Custom>
+      <Custom Action="UnRegisterHelp" Before="RemoveFiles">(&amp;DocsFeature=2) AND (!DocsFeature=3)</Custom>
+    </InstallExecuteSequence>
+
+    <CustomAction Id="RegisterHelp" ExeCommand='-r -q CmdFile="[#H2Reg.ini]"' BinaryKey="H2Reg" Execute="deferred" Return="check" Impersonate="no"/>
+    <CustomAction Id="UnRegisterHelp" ExeCommand='-u -q CmdFile="[#H2Reg.ini]"' BinaryKey="H2Reg" Execute="deferred" Return="check" Impersonate="no"/>
+  </Product>
+</Wix>
+
+
+

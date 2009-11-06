@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fujiko", "fujiko.csproj", "{3F476E5D-20B3-4DE6-AC8A-D85467E178CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F476E5D-20B3-4DE6-AC8A-D85467E178CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F476E5D-20B3-4DE6-AC8A-D85467E178CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F476E5D-20B3-4DE6-AC8A-D85467E178CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F476E5D-20B3-4DE6-AC8A-D85467E178CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

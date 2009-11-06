@@ -1,0 +1,10 @@
+bin\Debug\VkEncoder.dll
+bin\Debug\VkEncoder.pdb
+bin\Debug\VkImage.dll
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VkEncoder.dll
+obj\Debug\VkEncoder.pdb
+bin\Debug\NLog.dll
+bin\Debug\NLog.pdb
+bin\Debug\NLog.xml

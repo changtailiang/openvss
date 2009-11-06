@@ -1,0 +1,5 @@
+bin\debug\NetworkingBasics.dll
+bin\debug\NetworkingBasics.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\NetworkingBasics.dll
+obj\Debug\NetworkingBasics.pdb

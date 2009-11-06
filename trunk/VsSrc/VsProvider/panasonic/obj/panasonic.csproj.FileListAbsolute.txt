@@ -1,0 +1,17 @@
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdPanasonic.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdPanasonic.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\panasonic\obj\Debug\VdPanasonic.PanasonicCameraSetupPage.resources
+D:\my_dvs\trunk\VsCamera\panasonic\obj\Debug\panasonic.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\panasonic\obj\Debug\VdPanasonic.dll
+D:\my_dvs\trunk\VsCamera\panasonic\obj\Debug\VdPanasonic.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\panasonic\bin\Debug\VkImage.pdb

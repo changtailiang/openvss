@@ -1,0 +1,4 @@
+2009-10-31 21:23:03.0781 Vs.Core.Analyzer.VsCoreAnalyzer Camera: Object Detection, Host: localhost, Analyzer: 
+2009-10-31 21:23:28.2500 Vs.Core.Analyzer.VsCoreAnalyzer Camera: Object Detection, Host: localhost, Analyzer: 
+2009-10-31 21:24:05.3125 Vs.Core.Analyzer.VsCoreAnalyzer Camera: Object Detection, Host: localhost, Analyzer: 
+2009-10-31 21:40:17.6093 Vs.Core.Analyzer.VsCoreAnalyzer Camera: Motion History, Host: localhost, Analyzer: 

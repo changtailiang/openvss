@@ -1,0 +1,5 @@
+bin\Debug\VdDshow.dll
+bin\Debug\VdDshow.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdDshow.dll
+obj\Debug\VdDshow.pdb

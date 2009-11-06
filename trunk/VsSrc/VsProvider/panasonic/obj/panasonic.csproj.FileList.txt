@@ -1,0 +1,17 @@
+bin\Debug\VdPanasonic.dll
+bin\Debug\VdPanasonic.pdb
+bin\Debug\VdJpeg.dll
+bin\Debug\VdMjpeg.dll
+bin\Debug\VdMultisource.dll
+bin\Debug\VkProvider.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkProvider.pdb
+bin\Debug\VdJpeg.pdb
+bin\Debug\VdMultisource.pdb
+bin\Debug\VdMjpeg.pdb
+bin\Debug\VkImage.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VdPanasonic.PanasonicCameraSetupPage.resources
+obj\Debug\panasonic.csproj.GenerateResource.Cache
+obj\Debug\VdPanasonic.dll
+obj\Debug\VdPanasonic.pdb

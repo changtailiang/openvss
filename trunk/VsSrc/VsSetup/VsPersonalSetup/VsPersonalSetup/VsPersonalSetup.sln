@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VsPersonalSetup", "VsPersonalSetup\VsPersonalSetup.vdproj", "{7644EE69-DDEF-41D5-AA04-0D5CBBC2694E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsPersonal", "..\..\..\VsApp\VsPersonal\VsPersonal\VsPersonal.csproj", "{45702126-2D53-498E-A708-3175BBE64EAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7644EE69-DDEF-41D5-AA04-0D5CBBC2694E}.Debug|Any CPU.ActiveCfg = Debug
+		{7644EE69-DDEF-41D5-AA04-0D5CBBC2694E}.Debug|Any CPU.Build.0 = Debug
+		{7644EE69-DDEF-41D5-AA04-0D5CBBC2694E}.Release|Any CPU.ActiveCfg = Release
+		{7644EE69-DDEF-41D5-AA04-0D5CBBC2694E}.Release|Any CPU.Build.0 = Release
+		{45702126-2D53-498E-A708-3175BBE64EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45702126-2D53-498E-A708-3175BBE64EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45702126-2D53-498E-A708-3175BBE64EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45702126-2D53-498E-A708-3175BBE64EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

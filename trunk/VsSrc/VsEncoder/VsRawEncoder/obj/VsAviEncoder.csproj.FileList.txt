@@ -1,0 +1,17 @@
+bin\Debug\Interop.WMEncoderLib.dll
+bin\Debug\NLog.dll
+bin\Debug\VkEncoder.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkImage.pdb
+bin\Debug\VkEncoder.pdb
+bin\Debug\NLog.pdb
+bin\Debug\NLog.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VkAviEncoder.VkAviEncoderSetupPage.resources
+obj\Debug\VsAviEncoder.csproj.GenerateResource.Cache
+bin\Debug\VeAviLib.dll
+bin\Debug\VeAviLib.pdb
+bin\Debug\VsAviEncoder.dll
+bin\Debug\VsAviEncoder.pdb
+obj\Debug\VsAviEncoder.dll
+obj\Debug\VsAviEncoder.pdb

@@ -1,0 +1,26 @@
+<Project DefaultTargets="GenerateDocumentation" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import  Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Target Name="GenerateDocumentation">
+    <PropertyGroup>
+      <SandcastleBuidlerPath>C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\SandcastleBuilderConsole.exe</SandcastleBuidlerPath>
+      <SandcastleBuilderProjectTemplateFile>$(MSBuildExtensionsPath)\template.shfb</SandcastleBuilderProjectTemplateFile>
+      <SandcastleBuilderProjectFile>$(MSBuildProjectDirectory)\help.shfb</SandcastleBuilderProjectFile>
+<!--      <SandcastleBuilderArguments>-assembly=&quot;$(OutDir)*.dll&quot; -outputpath=&quot;$(OutDir).&quot;</SandcastleBuilderArguments>-->
+      <!-- -dependency=&quot;$(SolutionRoot)\References\*.dll&quot; -->
+      <!-- HACK: For some reason the -outputpath argument requires a '.' on the end,
+     otherwise you get BUILD FAILED: Illegal characters in path. -->
+    </PropertyGroup>
+
+    <Error Text="Sandcastle Help File Builder is not found at $(SandcastleBuidlerPath)." Condition="!Exists('$(SandcastleBuidlerPath)')"  />
+<!--    <Error Text="Sandcastle Help File Builder project template is not found at $(SandcastleBuilderProjectTemplateFile)."
+           Condition="!Exists('$(SandcastleBuilderProjectTemplateFile)')" />-->
+
+<!--    <Copy SourceFiles="$(SandcastleBuilderProjectTemplateFile)" DestinationFiles="$(SandcastleBuilderProjectFile)" />-->
+
+<!--    <XmlUpdate XPath="/project/HelpTitle" XmlFileName="$(SandcastleBuilderProjectFile)" Value="Documentation for $(BuildDefinition)" />
+    <XmlUpdate XPath="/project/HtmlHelpName" XmlFileName="$(SandcastleBuilderProjectFile)" Value="$(BuildDefinition)" />
+    <XmlUpdate XPath="/project/FooterText" XmlFileName="$(SandcastleBuilderProjectFile)" Value="Build Number: $(BuildNumber)" />-->
+
+    <Exec Command="&quot;$(SandcastleBuidlerPath)&quot; &quot;$(SandcastleBuilderProjectFile)&quot;" />
+  </Target>
+</Project>

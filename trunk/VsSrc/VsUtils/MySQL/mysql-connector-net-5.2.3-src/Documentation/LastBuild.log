@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder Console" version="1.7.0.0" projectFile="D:\work\connector-net\branches\5.2\Documentation\help.shfb" started="8/14/2008 9:13:03 AM">
+<buildStep step="Initializing">
+</buildStep>
+<buildStep step="FindingTools">
+Finding tools...
+Found Sandcastle in 'C:\Program Files (x86)\Sandcastle\'
+Found HTML 1.x help compiler in 'C:\Program Files (x86)\HTML Help Workshop\'
+Found HTML 2.x help compiler in 'C:\Program Files (x86)\Visual Studio 2005 SDK\2007.02\VisualStudioIntegration\Archive\HelpIntegration\'
+</buildStep>
+<buildStep step="ValidatingAssemblies">
+Validating and copying documentation assembly information...
+    D:\work\connector-net\branches\5.2\MySql.Data\Provider\bin\net-2.0\Release\MySql.Data.dll -&gt; D:\work\connector-net\branches\5.2\Documentation\Working\MySql.Data.dll
+    D:\work\connector-net\branches\5.2\MySql.Data\Provider\bin\net-2.0\Release\MySql.Data.xml -&gt; D:\work\connector-net\branches\5.2\Documentation\Working\MySql.Data.xml
+    D:\work\connector-net\branches\5.2\MySql.Web\Providers\bin\Release\MySql.Web.dll -&gt; D:\work\connector-net\branches\5.2\Documentation\Working\MySql.Web.dll
+    D:\work\connector-net\branches\5.2\MySql.Web\Providers\bin\Release\doc.xml -&gt; D:\work\connector-net\branches\5.2\Documentation\Working\doc.xml
+    Last step completed in 00:00:00.1143
+</buildStep>
+<buildStep step="Failed">
+
+BUILD FAILED: Unable to find assembly: D:\work\connector-net\branches\5.2\Documentation\*.dll
+
+</buildStep>
+</shfbBuild>

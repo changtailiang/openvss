@@ -1,0 +1,5 @@
+D:\my_dvs\trunk\VsImage\VsImage\bin\Debug\VsImage.dll
+D:\my_dvs\trunk\VsImage\VsImage\bin\Debug\VsImage.pdb
+D:\my_dvs\trunk\VsImage\VsImage\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsImage\VsImage\obj\Debug\VsImage.dll
+D:\my_dvs\trunk\VsImage\VsImage\obj\Debug\VsImage.pdb

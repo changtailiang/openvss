@@ -1,0 +1,16 @@
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdStardot.dll
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdStardot.pdb
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\VdStardot.StardotExpress6SetupPage.resources
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\VdStardot.StardotNetCamSetupPage.resources
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\stardot.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\VdStardot.dll
+D:\my_dvs\trunk\VsCamera\stardot\obj\Debug\VdStardot.pdb
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\stardot\bin\Debug\VkImage.pdb

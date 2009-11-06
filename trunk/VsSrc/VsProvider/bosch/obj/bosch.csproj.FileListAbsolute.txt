@@ -1,0 +1,17 @@
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdBosch.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdBosch.pdb
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\bosch\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\bosch\obj\Debug\VdBosch.BoschCameraSetupPage.resources
+D:\my_dvs\trunk\VsCamera\bosch\obj\Debug\bosch.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\bosch\obj\Debug\VdBosch.dll
+D:\my_dvs\trunk\VsCamera\bosch\obj\Debug\VdBosch.pdb
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\bosch\bin\Debug\VkImage.pdb

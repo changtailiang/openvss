@@ -1,0 +1,3 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VkMotionDetector.VkMotionHistorySetupPage.resources
+obj\Debug\VkMotionHistory.csproj.GenerateResource.Cache

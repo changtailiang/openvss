@@ -1,0 +1,17 @@
+bin\Debug\VsMediaEncoder.dll
+bin\Debug\VsMediaEncoder.pdb
+bin\Debug\Interop.WMEncoderLib.dll
+bin\Debug\VeWmvLib.dll
+bin\Debug\VkEncoder.dll
+bin\Debug\VkImage.dll
+bin\Debug\VkImage.pdb
+bin\Debug\VkEncoder.pdb
+bin\Debug\VeWmvLib.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VkMediaEncoder.VkMediaEncoderSetupPage.resources
+obj\Debug\VsMediaEncoder.csproj.GenerateResource.Cache
+obj\Debug\VsMediaEncoder.dll
+obj\Debug\VsMediaEncoder.pdb
+bin\Debug\NLog.dll
+bin\Debug\NLog.pdb
+bin\Debug\NLog.xml

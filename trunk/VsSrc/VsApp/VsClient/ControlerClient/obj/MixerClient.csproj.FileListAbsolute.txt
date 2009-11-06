@@ -1,0 +1,24 @@
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\MixerControler.exe
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\MixerControler.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\CommandClient.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\P_0_0_0.U_0.dll
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\P_0_0_0.U_0.xml
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\CommandClient.pdb
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\bin\Debug\CommandClient.xml
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\ChatClient.frmMain.resources
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\MixerControler.Properties.Resources.resources
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\MixerClient.csproj.GenerateResource.Cache
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\MixerControler.exe
+C:\Documents and Settings\kom\Desktop\Source\CommandClient\ChatClient\obj\Debug\MixerControler.pdb
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\bin\Debug\VsMixerControler.exe
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\bin\Debug\VsMixerControler.pdb
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\bin\Debug\CommandClient.dll
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\bin\Debug\CommandClient.pdb
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\bin\Debug\CommandClient.xml
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\ChatClient.frmMain.resources
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\VsMixerControler.Properties.Resources.resources
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\MixerClient.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\VsMixerControler.exe
+D:\my_dvs\trunk\VsMixerClient\ControlerClient\obj\Debug\VsMixerControler.pdb

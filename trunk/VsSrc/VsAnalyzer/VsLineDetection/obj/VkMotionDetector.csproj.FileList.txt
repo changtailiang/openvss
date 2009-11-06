@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\VkMotionDetector.VkMotionDetectorSetupPage.resources
+obj\Debug\VkMotionDetector.csproj.GenerateResource.Cache
+bin\Debug\VkMotionDetector.dll
+bin\Debug\VkMotionDetector.pdb
+bin\Debug\VkAnalysis.dll
+bin\Debug\VkAnalysis.pdb
+obj\Debug\VkMotionDetector.dll
+obj\Debug\VkMotionDetector.pdb

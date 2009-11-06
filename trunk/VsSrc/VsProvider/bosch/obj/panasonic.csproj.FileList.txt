@@ -1,0 +1,15 @@
+bin\Debug\panasonic.dll
+bin\Debug\panasonic.pdb
+bin\Debug\jpeg.dll
+bin\Debug\mjpeg.dll
+bin\Debug\multisource.dll
+bin\Debug\videosource.dll
+bin\Debug\jpeg.pdb
+bin\Debug\mjpeg.pdb
+bin\Debug\videosource.pdb
+bin\Debug\multisource.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\panasonic.PanasonicCameraSetupPage.resources
+obj\Debug\panasonic.csproj.GenerateResource.Cache
+obj\Debug\panasonic.dll
+obj\Debug\panasonic.pdb

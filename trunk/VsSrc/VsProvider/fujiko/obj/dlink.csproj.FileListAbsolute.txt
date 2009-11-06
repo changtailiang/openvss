@@ -1,0 +1,17 @@
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdDlink.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdDlink.pdb
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdJpeg.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdMjpeg.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdMultisource.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdJpeg.pdb
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdMultisource.pdb
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VdMjpeg.pdb
+D:\my_dvs\trunk\VsCamera\dlink\obj\Debug\ResolveAssemblyReference.cache
+D:\my_dvs\trunk\VsCamera\dlink\obj\Debug\VdDlink.DLinkCameraSetupPage.resources
+D:\my_dvs\trunk\VsCamera\dlink\obj\Debug\dlink.csproj.GenerateResource.Cache
+D:\my_dvs\trunk\VsCamera\dlink\obj\Debug\VdDlink.dll
+D:\my_dvs\trunk\VsCamera\dlink\obj\Debug\VdDlink.pdb
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VkProvider.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VkImage.dll
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VkProvider.pdb
+D:\my_dvs\trunk\VsCamera\dlink\bin\Debug\VkImage.pdb
