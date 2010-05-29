@@ -56,6 +56,12 @@ namespace Vs.Monitor
 
         private VsSingleViewer[] vsSingleViewer = new VsSingleViewer[25];
 
+        public VsSingleViewer[] VsSingleViewers
+        {
+            get { return vsSingleViewer; }
+           // set { vsSingleViewer = value; }
+        }
+
         private const int MULTI_VIEW = 2;
         private int vsCol = MULTI_VIEW;
 

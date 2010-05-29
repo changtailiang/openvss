@@ -45,11 +45,11 @@ using NLog;
 
 namespace Vs.Playback
 {
-    class VsCoreEngine
+   public class VsCoreEngine
     {
         static Logger logger = LogManager.GetCurrentClassLogger();
         private VsIDataConnect dataConn;
-        private VsIPlayer player;
+        public VsIPlayer player;
 
         public VsService.VsService service;
 
@@ -127,7 +127,8 @@ namespace Vs.Playback
             try
             {
                 List<int> data = new List<int>();
-                data.AddRange(service.getNumberOfMotionInDay(timeBegin, timeEnd, p));
+                int[] number = service.getNumberOfMotionInDay(timeBegin, timeEnd, p);
+                data.AddRange(number);
                 return data;
             }
             catch (Exception err)

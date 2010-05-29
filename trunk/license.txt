@@ -5,9 +5,9 @@
  copy or use the software.
 
                           License Agreement
-         For OpenVss - Open Source Video Surveillance System
+         For OpenVSS - Open Source Video Surveillance System
 
-Copyright (C) 2007-2009, Prince of Songkla University, All rights reserved.
+Copyright (C) 2007-2010, Prince of Songkla University, All rights reserved.
 
 Third party copyrights are property of their respective owners.
 
@@ -35,3 +35,9 @@ loss of use, data, or profits; or business interruption) however caused
 and on any theory of liability, whether in contract, strict liability,
 or tort (including negligence or otherwise) arising in any way out of
 the use of this software, even if advised of the possibility of such damage.
+
+Intelligent Systems Laboratory (iSys Lab)
+Faculty of Engineering, Prince of Songkla University, THAILAND
+Project leader by Nikom SUVONVORN
+Project website at http://code.google.com/p/openvss/
+

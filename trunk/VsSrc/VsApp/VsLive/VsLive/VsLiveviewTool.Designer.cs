@@ -340,10 +340,25 @@ namespace Vs.Monitor
         private System.Windows.Forms.TableLayoutPanel vsTableLayoutPanel3;
         private VsPropertyControl vsPropertyControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private VsTreeviewControl vsApplicationControl1;
+       
         private System.Windows.Forms.TableLayoutPanel vsTableLayoutPanel1;
-        private VsMultiViewer vsMultiViewer1;
+        
         private System.Windows.Forms.Button actionMinus;
         private System.Windows.Forms.Button actionPlus;
+
+
+        private VsMultiViewer vsMultiViewer1;
+        public VsMultiViewer VsMultiViewer1
+        {
+            get { return vsMultiViewer1; }
+            //set { vsMultiViewer1 = value; }
+        }
+       
+        private VsTreeviewControl vsApplicationControl1;
+        public VsTreeviewControl VsApplicationControl1
+        {
+            get { return vsApplicationControl1; }
+           // set { vsApplicationControl1 = value; }
+        }
     }
 }

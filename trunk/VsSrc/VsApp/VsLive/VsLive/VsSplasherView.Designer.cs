@@ -159,7 +159,7 @@ namespace Vs.Monitor
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "172.30.3.51";
+            this.textBox1.Text = "localhost";
             // 
             // panel1
             // 

@@ -372,7 +372,7 @@ namespace Vs.Core
         {
             try
             {
-                vsAppPath = path;
+                string vsAppPath = path;
                 vsSettingsFile = Path.Combine(vsAppPath, "app.config");
                 vsCamerasFile = Path.Combine(vsAppPath, "cameras.config");
                 vsChannelsFile = Path.Combine(vsAppPath, "channels.config");
@@ -624,7 +624,8 @@ namespace Vs.Core
             {
                 DateTime vsDate = DateTime.Now;
                 int vsMonths = -2;
-                vsDate = vsDate.AddMonths(vsMonths);
+                //vsDate = vsDate.AddMonths(vsMonths);
+                vsDate = vsDate.AddDays(-5.0);
 
                 string appFile = string.Format("VsUtility.exe delete \"{0}\"", vsDate.ToString("yyyy/MM/dd HH:mm:ss"));
 

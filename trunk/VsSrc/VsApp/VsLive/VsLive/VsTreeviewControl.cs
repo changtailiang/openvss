@@ -56,7 +56,19 @@ namespace Vs.Monitor
         public event VsMonitorEventHandler vsUpdateEvent;
 
         private TreeNode camerasNode;
+        public TreeNode CamerasNode
+        {
+            get { return camerasNode; }
+            //set { camerasNode = value; }
+        }
+       
         private TreeNode channelsNode;
+        public TreeNode ChannelsNode
+        {
+            get { return channelsNode; }
+            //set { channelsNode = value; }
+        }
+       
         private TreeNode pagesNode;
 
         public VsLiveviewTool Monitor

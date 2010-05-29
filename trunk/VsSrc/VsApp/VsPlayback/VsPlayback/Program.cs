@@ -58,7 +58,8 @@ namespace Vs.Playback
             Application.SetCompatibleTextRenderingDefault(false);
 
             VsSplasher.Show(typeof(VsLogin));
-            Application.Run(new VsClient());
+            Application.Run(new VsPlayback());
+            //Application.Run(new test());
         }
     }
 }

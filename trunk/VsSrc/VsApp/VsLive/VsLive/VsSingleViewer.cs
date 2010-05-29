@@ -53,14 +53,14 @@ namespace Vs.Monitor
 {
     public enum VsViewStatusType
     {
-        VIEW_AVAIABLE=0,
+        VIEW_AVAIABLE = 0,
         VIEW_CONNECTING,
         VIEW_CONNECTED
     }
 
     public enum VsAttachType
     {
-        ATTACH_RECEIVER=0,
+        ATTACH_RECEIVER = 0,
         ATTACH_ANALYZER
     }
 
@@ -70,7 +70,7 @@ namespace Vs.Monitor
         private VsCoreServer vsCoreMonitor;
         public event VsMonitorEventHandler vsUpdateEvent;
 
-        VsViewStatusType vsStatus  = VsViewStatusType.VIEW_AVAIABLE;
+        VsViewStatusType vsStatus = VsViewStatusType.VIEW_AVAIABLE;
         VsDeviceType vsDeviceType;
         VsAttachType vsAttachType;
         String vsDeviceName;
@@ -131,7 +131,7 @@ namespace Vs.Monitor
             if (e.Parameters.EventTo == VsAppControlType.APP_ALL ||
                 e.Parameters.EventTo == VsAppControlType.APP_SIGLEVIEW)
             {
-                if(e.Parameters.Device == vsDeviceType && e.Parameters.DeviceName == vsDeviceName && e.Parameters.MsgType == VsMessageType.MSG_VIEWER_STYLE)
+                if (e.Parameters.Device == vsDeviceType && e.Parameters.DeviceName == vsDeviceName && e.Parameters.MsgType == VsMessageType.MSG_VIEWER_STYLE)
                     try { this.Invoke(new VsMonitorEventHandler(vsSigleViewer_Update), sender, e); }
                     catch { }
             }
@@ -166,7 +166,7 @@ namespace Vs.Monitor
         // drage leave the window
         void VsCameraViewer_DragLeave(object sender, EventArgs e)
         {
-            this.BorderStyle = BorderStyle.None;            
+            this.BorderStyle = BorderStyle.None;
         }
 
         // drag drop into window
@@ -174,9 +174,16 @@ namespace Vs.Monitor
         {
             this.BorderStyle = BorderStyle.None;
 
+            string send = (string)e.Data.GetData(typeof(string));
+
+            connectDevice(send);
+        }
+
+        public void connectDevice(string send)
+        {
+
             if (vsStatus == VsViewStatusType.VIEW_CONNECTING || vsStatus == VsViewStatusType.VIEW_CONNECTED) return;
 
-            string send = (string)e.Data.GetData(typeof(string));
             string[] cmd = send.Split('\\');
 
             vsDeviceName = cmd[1];
@@ -289,7 +296,7 @@ namespace Vs.Monitor
         }
 
         // Close Camera
-        private void CloseCameraView()
+        public void CloseCameraView()
         {
             // try to detache
             switch (vsDeviceType)
@@ -334,7 +341,7 @@ namespace Vs.Monitor
                         if (vsAttachType == VsAttachType.ATTACH_RECEIVER)
                         {
                             vsCoreMonitor.DetachCameraView(vsDeviceName, this);
-                           // vsCoreMonitor.DetachCameraViewAnalyzer(vsDeviceName, this);
+                            // vsCoreMonitor.DetachCameraViewAnalyzer(vsDeviceName, this);
 
                             vsViewer.Image = global::Vs.Monitor.Properties.Resources.isys;
                             vsViewer.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -396,7 +403,7 @@ namespace Vs.Monitor
 
         private void buttonAnalyzer_Click(object sender, EventArgs e)
         {
-            if (vsCamera!=null && vsAttachType == VsAttachType.ATTACH_ANALYZER)
+            if (vsCamera != null && vsAttachType == VsAttachType.ATTACH_ANALYZER)
             {
                 VsAnalyzerDialog analyzerDialog = new VsAnalyzerDialog(vsCoreMonitor, vsCamera);
 

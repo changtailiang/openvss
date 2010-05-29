@@ -60,7 +60,7 @@ namespace Vs.Playback
         public VsChartPresent()
         {
             InitializeComponent();
-            InitializeComponent2();
+           // InitializeComponent2();
             //FillInterface();
 
             //ChartModel model = new ChartModel();
@@ -71,6 +71,7 @@ namespace Vs.Playback
 
         public void updateChartModel(VsChartModel model)
         {
+            //MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
             try
             {
                 m_chartSample1.ChartDescription.Columns.Clear();
@@ -233,6 +234,7 @@ namespace Vs.Playback
             this.m_chartSample1.ChartDescription.VerticalAxisStep = 1000;
             this.m_chartSample1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_panelChartLegend.Dock = System.Windows.Forms.DockStyle.Fill;
+            
             this.panel1.Controls.Add(this.m_chartSample1);
             this.panel3.Controls.Add(this.m_panelChartLegend);
 

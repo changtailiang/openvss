@@ -57,9 +57,9 @@ namespace Vs.Playback
             InitializeComponent();
         }
 
-        VsClient main;
+        VsPlayback main;
 
-        public void getParent(VsClient m)
+        public void getParent(VsPlayback m)
         {
             try
             {

@@ -160,7 +160,7 @@ namespace Vs.Monitor
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "???????????";
+            this.label1.Text = "รายการกล้อง";
             // 
             // cameraContextMenu
             // 

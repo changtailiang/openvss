@@ -45,21 +45,21 @@ using System.Text;
 using System.Windows.Forms;
 using Vs.Playback.VsService;
 using System.Globalization;
-using NLog; 
+using NLog;
 
 namespace Vs.Playback
 {
     public delegate void getAllcam();
     public delegate void setServerURL(string s);
 
-    public partial class VsClient : Form
+    public partial class VsPlayback : Form
     {
         static Logger logger = LogManager.GetCurrentClassLogger();
 
         VsCoreEngine engine;
 
         VsCamera[] camList;
-       
+
         List<int> camSelect = new List<int>();
         VsMotion[] motionList;
         List<VsMotion> motions = new List<VsMotion>();
@@ -69,7 +69,7 @@ namespace Vs.Playback
 
         bool bCancel = false;
 
-        public VsClient()
+        public VsPlayback()
         {
             try
             {
@@ -78,14 +78,14 @@ namespace Vs.Playback
                 engine = new VsCoreEngine(new VsServiceConnect(), vlCplayer1);
                 engine.connectData();
 
-                setTimePeriod(DateTime.Now, DateTime.Now);                
+                setTimePeriod(DateTime.Now, DateTime.Now);
                 setAllCam(camList);
-                this.Load += new EventHandler(VsClient_Load);
+                this.Load += new EventHandler(VsPlayback_Load);
 
                 // Initial application core
                 VsSplasher.Status = "Load application setting...";
                 System.Threading.Thread.Sleep(1500);
-                
+
                 VsSplasher.LoginSerivce(new getAllcam(this.getAllCam), new setServerURL(this.setServerUrl));
 
                 while (VsSplasher.Blocked) System.Threading.Thread.Sleep(100);
@@ -98,6 +98,8 @@ namespace Vs.Playback
                 }
 
                 VsSplasher.Hide();
+
+
             }
             catch (Exception err)
             {
@@ -105,13 +107,15 @@ namespace Vs.Playback
             }
         }
 
-        void VsClient_Load(object sender, EventArgs e)
+        void VsPlayback_Load(object sender, EventArgs e)
         {
             if (bCancel)
                 this.Close();
             VsSplasher.Close();
-         
+
             this.vsSystemInfo1.Start();
+
+            //radioButtonGraph.Checked = true;
         }
 
         private void setServerUrl(string s)
@@ -140,6 +144,8 @@ namespace Vs.Playback
                         listCameras.Items.Add("" + c.location);
                     }
                 }
+
+                setVsTimeLine();
             }
             catch (Exception err)
             {
@@ -170,6 +176,8 @@ namespace Vs.Playback
                 //textBoxDateBegin.Text = t1.ToString();
                 //textBoxDateEnd.Text = t2.ToString();
 
+            
+
                 updateMotionList();
             }
             catch (Exception err)
@@ -177,6 +185,15 @@ namespace Vs.Playback
                 logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
             }
         }
+
+        private void setVsTimeLine()
+        {
+            vsTimeLine1.setCoreEngine(engine);
+            vsTimeLine1.setVsPlayback(this);
+            vsTimeLine1.setPlayers(vsVlcPlayerQuart1.players);
+            camListDControl.setCam(camList);
+        }
+
         private void connectDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -197,7 +214,7 @@ namespace Vs.Playback
                 int selectIndex = listCameras.SelectedIndex;
 
                 if (!camSelect.Contains(listCameras.SelectedIndex))
-                    camSelect.Add(listCameras.SelectedIndex);                    
+                    camSelect.Add(listCameras.SelectedIndex);
                 else
                     camSelect.RemoveAt(camSelect.FindIndex(delegate(int item) { return item == listCameras.SelectedIndex; }));
 
@@ -221,7 +238,7 @@ namespace Vs.Playback
             {
                 if (listCameras.SelectedIndex >= 0)
                 {
-                    camSelected();                    
+                    camSelected();
                 }
             }
             catch (Exception err)
@@ -243,7 +260,7 @@ namespace Vs.Playback
 
                 int index = listEvents.SelectedIndex;
                 VsMotion m = motions[index];
-                VsFileURL url = engine.getFileUrlOfMotion( m.MotionID.ToString(),m.timeBegin);
+                VsFileURL url = engine.getFileUrlOfMotion(m.MotionID.ToString(), m.timeBegin);
 
                 textBox3.Text = "" + m.timeBegin + " To " + m.timeEnd;
                 vlCplayer1.playFileUrl(url.FilesURL);
@@ -258,11 +275,11 @@ namespace Vs.Playback
         {
             try
             {
-                motions.Clear(); 
-                
+                motions.Clear();
+
                 vlCplayer1.stop();
                 listEvents.Items.Clear();
-                
+
                 foreach (int i in camSelect)
                 {
                     motionList = engine.getMotionOfCamAsPeriod(timeBegin, timeEnd, camList[i].cameraID.ToString());
@@ -273,9 +290,9 @@ namespace Vs.Playback
                     }
 
                     motions.AddRange(motionList);
-                
+
                 }
-               
+
                 //foreach (VsMotion m in motions)
                 //{
                 //    listEvents.Items.Add("" + m.timeBegin+ " :"+ m.cameraID);
@@ -284,6 +301,7 @@ namespace Vs.Playback
                 vlCplayer1.addPlayList(listEvents);
                 vlCplayer1.addMainGui(this);
 
+               
                 updateChart();
             }
             catch (Exception err)
@@ -377,7 +395,7 @@ namespace Vs.Playback
 
         private void listEvents_MouseClick(object sender, MouseEventArgs e)
         {
-            listEvents_MouseDoubleClick(sender, e);           
+            listEvents_MouseDoubleClick(sender, e);
         }
 
         private void listSelectedCameras_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -393,7 +411,7 @@ namespace Vs.Playback
                     {
                         listSelectedCameras.Items.Add(camList[i].location);
                     }
-                   // camSelected();
+                    // camSelected();
                     updateMotionList();
                 }
             }
@@ -408,107 +426,7 @@ namespace Vs.Playback
             listSelectedCameras_MouseDoubleClick(sender, e);
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ChartMode = "day";
-                updateChart();
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ChartMode = "month";
-                updateChart();
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ChartMode = "year";
-                updateChart();
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void radioButtonVideo_CheckedChanged(object sender, EventArgs e)//show player
-        {
-            try
-            {
-                panel2.Visible = true;
-                panel5.Visible = false;
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void radioButtonGraph_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                panel2.Visible = false;
-                panel5.Visible = true;
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (listCameras.SelectedIndex >= 0)
-                {
-                    camSelected();
-                }
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (listSelectedCameras.SelectedIndex >= 0)
-                {
-
-                    camSelect.RemoveAt(listSelectedCameras.SelectedIndex);
-                    listSelectedCameras.Items.Clear();
-                    foreach (int i in camSelect.ToArray())
-                    {
-                        listSelectedCameras.Items.Add(camList[i].location);
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
-            }
-        }
-
+        //autoupdate
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -561,16 +479,50 @@ namespace Vs.Playback
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+
+        #region "chart"
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                ChartMode = "day";
+                updateChart();
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
         }
 
-        private void txtboxInfo_TextChanged(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            //txtboxInfo.ScrollToCaret();
+            try
+            {
+                ChartMode = "month";
+                updateChart();
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
         }
 
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ChartMode = "year";
+                updateChart();
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
+        }
+        #endregion
+
+        #region "SetTimeMenu"
         private void radioButtonToday_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -682,7 +634,7 @@ namespace Vs.Playback
 
                 textBox1.Text = "" + h1 + ":" + m1 + ":01";
 
-                if(trackBar1.Value == 48) textBox1.Text = "23:59:59";
+                if (trackBar1.Value == 48) textBox1.Text = "23:59:59";
             }
             catch (Exception err)
             {
@@ -716,11 +668,87 @@ namespace Vs.Playback
                 DateTime end = DateTime.Parse(dateTimePicker2.Value.Date.ToString().Split()[0] + " " + textBox2.Text);
 
                 setTimePeriod(start, end);
+
+                textBox4.Text = start.ToString() + " ถึง " + end.ToString();
+                vsTimeLine1.updateTimeLine();
+
+                
             }
             catch (Exception err)
             {
                 logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
             }
         }
+        #endregion
+
+        #region "presentType"
+        private void radioButtonVideo_CheckedChanged(object sender, EventArgs e)//show player
+        {
+            try
+            {
+                panel2.Visible = true;
+                panel5.Visible = false;
+                panelTimeLine.Visible = false;
+
+                camListDControl.Visible = false;
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
+        }
+
+        private void radioButtonGraph_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                panel2.Visible = false;
+                panel5.Visible = true;
+                panelTimeLine.Visible = false;
+
+                camListDControl.Visible = false;
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
+        }
+        private void radioButtonTimeLine_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                panel2.Visible = false;
+                panel5.Visible = false;
+                panelTimeLine.Visible = true;
+
+                camListDControl.Visible = true;
+
+                vlCplayer1.stop();
+                listEvents.Items.Clear();
+
+
+
+
+            }
+            catch (Exception err)
+            {
+                logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+            }
+        }
+
+      
+        #endregion
+
+        private void txtboxInfo_TextChanged(object sender, EventArgs e)
+        {
+            //txtboxInfo.ScrollToCaret();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
     }
 }
