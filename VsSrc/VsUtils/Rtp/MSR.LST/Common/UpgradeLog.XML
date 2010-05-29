@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="LSTCommon">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\LSTCommon.sln">
+</Property><Property Name="User Options File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\LSTCommon.suo">
+</Property><Property Name="Date" Value="Thursday, June 12, 2008">
+</Property><Property Name="Time" Value="6:03 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="LSTCommon.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\LSTCommon.sln">
+</Event><Event ErrorLevel="0" Project="" Source="LSTCommon.suo" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\LSTCommon.suo">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="LSTCommon.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\LSTCommon.csproj">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="AppConfig.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\AppConfig.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="ArgumentParser.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\ArgumentParser.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="EventLogWrapper.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\EventLogWrapper.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="Firewall.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\Firewall.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="Installation.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\Installation.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="LSTQueue.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\LSTQueue.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="MemCheck.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\MemCheck.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="PerfmonWrapper.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\PerfmonWrapper.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="TimeCheck.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\TimeCheck.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\MediaControlButton.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\MediaControlButton.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UnhandledExceptionHandler.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UnhandledExceptionHandler.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="Win32Window.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\Win32Window.cs">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\MediaControlButton.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\MediaControlButton.resx">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\pause_enabled.bmp" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\pause_enabled.bmp">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\play_enabled.bmp" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\play_enabled.bmp">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\record_enabled.bmp" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\record_enabled.bmp">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="UI Components\stop_enabled.bmp" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST\Common\Backup\UI Components\stop_enabled.bmp">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="LSTCommon.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LSTCommon" Source="LSTCommon.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="LSTCommon.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="LSTCommon.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LSTCommon" Source="LSTCommon.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

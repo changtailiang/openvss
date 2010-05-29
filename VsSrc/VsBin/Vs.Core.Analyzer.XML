@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Analyzer</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.Analyzer.VsICoreAnalyzerDescription">
+            <summary>
+            VsIAnalysisDescription interface - description of video source
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerDescription.GetSettingsPage">
+            <summary>
+            Return settings page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerDescription.SaveConfiguration(System.Xml.XmlTextWriter,Vs.Core.Analyzer.VsICoreAnalyzerConfiguration)">
+            <summary>
+            Save configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerDescription.LoadConfiguration(System.Xml.XmlTextReader)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerDescription.LoadConfiguration(System.Collections.Hashtable)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(System.Int64,Vs.Core.Analyzer.VsICoreAnalyzerConfiguration)">
+            <summary>
+            Create video source object
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzerDescription.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzerDescription.Description">
+            <summary>
+            Description property
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Analyzer.VsICoreAnalyzerConfiguration">
+            <summary>
+            VsICoreAnalyzerConfiguration interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerConfiguration.GetConfiguration">
+            <summary>
+            Get configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerConfiguration.LoadConfiguration(System.Collections.Hashtable)">
+            <summary>
+            Load configuration
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:Vs.Core.Analyzer.VsICoreAnalyzerPage">
+            <summary>
+            VsIAnalysisPage interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerPage.Display">
+            <summary>
+            Display - display the page
+            Wizard call the method after the page was shown
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerPage.Apply">
+            <summary>
+            Apply - check and update all variables
+            Return false if something wrong and we want to stay on the page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerPage.GetConfiguration">
+            <summary>
+            Get configuration object
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzerPage.SetConfiguration(Vs.Core.Analyzer.VsICoreAnalyzerConfiguration)">
+            <summary>
+            Set configuration
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzerPage.StateChanged">
+            <summary>
+            State changed event - notify client if the page is completed
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzerPage.Completed">
+            <summary>
+            Completed property
+            true, if the page is completed and wizard can proceed to next page
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Analyzer.VsICoreAnalyzer">
+            <summary>
+            VsIAnalysis interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzer.FrameIn1(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Input 1
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzer.FrameIn2(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Input 2
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzer.FrameIn3(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Input 3
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzer.FrameIn4(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Input 4
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Analyzer.VsICoreAnalyzer.FrameIn5(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Input 5
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzer.FrameOut1">
+            <summary>
+            Output1
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzer.FrameOut2">
+            <summary>
+            Output 2
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzer.FrameOut3">
+            <summary>
+            Output 3
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzer.FrameOut4">
+            <summary>
+            Output 4
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Analyzer.VsICoreAnalyzer.FrameOut5">
+            <summary>
+            Output 5
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzer.AnalyserName">
+            <summary>
+            AnalyserName
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzer.AnalyzerConfiguration">
+            <summary>
+            Analyzer configuration
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzer.CameraName">
+            <summary>
+            Data directory
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Analyzer.VsICoreAnalyzer.LocalHost">
+            <summary>
+            LocalHost
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Vs.Core.Analyzer.VsCoreAnalyzer.#ctor(System.Int64,System.Int32,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Vs.Core.Analyzer.VsCoreAnalyzer.Dispose" -->
+        <member name="M:Vs.Core.Analyzer.VsCoreAnalyzer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

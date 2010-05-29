@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Mjpeg</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Mjpeg.MJPEGConfiguration">
+            <summary>
+            MJPEGConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Mjpeg.MJPEGSource">
+            <summary>
+            MJPEGSource - MJPEG stream support
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Mjpeg.MJPEGSource.ExecuteCommand(System.String)">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Mjpeg.ByteArrayUtils">
+            <summary>
+            Some array utilities
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Mjpeg.MJPEGSourceDescription">
+            <summary>
+            MJPEGSourceDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Mjpeg.MJPEGSourcePage">
+            <summary>
+            Summary description for MJPEGSourcePage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Mjpeg.MJPEGSourcePage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Mjpeg.MJPEGSourcePage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Mjpeg.MJPEGSourcePage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

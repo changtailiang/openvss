@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Local</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Local.CaptureDeviceDescription">
+            <summary>
+            CaptureDeviceDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Local.CaptureDevice">
+            <summary>
+            CaptureDevice - capture video from local device
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Local.CaptureDevice.PanLeft">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Local.LocalConfiguration">
+            <summary>
+            StreamConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Local.CaptureDeviceSetupPage">
+            <summary>
+            Summary description for CaptureDeviceSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Local.CaptureDeviceSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Local.CaptureDeviceSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Local.CaptureDeviceSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

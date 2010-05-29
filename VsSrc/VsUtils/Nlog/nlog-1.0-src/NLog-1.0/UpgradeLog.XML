@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NLogC.vs2005">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\NLogC.vs2005.sln">
+</Property><Property Name="Date" Value="Monday, November 10, 2008">
+</Property><Property Name="Time" Value="22:09 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NLogC.vs2005.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\NLogC.vs2005.sln.old">
+</Event><Event ErrorLevel="0" Project="NLog.vs2005" Source="src\NLog\NLog.vs2005.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\src\NLog\NLog.vs2005.csproj.old">
+</Event><Event ErrorLevel="0" Project="NLog.vs2005" Source="src\NLog\NLog.vs2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="NLog.vs2005" Source="src\NLog\NLog.vs2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NLogC.vs2005" Source="src\NLogC\NLogC.vs2005.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="NLogC.vs2005" Source="src\NLogC\NLogC.vs2005.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="NLogC.vs2005" Source="src\NLogC\NLogC.vs2005.vcproj" Description="Project file successfully backed up as 'D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\src\NLogC\NLogC.vs2005.vcproj.8.00.old'.">
+</Event><Event ErrorLevel="0" Project="NLogC.vs2005" Source="src\NLogC\NLogC.vs2005.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="NLogC.vs2005" Source="src\NLogC\NLogC.vs2005.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="NLogC.vs2005.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="NLogC.vs2005.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NLog.vs2005" Source="src\NLog\NLog.vs2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

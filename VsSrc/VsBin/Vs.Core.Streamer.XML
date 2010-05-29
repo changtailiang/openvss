@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Streamer</name>
+    </assembly>
+    <members>
+        <member name="F:Vs.Core.VsStreamer.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="F:Vs.Core.VsStreamer.rtpSender">
+            <summary>
+            Sends the data across the network
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsStreamer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsStreamer.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsStreamer.Disconnect">
+            Disconnect
+        </member>
+        <member name="P:Vs.Core.VsStreamer.Streaming">
+            <summary>
+            Is Streamming
+            </summary>
+        </member>
+    </members>
+</doc>

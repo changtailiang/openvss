@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.RtpStream</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.RtpStream.RtpStream1Description">
+            <summary>
+            RtpStreamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream2Description">
+            <summary>
+            RtpStreamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream3Description">
+            <summary>
+            RtpStreamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream4Description">
+            <summary>
+            RtpStreamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream5Description">
+            <summary>
+            RtpStreamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStreamSetupPage">
+            <summary>
+            Summary description for VideoStreamSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStreamSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStreamSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStreamSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStreamConfiguration">
+            <summary>
+            StreamConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream5">
+            <summary>
+            RtpStream - stream downloader
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStream5.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream5.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream5.Disconnect">
+            Disconnect
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream5.PanLeft">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream4">
+            <summary>
+            RtpStream - stream downloader
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStream4.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream4.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream4.Disconnect">
+            Disconnect
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream4.PanLeft">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream3">
+            <summary>
+            RtpStream - stream downloader
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStream3.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream3.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream3.Disconnect">
+            Disconnect
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream3.PanLeft">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream2">
+            <summary>
+            RtpStream - stream downloader
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStream2.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream2.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream2.Disconnect">
+            Disconnect
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream2.PanLeft">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpStream.RtpStream1">
+            <summary>
+            RtpStream - stream downloader
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpStream.RtpStream1.rtpSession">
+            <summary>
+            Manages the connection to a multicast address and all the objects related to Rtp
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream1.Connect(System.String,System.String,System.Int32)">
+            <summary>
+            Connect
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream1.Disconnect">
+            Disconnect
+        </member>
+        <member name="M:Vs.Provider.RtpStream.RtpStream1.IsPanTiltZoom">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Bosch</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Bosch.BoschCameraDescription">
+            <summary>
+            BoschCameraDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Bosch.BoschConfiguration">
+            <summary>
+            PixordConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Bosch.BoschCameraSetupPage">
+            <summary>
+            Summary description for BoschCameraSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Bosch.BoschCameraSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Bosch.BoschCameraSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Bosch.BoschCameraSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Bosch.BoschCamera">
+            <summary>
+            Bosch network cameras
+            </summary>
+        </member>
+    </members>
+</doc>

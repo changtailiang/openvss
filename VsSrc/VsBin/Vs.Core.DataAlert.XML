@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.DataAlert</name>
+    </assembly>
+    <members>
+        <member name="M:Vs.Core.DataAlert.VsDataGenerator.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

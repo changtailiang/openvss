@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Stardot</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Stardot.StardotExpress6">
+            <summary>
+            StardotExpress6 video server
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotConfiguration">
+            <summary>
+            StardotConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotNetCam">
+            <summary>
+            StarDot NetCam network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotNetCamDescription">
+            <summary>
+            StardotNetCamDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotExpress6Description">
+            <summary>
+            StardotExpress6Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotExpress6SetupPage">
+            <summary>
+            Summary description for StardotExpress6SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Stardot.StardotExpress6SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stardot.StardotExpress6SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stardot.StardotExpress6SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stardot.StardotNetCamSetupPage">
+            <summary>
+            Summary description for StardotNetCamSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Stardot.StardotNetCamSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stardot.StardotNetCamSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stardot.StardotNetCamSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

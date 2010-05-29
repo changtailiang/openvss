@@ -1,0 +1,95 @@
+2009-10-31 20:08:52.8125 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:08:52.8750 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:08:52.8750 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:09:52.6093 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:11:43.3750 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:12:12.4218 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:14:06.7812 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:14:06.8125 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:14:06.8593 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:18:56.9687 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:26:57.1562 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:37:03.3125 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:37:07.3750 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.EdgeDetection    at Vs.Analyzer.EdgeDetection.VsEdgeDetection..ctor(Int64 syncTimer)
+   at Vs.Analyzer.EdgeDetection.VsEdgeDetectionDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsAnalyzer\VsEdgeDetection\VsEdgeDetectionDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:37:07.4062 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:37:30.0156 Vs.Core.VsAnalyzer The specified module could not be found. (Exception from HRESULT: 0x8007007E) Vs.Analyzer.MotionHistory    at Vs.Analyzer.MotionHistory.VsMotionHistory..ctor(Int64 syncTimer)
+   at Vs.Analyzer.MotionHistory.VsMotionHistoryDescription.Vs.Core.Analyzer.VsICoreAnalyzerDescription.CreateAnalyser(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsAnalyzer\VsMotionHistory\VsMotionHistoryDescription.cs:line 62
+   at Vs.Core.VsAnalyzer.CreateAnalyserSource(Int64 syncTimer, VsICoreAnalyzerConfiguration config) in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsAnalyzer.cs:line 152
+2009-10-31 20:50:22.8906 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:50:22.9062 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:50:30.1562 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:50:33.9218 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:50:33.9218 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:51:43.7656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:51:50.0000 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:51:50.0000 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:52:32.2968 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:53:17.0937 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:53:17.0937 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:54:20.2812 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:54:27.3593 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:54:27.3593 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:55:48.9218 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:55:55.9843 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:55:55.9843 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:56:27.6875 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:56:31.3125 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:56:31.3125 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:07.5625 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:17.3750 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:17.3750 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:21.1718 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:23.8750 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:23.8750 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:58:45.2031 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:59:02.1718 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:59:02.1718 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:59:42.9843 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:59:53.8906 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 20:59:53.9062 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:00:08.4687 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:00:15.9062 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:00:15.9218 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:06.0000 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2500 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2500 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2500 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2500 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:01:23.2656 Vs.Core.VsCamera Object reference not set to an instance of an object. Vs.Core    at Vs.Core.VsCamera.StreamerLinking() in E:\my_dvs\trunk\VsSrc\VsCore\VsCore\VsCamera.cs:line 1030
+2009-10-31 21:23:04.3125 Vs.Core.EventAlert.VsEventGenerator Unable to connect to any of the specified MySQL hosts. MySql.Data    at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Vs.Core.EventAlert.VsEventGenerator.process_NewFrame(Object stateInfo) in E:\my_dvs\trunk\VsSrc\VsCore\VsCoreEventAlert\VsEventGenerator.cs:line 228
+2009-10-31 21:23:29.3125 Vs.Core.EventAlert.VsEventGenerator Unable to connect to any of the specified MySQL hosts. MySql.Data    at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Vs.Core.EventAlert.VsEventGenerator.process_NewFrame(Object stateInfo) in E:\my_dvs\trunk\VsSrc\VsCore\VsCoreEventAlert\VsEventGenerator.cs:line 228
+2009-10-31 21:24:06.3281 Vs.Core.EventAlert.VsEventGenerator Unable to connect to any of the specified MySQL hosts. MySql.Data    at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Vs.Core.EventAlert.VsEventGenerator.process_NewFrame(Object stateInfo) in E:\my_dvs\trunk\VsSrc\VsCore\VsCoreEventAlert\VsEventGenerator.cs:line 228
+2009-10-31 21:40:18.7500 Vs.Core.EventAlert.VsEventGenerator Unable to connect to any of the specified MySQL hosts. MySql.Data    at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Vs.Core.EventAlert.VsEventGenerator.process_NewFrame(Object stateInfo) in E:\my_dvs\trunk\VsSrc\VsCore\VsCoreEventAlert\VsEventGenerator.cs:line 228

@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Provider</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.Provider.CameraEventArgs">
+            <summary>
+            Camera event arguments
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Provider.VsICoreProvider">
+            <summary>
+            IVideoSource interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.Start">
+            <summary>
+            Start receiving video frames
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.SignalToStop">
+            <summary>
+            Stop receiving video frames
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.WaitForStop">
+            <summary>
+            Wait for stop
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.Stop">
+            <summary>
+            Stop work
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.IsPanTiltZoom">
+            <summary>
+            test if the current camera is a PTZ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.GoHome">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.PanLeft">
+            <summary>
+            Pan Left
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.PanRight">
+            <summary>
+            Pan Right
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.TiltUp">
+            <summary>
+            Tilt Up
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.TiltDown">
+            <summary>
+            Tilt Down
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.ZoomIn">
+            <summary>
+            Zoom In
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.ZoomOut">
+            <summary>
+            Zoom Out
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.ZoomAt(System.Int32)">
+            <summary>
+            Zoom at a factor
+            </summary>
+            <param name="factor"></param>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProvider.PanTilt(System.Int32,System.Int32)">
+            <summary>
+            Pan and Tilt to a specific point
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="E:Vs.Core.Provider.VsICoreProvider.FrameOut">
+            <summary>
+            New frame event - notify client about the new frame
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.VideoSource">
+            <summary>
+            Video source property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.Login">
+            <summary>
+            Login property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.Password">
+            <summary>
+            Password property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.FramesReceived">
+            <summary>
+            FramesReceived property
+            get number of frames the video source received from the last
+            access to the property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.BytesReceived">
+            <summary>
+            BytesReceived property
+            get number of bytes the video source received from the last
+            access to the property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.UserData">
+            <summary>
+            UserData property
+            allows to associate user data with an object
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProvider.Running">
+            <summary>
+            Get state of video source
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Provider.VsICoreProviderDescription">
+            <summary>
+            IVideoSourceDescription interface - description of video source
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderDescription.GetSettingsPage">
+            <summary>
+            Return settings page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderDescription.SaveConfiguration(System.Xml.XmlTextWriter,System.Object)">
+            <summary>
+            Save configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderDescription.LoadConfiguration(System.Xml.XmlTextReader)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderDescription.LoadConfiguration(System.Collections.Hashtable)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderDescription.CreateVideoSource(System.Object)">
+            <summary>
+            Create video source object
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProviderDescription.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProviderDescription.Description">
+            <summary>
+            Description property
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Provider.VsICoreProviderPage">
+            <summary>
+            IVideoSourcePage interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderPage.Display">
+            <summary>
+            Display - display the page
+            Wizard call the method after the page was shown
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderPage.Apply">
+            <summary>
+            Apply - check and update all variables
+            Return false if something wrong and we want to stay on the page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderPage.GetConfiguration">
+            <summary>
+            Get configuration object
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Provider.VsICoreProviderPage.SetConfiguration(System.Object)">
+            <summary>
+            Set configuration
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Provider.VsICoreProviderPage.StateChanged">
+            <summary>
+            State changed event - notify client if the page is completed
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Provider.VsICoreProviderPage.Completed">
+            <summary>
+            Completed property
+            true, if the page is completed and wizard can proceed to next page
+            </summary>
+        </member>
+    </members>
+</doc>

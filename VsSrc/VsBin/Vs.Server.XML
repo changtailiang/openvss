@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Server</name>
+    </assembly>
+    <members>
+        <member name="M:Vs.Server.Program.Main(System.String[])">
+            <summary>
+            Start the console server.
+            </summary>
+            <param name="args">These are optional arguments.Pass the local ip address of the server as the first argument and the local port as the second argument.</param>
+        </member>
+        <member name="M:Vs.Server.VsServer.#ctor">
+            <summary>
+            Start the console server.
+            </summary>
+            <param name="args">These are optional arguments.Pass the local ip address of the server as the first argument and the local port as the second argument.</param>
+        </member>
+        <member name="M:Vs.Server.VsServer.GetServerIPAddress">
+            <summary>
+            get mixer ip address
+            </summary>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartServer">
+            <summary>
+            StartServer
+            </summary>
+        </member>
+        <member name="M:Vs.Server.VsServer.Start(System.String)">
+            <summary>
+            Start
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartAll">
+            <summary>
+            StartFull
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.Stop(System.String)">
+            <summary>
+            Stop
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopAll">
+            <summary>
+            StopAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartConnect(System.String)">
+            <summary>
+            StartConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartConnectAll">
+            <summary>
+            StartConnectAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopConnect(System.String)">
+            <summary>
+            StopConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopConnectAll">
+            <summary>
+            StopConnectAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartAnalyse(System.String)">
+            <summary>
+            StartAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartAnalyseAll">
+            <summary>
+            StartAnalyseAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopAnalyse(System.String)">
+            <summary>
+            StopAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopAnalyseAll">
+            <summary>
+            StopAnalyseAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartEventAlert(System.String)">
+            <summary>
+            StartEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartEventAlertAll">
+            <summary>
+            StartEventAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopEventAlert(System.String)">
+            <summary>
+            StopEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopEventAlertAll">
+            <summary>
+            StopEventAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartRecord(System.String)">
+            <summary>
+            StartRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartRecordAll">
+            <summary>
+            StartRecordAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopRecord(System.String)">
+            <summary>
+            StopRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopRecordAll">
+            <summary>
+            StopRecordAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartDataAlert(System.String)">
+            <summary>
+            StartDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StartDataAlertAll">
+            <summary>
+            StartDataAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopDataAlert(System.String)">
+            <summary>
+            StopDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.StopDataAlertAll">
+            <summary>
+            StopDataAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameras">
+            <summary>
+            ListCameras
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasDetail">
+            <summary>
+            ListCameras
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasConnect">
+            <summary>
+            ListCamerasConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasAnalyse">
+            <summary>
+            ListCamerasAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasEventAlert">
+            <summary>
+            ListCamerasEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasRecord">
+            <summary>
+            ListCamerasRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCamerasDataAlert">
+            <summary>
+            ListCamerasDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameraConnect(System.String)">
+            <summary>
+            ListCameraConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameraAnalyse(System.String)">
+            <summary>
+            ListCameraAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameraEventAlert(System.String)">
+            <summary>
+            ListCameraEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameraRecord(System.String)">
+            <summary>
+            ListCameraRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListCameraDataAlert(System.String)">
+            <summary>
+            ListCameraDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.ListInfo(System.String)">
+            <summary>
+            ListInfo
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.UpdateConsole(System.String,System.Net.IPAddress,System.Int32)">
+            <summary>
+            UpdateConsole
+            </summary>
+            <param name="vsStatus"></param>
+            <param name="IP"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.SendStatus(System.String)">
+            <summary>
+            SendStatus
+            </summary>
+            <param name="vsStatus"></param>
+        </member>
+        <member name="M:Vs.Server.VsServer.SendError(Vs.Core.Server.Command.CommandType,System.String)">
+            <summary>
+            SendError
+            </summary>
+            <param name="cmdType"></param>
+            <param name="msgs"></param>
+        </member>
+    </members>
+</doc>

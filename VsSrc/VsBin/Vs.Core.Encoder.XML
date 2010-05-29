@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Encoder</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.Encoder.VsICoreEncoderPage">
+            <summary>
+            VsIAnalysisPage interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderPage.Display">
+            <summary>
+            Display - display the page
+            Wizard call the method after the page was shown
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderPage.Apply">
+            <summary>
+            Apply - check and update all variables
+            Return false if something wrong and we want to stay on the page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderPage.GetConfiguration">
+            <summary>
+            Get configuration object
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderPage.SetConfiguration(System.Object)">
+            <summary>
+            Set configuration
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Encoder.VsICoreEncoderPage.StateChanged">
+            <summary>
+            State changed event - notify client if the page is completed
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoderPage.Completed">
+            <summary>
+            Completed property
+            true, if the page is completed and wizard can proceed to next page
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Encoder.VsICoreEncoder">
+            <summary>
+            VsIAnalysis interface
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoder.FrameIn(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            Add new frame
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoder.StartRecord">
+            <summary>
+            StartRecord
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoder.DoRecord(Vs.Core.Image.VsImage)">
+            <summary>
+            DoRecord
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoder.StopRecord">
+            <summary>
+            StopRecord
+            </summary>
+        </member>
+        <member name="E:Vs.Core.Encoder.VsICoreEncoder.FrameOut">
+            <summary>
+            New frame out
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoder.EncoderName">
+            <summary>
+            EncoderName
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoder.CameraName">
+            <summary>
+            Data directory
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoder.LocalHost">
+            <summary>
+            LocalHost
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoder.LocalStorage">
+            <summary>
+            Data directory
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsCoreEncoder.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsCoreEncoder.GetRandomString">
+            Random password
+        </member>
+        <member name="M:Vs.Core.Encoder.VsCoreEncoder.RandomString(System.Int32,System.Boolean)">
+            Generates a random string with the given length
+        </member>
+        <member name="T:Vs.Core.Encoder.VsICoreEncoderDescription">
+            <summary>
+            VsIAnalysisDescription interface - description of video source
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderDescription.GetSettingsPage">
+            <summary>
+            Return settings page
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderDescription.SaveConfiguration(System.Xml.XmlTextWriter,System.Object)">
+            <summary>
+            Save configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderDescription.LoadConfiguration(System.Xml.XmlTextReader)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderDescription.LoadConfiguration(System.Collections.Hashtable)">
+            <summary>
+            Load configuration
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Encoder.VsICoreEncoderDescription.CreateEncoder(System.Int64,System.Object)">
+            <summary>
+            Create video source object
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoderDescription.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Encoder.VsICoreEncoderDescription.Description">
+            <summary>
+            Description property
+            </summary>
+        </member>
+    </members>
+</doc>

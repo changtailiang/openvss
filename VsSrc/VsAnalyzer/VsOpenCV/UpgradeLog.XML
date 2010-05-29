@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="VkOpenCV">
+</Property><Property Name="Solution File" Value="D:\iSys\Monitor\VkOpenCV\VkOpenCV.sln">
+</Property><Property Name="Date" Value="24 มิถุนายน 2551">
+</Property><Property Name="Time" Value="8:54:09">
+</Property></Properties><Event ErrorLevel="2" Project="VkOpenCV" Source="VkOpenCV.vcproj" Description="The following error has occurred during XML parsing:&#xA;&#xA;File: D:\iSys\Monitor\VkOpenCV\VkOpenCV.vcproj&#xA;Line: 10&#xA;Column: 2&#xA;Error Message:&#xA;'9.00' violates enumeration constraint of '7.00 7,00 7.10 7,10 8.00 8,00'.&#xA;The attribute 'Version' with value '9.00' failed to parse.&#xA;&#xA;The file 'D:\iSys\Monitor\VkOpenCV\VkOpenCV.vcproj' has failed to load.">
+</Event><Event ErrorLevel="2" Project="VkOpenCV" Source="VkOpenCV.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="VkOpenCV" Source="VkOpenCV.vcproj" Description="Not Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Panasonic</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Panasonic.PanasonicCameraDescription">
+            <summary>
+            PanasonicCameraDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Panasonic.PanasonicCameraSetupPage">
+            <summary>
+            Summary description for PanasonicCameraSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Panasonic.PanasonicCameraSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Panasonic.PanasonicCameraSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Panasonic.PanasonicCameraSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Panasonic.PanasonicConfiguration">
+            <summary>
+            PixordConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Panasonic.PanasonicCamera">
+            <summary>
+            Panasonic network cameras
+            </summary>
+        </member>
+    </members>
+</doc>

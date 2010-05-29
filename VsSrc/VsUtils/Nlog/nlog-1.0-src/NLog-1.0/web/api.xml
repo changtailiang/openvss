@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<?xml-stylesheet type="text/xsl" href="style.xsl" ?>
+<content lang="en" id="documentation" subid="api">
+    <h1>NLog API</h1>
+    <p>
+        NLog provides the following Application Programming Interfaces (APIs)
+    </p>
+    <ul>
+        <li><link href="netapi">.NET API</link> - native API</li>
+        <li><link href="capi">C/C++ API</link> - a wrapper API to be used in legacy COM applications</li>
+        <li><link href="comapi">COM API</link> - a wrapper API to be used in legacy C/C++ applications</li>
+    </ul>
+    <last-changed-date>$LastChangedDate: 2006-07-10 11:25:00 +0200 (Pn, 10 lip 2006) $</last-changed-date>
+</content>
+

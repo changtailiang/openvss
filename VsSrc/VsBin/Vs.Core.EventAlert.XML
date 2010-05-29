@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.EventAlert</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.EventAlert.VsEventGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Vs.Core.EventAlert.VsEventGenerator.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

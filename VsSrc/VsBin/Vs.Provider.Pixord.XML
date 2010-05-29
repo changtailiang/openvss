@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Pixord</name>
+    </assembly>
+    <members>
+        <member name="T:VdPixord.PixordCameraSetupPage">
+            <summary>
+            Summary description for PixordCameraSetupPage.
+            </summary>
+        </member>
+        <member name="F:VdPixord.PixordCameraSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:VdPixord.PixordCameraSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:VdPixord.PixordCameraSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:VdPixord.PixordConfiguration">
+            <summary>
+            PixordConfiguration
+            </summary>
+        </member>
+        <member name="T:VdPixord.PixordCamera">
+            <summary>
+            Pixord network cameras
+            </summary>
+        </member>
+        <member name="T:VdPixord.PixordCameraDescription">
+            <summary>
+            PixordCameraDescription
+            </summary>
+        </member>
+    </members>
+</doc>

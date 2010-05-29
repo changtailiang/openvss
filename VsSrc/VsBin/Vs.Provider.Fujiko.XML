@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Fujiko</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Fujiko.FujikoCameraDescription">
+            <summary>
+            DLinkCameraDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Fujiko.FujikoCamera">
+            <summary>
+            Panasonic network cameras
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Fujiko.DLinkConfiguration">
+            <summary>
+            DLinkConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Fujiko.DLinkCameraSetupPage">
+            <summary>
+            Summary description for DLinkCameraSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Fujiko.DLinkCameraSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Fujiko.DLinkCameraSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Fujiko.DLinkCameraSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,13 @@
+2010-02-16 11:28:18.3437 Vs.Playback.VsPlayback Object reference not set to an instance of an object. VsPlayback    at Vs.Playback.CamList.setCam(VsCamera[] camData) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsCamList\CamList.cs:line 139
+   at Vs.Playback.VsPlayback.setVsTimeLine() in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 194
+   at Vs.Playback.VsPlayback.setAllCam(VsCamera[] camLit) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 148
+2010-02-16 11:28:42.9843 Vs.Playback.VsCoreEngine Unable to connect to the remote server System    at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at Vs.Playback.VsService.VsService.getCamAll() in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\Web References\VsService\Reference.cs:line 339
+   at Vs.Playback.VsCoreEngine.getCamAll() in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsCoreEngine.cs:line 83
+2010-02-16 11:28:43.0000 Vs.Playback.VsPlayback Object reference not set to an instance of an object. VsPlayback    at Vs.Playback.CamList.setCam(VsCamera[] camData) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsCamList\CamList.cs:line 139
+   at Vs.Playback.VsPlayback.setVsTimeLine() in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 194
+   at Vs.Playback.VsPlayback.setAllCam(VsCamera[] camLit) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 148
+2010-02-16 11:31:56.7656 Vs.Playback.VsPlayback Object reference not set to an instance of an object. VsPlayback    at Vs.Playback.CamList.setCam(VsCamera[] camData) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsCamList\CamList.cs:line 139
+   at Vs.Playback.VsPlayback.setVsTimeLine() in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 194
+   at Vs.Playback.VsPlayback.setAllCam(VsCamera[] camLit) in D:\my_dvs\trunk\VsSrc\VsApp\VsPlayback\VsPlayback\VsPlayback.cs:line 148

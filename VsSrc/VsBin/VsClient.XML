@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VsClient</name>
+    </assembly>
+    <members>
+        <member name="F:Vs.Client.frmLogin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Client.frmLogin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Client.frmLogin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Client.frmMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Client.frmMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Client.frmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Client.frmMain.GetCameraName">
+            <summary>
+            GetCameraName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Client.frmMain.Start(System.String)">
+            <summary>
+            Start
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartAll(System.String)">
+            <summary>
+            StartAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.Stop(System.String)">
+            <summary>
+            Stop
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopAll(System.String)">
+            <summary>
+            StopAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartConnect(System.String)">
+            <summary>
+            StartConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartConnectAll(System.String)">
+            <summary>
+            StartConnectAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopConnect(System.String)">
+            <summary>
+            StopConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopConnectAll(System.String)">
+            <summary>
+            StopConnectAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartAnalyse(System.String)">
+            <summary>
+            StartAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartAnalyseAll(System.String)">
+            <summary>
+            StartAnalyseAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopAnalyse(System.String)">
+            <summary>
+            StopAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopAnalyseAll(System.String)">
+            <summary>
+            StopAnalyseAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartEventAlert(System.String)">
+            <summary>
+            StartEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartEventAlertAll(System.String)">
+            <summary>
+            StartEventAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopEventAlert(System.String)">
+            <summary>
+            StopEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopEventAlertAll(System.String)">
+            <summary>
+            StopEventAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartRecord(System.String)">
+            <summary>
+            StartRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartRecordAll(System.String)">
+            <summary>
+            StartRecordAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopRecord(System.String)">
+            <summary>
+            StopRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopRecordAll(System.String)">
+            <summary>
+            StopRecordAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartDataAlert(System.String)">
+            <summary>
+            StartDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StartDataAlertAll(System.String)">
+            <summary>
+            StartDataAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopDataAlert(System.String)">
+            <summary>
+            StopDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.StopDataAlertAll(System.String)">
+            <summary>
+            StopDataAlertAll
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameras(System.String)">
+            <summary>
+            ListCameras
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCamerasConnect(System.String)">
+            <summary>
+            ListCamerasConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCamerasAnalyse(System.String)">
+            <summary>
+            ListCamerasAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCamerasEventAlert(System.String)">
+            <summary>
+            ListCamerasEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCamerasRecord(System.String)">
+            <summary>
+            ListCamerasRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCamerasDataAlert(System.String)">
+            <summary>
+            ListCamerasDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameraConnect(System.String)">
+            <summary>
+            ListCameraConnect
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameraAnalyse(System.String)">
+            <summary>
+            ListCameraAnalyse
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameraEventAlert(System.String)">
+            <summary>
+            ListCameraEventAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameraRecord(System.String)">
+            <summary>
+            ListCameraRecord
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListCameraDataAlert(System.String)">
+            <summary>
+            ListCameraDataAlert
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.frmMain.ListInfo(System.String)">
+            <summary>
+            ListInfo
+            </summary>
+            <param name="metaData"></param>
+        </member>
+        <member name="M:Vs.Client.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Vs.Client.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vs.Client.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vs.Client.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Analyzer.MotionDetection</name>
+    </assembly>
+    <members>
+        <member name="F:Vs.Analyzer.MotionDetection.VsMotionDetectionSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Analyzer.MotionDetection.VsMotionDetectionSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Analyzer.MotionDetection.VsMotionDetectionSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.R">
+            <summary>
+            Index of red component.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.G">
+            <summary>
+            Index of green component.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.B">
+            <summary>
+            Index of blue component.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.Red">
+            <summary>
+            Red component.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.Green">
+            <summary>
+            Green component.
+            </summary>
+        </member>
+        <member name="F:Vs.Analyzer.VsColorRGB.Blue">
+            <summary>
+            Blue component.
+            </summary>
+        </member>
+        <member name="M:Vs.Analyzer.VsColorRGB.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:VkColorRGB"/> class.
+            </summary>
+        </member>
+        <member name="M:Vs.Analyzer.VsColorRGB.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="!:VkColorRGB"/> class.
+            </summary>
+            
+            <param name="red">Red component.</param>
+            <param name="green">Green component.</param>
+            <param name="blue">Blue component.</param>
+            
+        </member>
+        <member name="M:Vs.Analyzer.VsColorRGB.#ctor(System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="!:VkColorRGB"/> class.
+            </summary>
+            
+            <param name="color">Initialize from specified <see cref="T:System.Drawing.Color">color.</see></param>
+            
+        </member>
+        <member name="P:Vs.Analyzer.VsColorRGB.Color">
+            <summary>
+            <see cref="T:System.Drawing.Color">Color</see> value of the class.
+            </summary>
+        </member>
+    </members>
+</doc>

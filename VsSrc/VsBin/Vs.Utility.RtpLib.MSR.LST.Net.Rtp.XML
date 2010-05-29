@@ -1,0 +1,3130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Utility.RtpLib.MSR.LST.Net.Rtp</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant">
+            <summary>
+            RtpParticipant is the object shared between Rtp and Rtcp for describing a participant.
+            
+            Most of the public properties are a thin wrapper around the SdesData used in Rtcp.
+            This class was created in order to shield the user from needing to understand Rtcp/Sdes,
+            and give them a familiar concept that is easy to understand.
+            
+            The most important aspect of a participant is their ID.  It needs to be unique on the
+            network - domain account, email, GUID, etc. in order to differentiate them from the other
+            participants.
+            
+            The participant also contains some other properties, such as the IPAddress the participant
+            originates from, as well as all the streams the participant "owns" (is sending).
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData">
+            <summary>
+            SdesData structure, used extensively amoung Rtcp &amp; Rtp objects to describe the common properties associated with the Rtp data / Rtcp Participant.
+            See RFC 3550 for definitions on the data it contains.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.data">
+            <summary>
+            These properties are stored as byte[] instead of string because they will be sent
+            across the wire in byte[] format more often than they will be updated.  It is also
+            helpful to know how many bytes of storage (size) a particular instance requires.
+            And they can be manipulated more efficiently in loops.
+            
+            We use the SDESType as the index.  Unfortunately, the SDESType starts with End = 0.  In
+            order to avoid a bunch of -1 math, we just allocate the extra storage (4 bytes) at 0 
+            and never use it.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.privs">
+            <summary>
+            A place to store private SDES extensions
+            
+            According to a close reading of RFC 3550 6.5.8 and emails exchanged with Colin Perkins
+            Private extensions are to be transmitted as UTF8 strings to remain consistent with the
+            rest of the SDES items, even though that may not be the most efficient storage.
+            
+            It is also desirable to not risk breaking other implementations by packing the data
+            efficiently as bytes (1 == True, and 0 == False) and producing an invalid UTF8 string
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.#ctor(System.String,System.String)">
+            <summary>
+            Most common constructor, setting the most relevant data
+            </summary>
+            <param name="cName">Canonical name - Unique network identifier for this participant</param>
+            <param name="name">Friendly name for this participant</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Constructs an SdesData instance by reading its properties from another instance 
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Constructs an SdesData instance by reading its properties from a BufferChunk 
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.WriteDataToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Serializes this object into the provided buffer
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.ReadDataFromBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Deserializes the provided buffer into this object
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.SetTool(System.Boolean)">
+            <summary>
+            Flag indicating whether you want the tool field to be set or not
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.SetPrivateExtension(System.String,System.String)">
+            <summary>
+            Add a private extension to the SDES data
+            
+            This method validates the data will fit in the 255 bytes (length = (1 Byte) = 255 max) 
+            available when converted to UTF8 for transmission across the wire and then stores it
+            
+            ---------------------------------------------------------------------------------------
+            Structure:
+            ---------------------------------------------------------------------------------------
+             0                   1                   2                   3
+             0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |     PRIV=8    |     length    | prefix length |prefix string...
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            ...             |               value string                  ...
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            </summary>
+            <param name="prefix">Name of the extension</param>
+            <param name="data">Value of the extension</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.GetPrivateExtensions">
+            <summary>
+            Gets the private extensions for this stream in a Hashtable with (string, string) key/value pairs.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.UpdateData(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            This method is called to update the local data from another SdesData
+            </summary>
+            <param name="data">what we want to update our data to</param>
+            <returns>true if the local data was updated, otherwise false</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.SetProperty(System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.SDESType)">
+            <summary>
+            ---------------------------------------------------------------------------------------
+            Purpose:
+            ---------------------------------------------------------------------------------------
+            Make sure the data will fit in the 255 bytes (length == 1 byte == byte.MaxValue) 
+            available to it when converted to UTF8 for transmission across the wire
+            
+            ---------------------------------------------------------------------------------------
+            General structure of an SDES property:
+            ---------------------------------------------------------------------------------------
+             0                   1                   2                   3
+             0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |     SDES=N    |     length    |        data                 ...
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Size">
+            <summary>
+            Return the size in bytes of this SdesData instance
+            Used to find out how much buffer space it will take to serialize this instance
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.CName">
+            <summary>
+            Canonical name - Unique network identifier for this participant
+            Usually an email address, but a domain name domain\user or GUID would work as well
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Name">
+            <summary>
+            Friendly name of the participant, e.g. "Dogbert"
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Phone">
+            <summary>
+            Phone number
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Location">
+            <summary>
+            Physical Location.  AKA Microsoft Campus, 112/2379, Redmond, WA, USA, Third Rock from the Sun
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Tool">
+            <summary>
+            Name and Version of tool sending streams, e.g. 'ConferenceXP v1.0'
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData.Note">
+            <summary>
+            Whatever the user wants to communicate to others on a periodic basis
+            Similar to Instant Messenger status
+            This isn't real time chat  :-)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.ipAddress">
+            <summary>
+            The originating IP address of the participant
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.ssrc">
+            <summary>
+            The ssrc of this participant
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.ssrcs">
+            <summary>
+            The SSRCs originating from this participant
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.stale">
+            <summary>
+            A marker indicating the staleness of the participant. A participant is considered stale
+            if we aren't receiving Rtcp or Rtp traffic from them
+            
+            If a participant goes N Rtcp intervals (currently 5, see RtpSession.RtcpMissedIntervalsTimeout)
+            without traffic, it is timed out and cleaned up by the manager, which checks this
+            value during each RtcpSender.RtcpTransmissionInterval
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.#ctor(System.String,System.String)">
+            <summary>
+            Called when creating an RtpSession and providing it with the local participant's data
+            </summary>
+            <param name="cName">Canonical name - Unique network identifier for this participant</param>
+            <param name="name">Friendly name for this participant</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData,System.Net.IPAddress)">
+            <summary>
+            Called when an SdesPacket arrives with an ID (CNAME) that no other session Participant has
+            </summary>
+            <param name="rtcp">SdesData containing the information for the participant</param>
+            <param name="ipAddress">IpAddress this participant originates from</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.ToString">
+            <summary>
+            Override for RtpParticipant
+            </summary>
+            <returns>Object state, represented as a string</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.UpdateData(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Raises the ParticipantStatusChanged event if the data changed
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.SSRCs">
+            <summary>
+            The SSRCs originating from this participant
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.SSRC">
+            <summary>
+            The ssrc of this participant
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.IPAddress">
+            <summary>
+            The IP address of the participant
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.Stale">
+            <summary>
+            A marker indicating the staleness of the participant. A participant is considered stale
+            if we aren't receiving Rtcp or Rtp traffic from them
+            
+            If a participant goes N Rtcp intervals (currently 5, see RtpSession.RtcpMissedIntervalsTimeout)
+            without traffic, it is timed out and cleaned up by the manager, which checks this
+            value during each RtcpSender.RtcpTransmissionInterval
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant.SetIPAddress">
+            <summary>
+            The IP address of the participant
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpException">
+            <summary>
+            This is the base exception from which all others inherit
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PoolExhaustedException">
+            <summary>
+            This exception is thrown when the RtpListener runs out of buffers
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FrameTooLargeException">
+            <summary>
+            This exception is thrown when a frame that is too large is sent or received
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FrameIncompleteException">
+            <summary>
+            This exception is thrown when a frame is incomplete but someone has asked for the data
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.IncorrectTimestampException">
+            <summary>
+            This exception is thrown when a packet with an incorrect timestamp is added to a frame
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.DuplicatePacketException">
+            <summary>
+            This exception is thrown when a duplicate packet arrives and it is not expected
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.NextFrameUnblockedException">
+            <summary>
+            This exception is thrown when the NextFrame method is unblocked from a manual call or the
+            Dispose method.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.DequeueEnumerator">
+            <summary>
+            This enumerator dequeues the items from a Queue as it iterates over them
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CompoundPacketBuilder.participant">
+            <summary>
+            The participant for the local session
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CompoundPacket">
+            <summary>
+            A compound Rtcp packet contains multiple Rtcp packets
+            
+            It is public for use by the NetworkDumper diagnostic tool
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CompoundPacket.ParseBuffer">
+            <summary>
+            Called immediately after the buffer is populated by the network listener
+            It parses RtcpPackets and rigorously validates them
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CompoundPacket.CompoundPacketException">
+            <summary>
+            InvalidRtcpPacketExeption is thrown if RtcpPacket.CheckForValidRtcpPacket() fails
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader">
+            <summary>
+            -------------------------------------------------------------------------------------------
+            RtcpHeader class purpose:
+            -------------------------------------------------------------------------------------------
+            Manipulates the RTCP header (first 32 bits (4 bytes)) of the buffer (byte[]) provided in 
+            its constructor
+            
+            -------------------------------------------------------------------------------------------
+            RTCP Header description:
+            -------------------------------------------------------------------------------------------
+            An RtcpHeader is always 32 bits long and has the following format
+            
+             0                   1                   2                   3
+             0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |V=2|P|    IC   |      PT       |             Length            |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            
+            V       version
+                        always 2
+            
+            P       padding bit
+                        The padding bit is set on the last packet of the compound 
+                        packet if padding is used after the packet
+                        
+            IC      item count between 0 and 31 (2^5 - 1)
+                        For SR,   IC == RC, number of receiver report blocks
+                        For RR,   IC == RC, number of receiver report blocks
+                        For SDES, IC == SC, number of SDES list items
+                        For BYE,  IC == RC, number of SSRC headers
+                        For APP,  IC == Subtype
+                        
+                        For ACK / NACK, IC == FMT, feedback message type
+                        
+            PT      payload type
+                        SR   = 200
+                        RR   = 201
+                        SDES = 202
+                        BYE  = 203
+                        APP  = 204
+                        
+                        ACK  = ?
+                        NACK = ?
+                        
+            Length  number of 32 bit words in the packet not including the header (data)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.SIZE">
+            <summary>
+             Size of the RTCP header in bytes - 4
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.PADDING_MASK">
+            <summary>
+            3 most significant bit
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.ITEMCOUNT_MASK">
+            <summary>
+            3 most significant bit
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.#ctor(System.Byte)">
+            <summary>
+            Must create a packet of a derived type if building the packet from scratch
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Constructor which converts buffer into member variables
+            Expects buffer to be 4 bytes long
+            </summary>
+            <param name="buffer">Data to be manipulated</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.WriteDataToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts member data to byte[]
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.ReadDataFromBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts the first 4 bytes of the buffer into member variables
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.Version">
+            <summary>
+            Manipulates bits 0 and 1 of byte 1 of the RTCP header
+            Version should always be the current version of RTCP (a.k.a. 2)
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.Padding">
+            <summary>
+            Property get/set which manipulates bit 2 of byte 1 of the RTCP header
+            Indicates whether the RTCP packet contains padding at the end of the packet
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.ItemCount">
+            <summary>
+            Property get/set which manipulates bits 3-7 (5 bits) of byte 1 of the RTCP header
+            Indicates how many "items" (packet type dependent) are in the packet
+            Valid values are between 0 and 31 inclusive (min and max values of 5 bits)
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.PacketType">
+            <summary>
+            Property get/set which manipulates byte 2 of the RTCP header
+            Indicates what type of RTCP packet follows - SR, RR, SDES, BYE, APP, etc.
+            
+            A byte is used, rather than the enum, in order to be compatible
+            with as of yet unknown types (as recommended in Colin's book)
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.Length">
+            <summary>
+            Property get/set which manipulates bytes 3 and 4 of the RTCP header
+            Length is the count of 32 bit words that follow the header (packet data)
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.Size">
+            <summary>
+            Size of the RtcpHeader, in bytes
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpHeader.RtcpHeaderException">
+            <summary>
+            This exception is thrown if anything unexpected happens while manipulating an RTCP header
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket">
+            <summary>
+            -------------------------------------------------------------------------------------------
+            RtcpPacket class purpose:
+            -------------------------------------------------------------------------------------------
+            Provides the common members of a generic RTCP packet (header and data) and provides the
+            interface for accessing that data from all specialized RTCP packets
+            
+            The well-known packet types SR, RR, SDES, BYE, APP, (etc.) will inherit from it and 
+            override or implement their own specific functionality
+            
+            It is public for use by the NetworkDumper diagnostic tool
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.utf8">
+            <summary>
+            All text in an RtcpPacket is encoded in UTF8
+            Please lock on this object before using it
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.AddPadding(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Adds padding to make sure buffer ends on a 32 bit boundary
+            </summary>
+            <param name="cbBuffer">Size of buffer in bytes</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.GetNeededPadding(System.Int32)">
+            <summary>
+            Does the math for how much padding we need.  Also called from Size.
+            </summary>
+            <param name="bufferSize">The size of the buffer to pad.</param>
+            <returns>The number of padding bytes to add.</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.RemovePadding(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Removes padding to make sure buffer ends on a 32 bit boundary
+            </summary>
+            <param name="cbBuffer">Size of buffer in bytes</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.ValidateItemSpace(System.Int32)">
+            <summary>
+            Make sure the ItemCount (of a specific packet type) has room for another item
+            Should be called before adding an item to a collection
+            </summary>
+            <param name="itemCount">current ItemCount</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.ValidatePacketType(System.Byte,System.Byte)">
+            <summary>
+            Make sure the packet passed to specialized packet constructors is of the correct type
+            </summary>
+            <param name="expected">Expected packet type (of the specialized packet class)</param>
+            <param name="actual">Actual packet type (as found in the header)</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.ValidateBufferBoundary(System.Int32)">
+            <summary>
+            Make sure buffer ends on a 32 bit boundary
+            </summary>
+            <param name="cbBuffer">Size of buffer in bytes</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PacketType)">
+            <summary>
+            Constructor which initializes header for use by derived packets
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Constructor which creates a generic RtcpPacket from an existing buffer
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.WriteDataToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts member data into buffer 
+            
+            This is meant to be overridden in derived classes, but can't be marked virtual
+            unless the whole class is marked virtual, which is not desired.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.ReadDataFromBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts buffer into member data 
+            
+            This is meant to be overridden in derived classes, but can't be marked virtual
+            unless the whole class is marked virtual, which is not desired.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.ProcessPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Converts packet's data into derived class member data
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.RtcpPacketException">
+            <summary>
+            InvalidRtcpPacketExeption is thrown if RtcpPacket.CheckForValidRtcpPacket() fails
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket.InsufficientItemSpaceException">
+            <summary>
+            InvalidRtcpPacketExeption is thrown if RtcpPacket.CheckForValidRtcpPacket() fails
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket">
+            <summary>
+            Derived class from RtcpPacket, SourceDescription (SDES).  This packet type provides property information for Rtp streams such as CNAME,
+            NAME, EMAIL, etc.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.sdesReports">
+            <summary>
+            A queue of object[] containing {SSRC, SdesData}
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.#ctor">
+            <summary>
+            Construct an empty SDES packet.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.#ctor(System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Construct an SDES packet from existing properties
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Construct an SDES packet from an existing RtcpPacket
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.ReadDataFromBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts buffer into member data
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.WriteDataToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts member data into buffer
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket.WriteReportToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk,System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Write a report (ssrc + SdesData) to the buffer
+            </summary>
+            <param name="ssrc">uint was cast to int because that's how BufferChunk writes 32 bits</param>
+            <param name="props"></param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket">
+            <summary>
+            Derived class from RtcpPacket, Bye.  This packet tells applications when someone is leaving.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.#ctor">
+            <summary>
+            Construct an empty Bye packet
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Constructor used to process an existing BYE packet
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.AddSSRC(System.UInt32)">
+            <summary>
+            Add an SSRC to the list
+            </summary>
+            <param name="ssrc"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.ReadDataFromBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts buffer into member data
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.WriteDataToBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts member data into buffer
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.SSRCs">
+            <summary>
+            Property get - return a collection clone of all the SSRCs
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket.Reason">
+            <summary>
+            Property get/set - the reason for leaving
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.AppPacket">
+            <summary>
+            Used to carry application-specific control data that is not meant to be understood by other applications
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.AppPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Construct an APP packet from an existing RtcpPacket
+            </summary>
+            <param name="packet">Packet to process</param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.AppPacket.Subtype">
+            <summary>
+            A number from 0 to 31 that can be used in addition to the four character name to determine the exact type of the APP packet.
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.AppPacket.Name">
+            <summary>
+            A four character (ASCII) name that identifies this type of APP packet to the application
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.AppPacket.Data">
+            <summary>
+            Application-specific data
+            
+            RFC 3550 says that this can be up to 256k, RFC3550 doesn't have a limit specified
+            But we only support a maximum packet size of @1.5K, and it the spec doesn't address
+            how to "chunk" larger data into smaller packets
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket">
+            <summary>
+            This packet represents a ReceiverReport and contains statistics on how well RtpStream data has been received.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket.receiverReports">
+            <summary>
+            Array of ReceiverReport structs
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket.#ctor">
+            <summary>
+            Constructs an empty ReceiverReport packet
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Construct a ReceiverReport packet from an existing RtcpPacket
+            </summary>
+            <param name="packet">Packet to process</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket.ClearReceiverReports">
+            <summary>
+            Used to allow one ReceiverReportPacket to be reused between reporting iterations
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RrPacket.AddReceiverReport(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport)">
+            <summary>
+            Add a ReceiverReport entry to the ReceiverReportPacket
+            </summary>
+            <param name="rr"></param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SrPacket">
+            <summary>
+            -------------------------------------------------------------------------------------------
+            SrPacket class purpose:
+            -------------------------------------------------------------------------------------------
+            A SenderReportPacket is used to send statistics information out on the network so that 
+            reporting applications can compare what each RtpSender is putting to the wire to what 
+            RtpListeners are receiving (reported via ReceiverReportPacket(s) )
+            
+            -------------------------------------------------------------------------------------------
+            SenderReportPacket description:
+            -------------------------------------------------------------------------------------------
+            0                   1                   2                   3
+            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--------------------------
+            |V=2|P|    RC   |   PT=SR=200   |             length            |   Header
+            +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+--------------------------
+            |                         SSRC of sender                        |   Sender SSRC
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--------------------------
+            |              NTP timestamp, most significant word             |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |             NTP timestamp, least significant word             |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+   Sender Report Block
+            |                         RTP timestamp                         |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |                     sender's packet count                     |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |                      sender's octet count                     |
+            +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+--------------------------
+            |                 SSRC_1 (SSRC of first source)                 |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+   Receiver Report Blocks
+            :                               ...                             :
+            +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+--------------------------
+            |                  profile-specific extensions                  |   Extension
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--------------------------
+            
+            -------------------------------------------------------------------------------------------
+            Comments:
+            -------------------------------------------------------------------------------------------
+            According to Colin's book, pg 108, paragraph 1 - Receiver report blocks are present when 
+            the sender is also a receiver.  In our code, this is not the case, but we should be capable
+            of parsing packets that are.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SrPacket.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket)">
+            <summary>
+            Construct a SenderReport packet from an existing RtcpPacket
+            </summary>
+            <param name="packet">Packet to process</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SrPacket.AddReceiverReport(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport)">
+            <summary>
+            Add a ReceiverReport entry to the ReceiverReportPacket
+            </summary>
+            <param name="rr"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SrPacket.SenderReport">
+            <summary>
+            setSenderReport synchronizes the SenderReport to the buffer
+            </summary>
+        </member>
+        <member name="T:ReflectorRegistrarClient.RegistrarClient">
+            <summary>
+            This class should run on a CXP client machine and handles the Join and Leave process by 
+            interacting with the RegistrarServer.
+            </summary>
+        </member>
+        <member name="F:ReflectorRegistrarClient.RegistrarClient.regSrvIP">
+            <summary>
+            The RegistrarServer's IP address
+            </summary>
+        </member>
+        <member name="F:ReflectorRegistrarClient.RegistrarClient.refSrvCookie">
+            <summary>
+            The returned confirmation number from the reflector.
+            </summary>
+        </member>
+        <member name="F:ReflectorRegistrarClient.RegistrarClient.joiningMulticastEP">
+            <summary>
+            Saves the requested group to join.
+            </summary>
+        </member>
+        <member name="F:ReflectorRegistrarClient.RegistrarClient.eventLog">
+            <summary>
+            An instant of the EventLogWrapper to log reflector related errors.
+            </summary>
+        </member>
+        <member name="F:ReflectorRegistrarClient.RegistrarClient.regSrvPort">
+            <summary>
+            The port number RegistrarServer is waiting for incomming connections 
+            </summary>
+        </member>
+        <member name="M:ReflectorRegistrarClient.RegistrarClient.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Constructor assigns values to regSrvIP and regSrvPort.
+            </summary>
+            <param name="regSrvIPArg">The RegistrarServer's IP address</param>
+            <param name="regSrvPortArg">The port number RegistrarServer is waiting for incomming connections</param>
+        </member>
+        <member name="M:ReflectorRegistrarClient.RegistrarClient.join(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Sends a join request to RegistrarServer and returns the confirmation number. This method opens
+            a connection to the server sends a request message, receives a response message and closes the
+            connection to the server.
+            </summary>
+            <param name="groupIP">The group IP address to join</param>
+            <param name="groupPort">The group port number to join</param>
+            <returns>The RTP unicast port</returns>
+        </member>
+        <member name="M:ReflectorRegistrarClient.RegistrarClient.leave">
+            <summary>
+            Sends a leave request to RegistrarServer for groupIP and groupPort.  This method opens
+            a connection to the server sends a request message, receives a response message and closes the
+            connection to the server.
+            </summary>
+            <param name="groupIP">The group IP address to leave</param>
+            <param name="groupPort">The group Port number to leave</param>
+            <param name="confirmNumber">The confirmation number received from the RegistrarServer at the join time</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk">
+            <summary>
+            Overview:
+            -------------------------------------------------------------------------------------------
+            FEC_BufferChunk is a class that implement the FEC calulation using
+            BufferChunk.
+            
+            Public Methods:
+            -------------------------------------------------------------------------------------------
+            - EncodeRS: Encode a BufferChunk array using a GF16 encoding matrix
+            - DecodingMatrixGeneration: Generate a decoding matrix from a BufferChunk
+              array of packets received
+            - DecodeRS: Recover lost packets from a BufferChunk array of received packet
+              using a GF16 decoding matrix
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.EncodeRS(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.UInt16[0:,0:])">
+            <summary>
+            Encode the packets that are in the data BufferChunk array and place the 
+            encoded result over GF16 in the checksum packets that are in 
+            the result BufferChunk array. This method encode the size on the first 2
+            bytes of the checksum packet and the data after that. Every checksum BufferChunk
+            has the same size, which is the size of the largest BufferChunk in the data BufferChunk
+            array, plus one if this BufferChunk doesn't end on a 16 bits boundary, plus
+            two to store the encoded length 
+            </summary>
+            <param name="data">The data BufferChunk array (left part of the multiplication)</param>
+            <param name="result"></param>
+            <param name="encode">The encoding Vandermonde GF16 matrix (right part of the multiplication)</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.DecodeRS(System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Decode to retrieve the missing data packet(s) (null entries) in the data BufferChunk array and place the 
+            decoded result over GF16 in order in the recovery BufferChunk array with the right length (every
+            data packet can have a different length)
+            </summary>
+            <param name="checksum">The number of checksum packet(s) that were used to encode</param>
+            <param name="data">The data BufferChunk array</param>
+            <param name="decode">The decoding GF16 matrix</param>
+            <param name="recovery">The recovery BufferChunk array to place the recovered result</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.DecodingMatrixGeneration(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32)">
+            <summary>
+            Create the decoding matrix
+            </summary>
+            <param name="nbDataPackets">Number of data packet</param>
+            <param name="nbChecksumPackets">Number of checksum packet</param>
+            <param name="rtpPackets">Array of rtpPackets</param>
+            <returns>The decoding matrix</returns>
+            <example>
+            For example, if you have 3 data packets and 2 checksum
+            packets and get the last data packet, you will get
+            the following matrix  
+            0   1   1
+            0   1   2
+            1   1   4
+            </example>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.GetMaxLength(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Find the length of the longest BC in the array
+            </summary>
+            <param name="data">The BufferChunk array</param>
+            <returns>The length (in bytes) of largest BufferChunk in the data BufferChunk array</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.AddPadding(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32,System.Collections.Queue)">
+            <summary>
+            Place all the packets in a 16bits boundary to avoid byte operation
+            Important: This suppose that all the bc passed in param to this method
+            ends on a 16bits boundary (so at least one addition availabe byte when the last
+            item is on a even address)
+            </summary>
+            <param name="data">The buffer chunk array containing the packet to resize</param>
+            <param name="checksum">The number of checksum packet (see remark section below)</param>
+            <param name="paddedData">Queue containing index of packet that was not on
+            a 16bits boundary and were the size has been incremented by one</param>
+            <remarks>
+            Checksum parameter is the number of checksum packet. In this implementation of the
+            Reed Solomon algorithm, we put the data to encode in a 16bits boundary to
+            simplify the encoding and improve the performance; we can treat all the packets as UInt16 chunks, 
+            including the last one, so no need to tread limit case with byte and deal with big and little
+            Indian issues. Because we encode the data, and that the checksum packets are created on
+            a 16bits boundary, we only need to take care of the packets at the entries of the data array
+            from index 0 to index smaller than data.Length - checksum
+            Note that teh parameter checksum should be 0 during encoding because there 
+            is no checksum packet in the data array at that point and should be the number
+            of checksum entries during decoding because the data array has checksum in it.
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.RemovePadding(System.Collections.Queue)">
+            <summary>
+            Restore all the packet in their original size. The queue paddedData is used
+            to know which packet index has a packet where we have to decrement the length by one.
+            </summary>
+            <param name="paddedData">Queue containing index of packet where the size has to be 
+            decrement the length by one (used as input param)</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.EncodeRSLength(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.UInt16[0:,0:])">
+            <summary>
+            Encode the length of the packets that are in the data BufferChunk array and place the 
+            encoded length over GF16 in the 2 first byte of the checksum packets that are in 
+            the result BufferChunk array  
+            </summary>
+            <param name="data">The BufferChunk array containing the data packets to get the size</param>
+            <param name="checksum">The number of checksum packets to generate.
+            This number is actually also the number of column of the Vandermonde
+            encoding matrix</param>
+            <param name="encode">The Vandermonde encoding matrix (size min should be
+            Vandermonde #column: checksum, Vandermonde #row: data.Length) 
+            </param>
+            <param name="result">The BufferChunk checksum packets array of containing the encoded length (over GF16)
+            in the first 2 bytes</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.EncodeRSData(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.UInt16[0:,0:],System.Int32)">
+            <summary>
+            Encode the packets that are in the data BufferChunk array and place the 
+            encoded result over GF16 in the checksum packets that are in 
+            the result BufferChunk array  
+            </summary>
+            <param name="data">The BufferChunk array containing the data packets</param>
+            <param name="checksum">The number of checksum packets to generate.
+            This number is actually also the number of column of the Vandermonde
+            encoding matrix</param>
+            <param name="checksum">The BufferChunk checksum packets array of containing the encoded data (over GF16)
+            after the first 2 bytes (the first 2 bytes are used to encode the length)</param>
+            <param name="encode">The Vandermonde encoding matrix (size min should be
+            Vandermonde #column: checksum, Vandermonde #row: data.Length) 
+            </param>
+            <param name="checksumRowsInt16">The number of row (in int 16 chunks) of the checksum packets</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.ReceivedPacketsCount(System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Count the number of packet actually received from the network
+            </summary>
+            <param name="nbTotalPackets">Number of packets (data + checksum)</param>
+            <param name="rtpPackets">The array of rtpPackets received</param>
+            <returns>The count of packets received</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.DecodeRSLength(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Decode to retrieve the length of the missing data packet(s) (null entries) in the 
+            data BufferChunk array and set the length of the packets in the recovery BufferChunk array.
+            We have to do that because every data packet could have a different length.
+            </summary>
+            <param name="data">The data BufferChunk array</param>
+            <param name="checksum">The number of checksum packet(s) that were used to encode</param>
+            <param name="decode">The decoding GF16 matrix</param>
+            <param name="recovery">The recovery BufferChunk array to set the length of the recovered packets</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_BufferChunk.DecodeRSData(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Decode to retrieve the missing data packet(s) (null entries) in the data BufferChunk array and place the 
+            decoded result over GF16 in order in the recovery BufferChunk array
+            </summary>
+            <param name="data">The data BufferChunk array</param>
+            <param name="checksum">The number of checksum packet(s) that were used to encode</param>
+            <param name="decode">The decoding GF16 matrix</param>
+            <param name="recovery">The recovery BufferChunk array to place the recovered result</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.CRC32">
+             <summary>
+             CRC32 is a table lookup optimized CRC32 generator that is commonly used to check for binary
+             equivalence between two byte arrays or to validate that a byte array has not been changed.
+             </summary>
+             <example>
+             using System;
+            
+             class TestCRC32
+             {
+                 [STAThread]
+                 static void Main(string[] args)
+                 {
+                     // This will write "False" since the CRC32 of a blank 5 byte array is not 5
+                     byte[] data = new byte[5];
+                     Console.WriteLine(IsValid(data, 5));
+                     Console.ReadLine();
+                 }
+            
+                 static bool IsValid(byte[] data, uint crc32)
+                 {
+                     if (MSR.LST.CRC32.Generate(data) == crc32)
+                         return true;
+                     else
+                         return false;
+                 }
+             }
+             </example>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.RtcpMaximumBandwidth">
+            <summary>
+            Maximum bandwidth to be consumed by Rtcp packets in bytes per second
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.RtcpMinimumTransmissionInterval">
+            <summary>
+            Minimum transmission interval in milliseconds
+            5 seconds per pg 131 in Colin's book
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.EulersConstant">
+            <summary>
+            Euler's constant: e - 1.5 = 1.21828
+            A compensating factor for the effects of reconsideration
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.rtcpNetworkSender">
+            <summary>
+            Object that actually sends outgoing multicast Rtcp packets
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates performance counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.Send(System.Boolean)">
+            <summary>
+            Collects the Rtcp data from the session, assembles it into CompoundPackets (via the
+            CompoundPacketBuilder) and sends the packets
+            
+            The current design has a "forced" Send occurring on the thread that makes the call, and
+            a normal Send occurring on the dedicated RtcpSender thread.
+            
+            To make sure that multiple threads aren't making the call at the same time, which can
+            lead to data access exceptions (e.g. Queue empty), we lock here.
+            </summary>
+            <param name="forced">Is Send being called due to timing rules, or forced?</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSender.RtcpTransmissionInterval">
+            <summary>
+            Calculates the amount of time that should elapse before the next Rtcp packet is sent
+            See Colin's book pp 128-142
+            </summary>
+            <returns>Wait time (in milliseconds)</returns>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener">
+            <summary>
+            RtcpReceiverThread is responsible for receiving all incoming packets on the Rtcp Listener,
+            casting them into specific RtcpPackets, and then taking appropriate action with the packet
+            
+            SDES packets are used to maintain the lists of active Participants and Streams, associate
+            Streams to Participants, and set the SdesData on Participants and Streams.
+            
+            BYE packets are used to remove RtpParticipants and RtpStreams.
+            
+            Currently SR, RR, and APP packets are simply forwarded to Events in case the application 
+            has interest in them.  TODO - In the future, we should take the information from SR and RR
+            and adjust our streams sending rates accordingly.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.rtpSession">
+            <summary>
+            A reference back to the rtpSession that created this RtcpListener
+            
+            The rtpSession is the focal point of data analysis and exchange between Rtp and Rtcp
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.threadRtcpListener">
+            <summary>
+            The thread that waits for Rtcp data and then forwards it along to the rtpSession
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.rtcpNetworkListener">
+            <summary>
+            A 'smart socket' that listens for incoming multicast Rtcp packets.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.disposed">
+            <summary>
+            Whether this class has been disposed or not
+            
+            Used in the listening thread
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.IRtpSession)">
+            <summary>
+            Constructs an RtcpListener
+            
+            The rtpSession is used as a communication point between the Rtcp and Rtp code
+            </summary>
+            <param name="rtpSession">A reference to the rtpSession that created this object</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpListener.Dispose(System.Boolean)">
+            <summary>
+            Clean up the RtcpListener
+            
+            A thread will not abort until it is in the running state.  Our listening thread is
+            generally blocked by the call to rtcpNetworkListener.ReceiveFrom().  In order to
+            dispose things quickly and efficiently, we tell the listening thread to abort as soon 
+            as it is back in the running state.  Then we clean up the network listener which should
+            unblock us.  
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender">
+            <summary>
+            RtpSender is the class that applications should use to send data over the network.
+            It handle the details of breaking data (frames) into packets
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.FrameInitialSize">
+            <summary>
+            Initial number of pre-allocated packets for sending data
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.FrameGrowthFactor">
+            <summary>
+            Multiplier - amount of packets to grow the frame by
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.FrameMaxGrows">
+            <summary>
+            How many times do we want the frame to grow by GrowthFactor before we consider
+            the situation to be out of control (unbounded)
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.CreateInstance(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.IRtpSession,System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PayloadType,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Class factory for creating all RtpSenders
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.frame">
+            <summary>
+            Class that turns raw BufferChunk frames into packets
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.rtpSession">
+            <summary>
+            A reference to the rtpSession that created this RtpSender
+            
+            Used to access properties that are common between Rtp components
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.sr">
+            <summary>
+            Rtcp SenderReport which holds how much data this sender has sent
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.payloadType">
+            <summary>
+            Payload type of this stream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.payloadPara">
+            <summary>
+            JPEG PayloadType Property
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.eventLog">
+            <summary>
+            EventLogWrapper, used to log events
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.disposed">
+            <summary>
+            Disposed marker per IDispoable pattern.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.tsIncrement">
+            <summary>
+            Increment by which to increase the TimeStamp value between frames
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.ssrc">
+            <summary>
+            SSRC of this stream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.ts">
+            <summary>
+            Track the TS of the last Rtp Frame
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.seq">
+            <summary>
+            Sequence number of the last packet sent
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.sdes">
+            <summary>
+            SdesData associated with this RtpSender
+            We set CName and optionally Name
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.rtpNetworkSender">
+            <summary>
+            Object we use to send our Rtp data.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.pc">
+            <summary>
+            Performance counter for this class
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.Send(System.Byte[])">
+            <summary>
+            Send an arbitrarily large set of data contained in a byte[].  All data in the byte[] is sent.  For efficiency reasons, you may consider
+            using the BufferChunk version of this method that allows you to specify an offset and length in the byte[] to send.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.Send(System.IntPtr[],System.Int32[],System.Boolean)">
+            <summary>
+            This method is intended to improve the efficiency of working with unmanaged code
+            by not forcing an extra copy into a "Frame" BufferChunk before we packetize.  We'll
+            just packetize from the ptrs.
+            </summary>
+            <param name="ptrs"></param>
+            <param name="lengths"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.Send(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Send an arbitrarily large set of data contained in a BufferChunk.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates performance counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.SSRCConflictDetected">
+            <summary>
+            Resets the RtpSenders ssrc, and other SenderReport data per pg. 110, para. 3 in Colin's book
+            </summary>
+            <param name="ipAddress"></param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender.DelayBetweenPackets">
+            <summary>
+            Adjust this to add a delay between sending packets.  This is a rough form of bandwidth control.
+            This is useful for constrained lossy networks like 802.11b.
+            A value of 10 would constrain the throughput to a maximum of 1500 bytes * 1000 ms per second / 10 = 150 kb/s.
+            Pri3: Should be setting this in reverse, AKA bps maximum allowed which is used to calculate delay
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener">
+            <summary>
+            Listens for packets from the network and distributes them to the appropriate RtpStream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.PoolInitialSize">
+            <summary>
+            Initial number of pre-allocated buffers for receiving data
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.PoolGrowthFactor">
+            <summary>
+            Multiplier - amount of buffers to grow the pools by when the pool is empty
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.PoolMaxGrows">
+            <summary>
+            How many times do we want the pools to grow by GrowthFactor before we consider
+            the situation to be out of control (unbounded)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.rtpSession">
+            <summary>
+            Reference back to the RtpSession that created this Listener
+            See IRtpSession for the methods used
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.bufferPool">
+            <summary>
+            Queue that holds a pool of BufferChunks for receiving data off the wire
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.packets">
+            <summary>
+            How many packets has this listener allocated
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.poolGrows">
+            <summary>
+            Number of times we have grown the bufferPool
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.receivedPackets">
+            <summary>
+            Queue that holds all RtpPackets that have been received but not yet forwarded to the 
+            RtpStreams for processing
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.threadReceivePackets">
+            <summary>
+            Receives packets off the network and stores them for sorting and distribution
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.threadDistributePackets">
+            <summary>
+            Sorts the packets which have been received from the network and forwards them on to the
+            appropriate RtpStream for processing
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.rtpNetworkListener">
+            <summary>
+            A socket that listens for incoming multicast Rtp packets.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.newPacket">
+            <summary>
+            Signals the Distribution thread it has work to do
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.pc">
+            <summary>
+            Local performance counter object
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.pcLock">
+            <summary>
+            Lock to make sure performance counters are valid during use
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.pcPackets">
+            <summary>
+            The number of packets the RtpListener has received off the wire
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.pcStreamlessPackets">
+            <summary>
+            The number of packets the RtpListener has received for an unassociated stream
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates performance counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.GrowBufferPool">
+            <summary>
+            Grow the buffer pool
+            
+            Called when all the previously allocated packets are in use.  Unless we are handling a
+            huge frame (~= 95MB), it indicates a problem - like packets that aren't being returned
+            to the pool and so we put a limit on the growth.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.GetBuffer">
+            <summary>
+            Returns a BufferChunk from the pool, or grows the pool if need be
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.ReturnBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            This method is called to return buffers to the bufferPool
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.DistributePackets">
+            <summary>
+            DistributePackets is responsible for receiving all incoming packets on the Rtp Listener,
+            casting them into RtpPackets, creating new RtpStreams if one doesn't exist for the RtpPacket's SSRC,
+            then calling RtpStream.newPacket(rtpPacket) to place the RtpPacket into the RtpStream's Queue for processing.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.Install">
+            <summary>
+            Ensure that Rtp is properly installed on each run, attempting to make ".NET File Copy Deployment" a reality.
+            
+            This mostly works, but two problems arise from "File Copy Deployment".  First, there's a large delay upon first run while setup executes.
+            Second, uninstall is never run if the files are just deleted so niggling things like registry entries, performance counters, event logs,
+            etc. get left around.
+            
+            Because of this, we still deploy the application to the clients using MSIs which call custom actions that run the Installer classes on both
+            setup and when Add/Remove Programs -> Remove is called.
+            
+            This Dll knows whether to self-install by checking a registry entry that is set upon installation.  If you delete the files without calling
+            uninstall, be sure to delete HKLM\SOFTWARE\Microsoft Research\RtpInstalled before reinstalling Rtp in another location.  The clean way to
+            uninstall without MSIs or Add/Remove Programs is to call "installutil /u MSR.LST.Net.Rtp.dll" before deleting the file or by having your
+            app call Installer.Uninstall on the MSR.LST.Net.Rtp assembly programatically.  See Installation.cs for an example of how to programmatically
+            install/uninstall an assembly dependency.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.participant">
+            <summary>
+            The local participant for this session
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.multicastEP">
+            <summary>
+            RtpEndPoint of the multicast session
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.rtpTraffic">
+            <summary>
+            Flag indicating whether this session is handling Rtp traffic, or only Rtcp traffic
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.receiveData">
+            <summary>
+            Flag indicating whether this session is receiving RTP and RTCP data as well as sending it
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.rtcpListener">
+            <summary>
+            The RtcpListener for this session
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.rtcpSender">
+            <summary>
+            The RtcpSender for this session
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.rtpListener">
+            <summary>
+            The RtpListener for this session, if the session is handling Rtp traffic
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.#ctor(System.Net.IPEndPoint,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant,System.Boolean,System.Boolean)">
+            <summary>
+            The RtpSession can be in 1 of 4 states:
+            
+            1. Sending/Receiving Rtp + Rtcp traffic - this is what most users want
+            2. Sending/Receiving Rtcp traffic - used mainly by diagnostic tools for discovery of 
+                people while also announcing the local user
+            3. Receiving Rtcp traffic only - a special diagnostic case used by Pipecleaner to 
+                discover if an Agent is already running.
+            4. Sending Rtp + Rtcp traffic - a rare case only used for sending test data or
+                for "playback" of data in a scenario where SSRC and CNAME conflicts aren't of
+                interest to the sender.  THIS SHOULD ONLY BE USED IN EXCEPTIONAL CASES.
+            
+            -If no participant is provided (null), then RtpSession cannot send Rtp or Rtcp data (state 3)
+            -Else a valid participant is provided and Rtcp traffic can be sent (states 1, 2, or 4)
+               -If rtpTraffic is true, then Rtp traffic is sent and/or received (state 1 or 4)
+                  -If receiveData is true, then Rtp traffic is received as well as sent (state 1)
+                  -Else Rtp and Rtcp traffic are not received (state 4)
+               -Else rtpTraffic is neither sent nor received (state 2)
+            </summary>
+            <remarks>
+            Note that receiving Rtp data without sending Rtcp data is seen as a privacy concern and is not allowed.
+            </remarks>
+            <param name="multicastEP">Rtp endpoint, Rtcp endpoint will be derived from it</param>
+            <param name="participant">Person joining the session</param>
+            <param name="rtpTraffic">Flag indicating whether or not to monitor or allow sending of Rtp traffic</param>
+            <param name="receiveData">Flag indicating whether or not to monitor any incoming data</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.#ctor(System.Net.IPEndPoint,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant,System.Boolean,System.Boolean,System.Net.IPEndPoint)">
+            <summary>
+            This constructor is the same as "RtpSession(IPEndPoint multicastEP, RtpParticipant participant, bool rtpTraffic, bool receiveData)",
+            except that it is capable of using a Unicast-Multicast reflector.
+            </summary>
+            <param name="multicastEP"></param>
+            <param name="participant"></param>
+            <param name="rtpTraffic"></param>
+            <param name="reflectorEPArg">The IP address and port number of the reflector</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession._CreateRtpSender(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSender)">
+            <summary>
+            Finishes the creation of an RtpSender by adding it to local collections and announcing
+            it to the remote sites via an Rtcp packet
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.CreateRtpSender(System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PayloadType,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Creates a basic RtpSender
+            
+            This RtpSender simply sends data over the wire.  It uses the least amount of CPU and
+            network bandwidth at the cost of reliability (i.e. it makes no attempts to improve data
+            arrival at the remote site).
+            </summary>
+            <param name="Name">string Friendly Name of the device/sender of this RtpStream</param>
+            <param name="payloadType">Rtp Payload Type</param>
+            <param name="priExns">Private extensions for this RtpSender/Stream</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.CreateRtpSenderFec(System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PayloadType,System.Collections.Hashtable,System.UInt16,System.UInt16)">
+            <summary>
+            Creates an RtpSender with Forward Error Correction
+            
+            This RtpSender sends the data requested by the user, plus some extra data in order to
+            help recover lost data.  The recovery packets are sent per the specified ratio of
+            cDataPx : cFecPx, e.g. 3:1 means for every 3 data packets we will send 1 fec packet.
+            This means we can lose any 1 of the 4 packets and recover the data.  3:2 means we
+            can lose any 2 of the 5 and still recover the data.
+            
+            It takes 1 FEC packet to recover 1 lost data packet.  It is important to balance the
+            extra CPU and network bandwidth against the reliability of the data.  Increasing either
+            CPU or network bandwidth too much may cause worse data loss than not correcting at all.
+            
+            If the FEC ratio uses only 1 FEC packet (2:1, 3:1, etc.) we use an XOR algorithm, which
+            is very fast.  If the ratio uses more than one FEC packet (3:2, 5:3, etc.), we use the 
+            Reed-Solomon algorithm.  Reed-Solomon is more complicated and therefore requires more 
+            CPU, however it allows you to recover from a broader range of loss patterns.
+            </summary>
+            <param name="Name">string Friendly Name of the device/sender of this RtpStream</param>
+            <param name="payloadType">Rtp Payload Type</param>
+            <param name="priExns">Private extensions for this RtpSender/Stream</param>
+            <param name="dataPackets">Count of data packets to protect with FEC packets</param>
+            <param name="perFECPackets">Count of FEC packets to protect data, 1:1 recovery</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.SendAppPacket(System.UInt32,System.String,System.Byte,System.Byte[],Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.RtcpInterval)">
+            <summary>
+            SendAppPacket is used to send application specific data to all other RtpListeners on the network.
+            </summary>
+            <param name="name">4 ASCII characters</param>
+            <param name="subtype">0 to 31, app specific "type of data"</param>
+            <param name="data">data is size sensitive, the total size of the packet cannot exceed 255 bytes</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.Dispose(System.Object)">
+            <summary>
+            Matches the signature of the WaitCallback so we can launch it from a ThreadPool thread
+            during a CNameConflict
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.InitializeNetwork">
+            <summary>
+            Initialize the Rtcp/Rtp listeners and senders.  See the primary constructor's summary
+            for an explanation of the "states" an RtpSession can be constructed in.
+            
+            Performance note - it takes .6+ seconds to initialize the performance counter code in
+            the .Net framework (the first time per process).  In the current code, that happens
+            during RtcpSender construction.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.DisposeNetwork">
+            <summary>
+            Dispose the Rtcp/Rtp listeners and senders
+            
+            Usually one would dispose items in the opposite order from which they were created in
+            order to maintain symmetry.  However, because objects are created due to data
+            received from the network, we first shut down the Rtcp/Rtp listeners so as not to
+            create new objects during shutdown.
+            
+            Since we are no longer listening on the network, we won't receive our own "dispose"
+            messages that we send out, so we dispose the items manually using the same methods as
+            if the data had come in off the wire.  This allows for proper eventing and logging.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.AddOrUpdateStream(System.UInt32,System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Called to create a stream via Rtcp and have all the "links" created
+            
+            CXP always stores the Participant ssrc/SdesData first in the SdesPacket.  So a
+            participant should always exist before the stream is created in this code.
+            
+            AddStream is called by the RtcpListener thread via ProcessSdesPacket
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.AddOrUpdateStream2(System.UInt32,System.String,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData)">
+            <summary>
+            Called to create a stream via Rtcp and have all the "links" created
+            
+            CXP always stores the Participant ssrc/SdesData first in the SdesPacket.  So a
+            participant should always exist before the stream is created in this code.
+            
+            AddStream is called by the RtcpListener thread via ProcessSdesPacket
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.CheckForStaleStreams">
+            <summary>
+            Called on the RtcpSender thread every RtcpIntervals
+            So that the session can iterate through the streams and see if they are doing anything
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RemoveSSRC(System.UInt32,System.Net.IPAddress)">
+            <summary>
+            This method is one extra layer of checks to make sure someone isn't messing with us
+            (trying to remove streams they don't own by sending BYE packets for instance)
+            
+            If we know the IPAddress of the request to RemoveStream, make sure it is the same
+            IPAddress that owns the stream
+            </summary>
+            <param name="ssrc"></param>
+            <param name="ip"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RemoveSSRC(System.UInt32)">
+            <summary>
+            Called to remove an  ssrc/stream and have all the links cleaned up
+            
+            A stream can either be "associated" (meaning it is mapped to a participant) or not.
+            
+            Whether the stream is associated or not, it will be added to/removed from the "streams"
+            and "ssrcToIPAddress" collections.
+            
+            If the stream is "associated" it will be added to/removed from the participant's 
+            streams collection and the "ssrcToParticipant" collection.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.AddOrUpdateParticipant(System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesData,System.Net.IPAddress)">
+            <summary>
+            AddOrUpdateParticipant is called by the RtpSession ctor for adding the local participant and
+            by ProcessSdesPacket when an SDES packet arrives on the RtcpListener thread
+            
+            If the participant does not exist in the session, we add them
+            If the participant does exist in the session, we make sure there is no CName conflict
+            </summary>
+            <param name="ssrc">Unique identifier of the stream</param>
+            <param name="sdes">CName, Name, Email, etc from which to create the Participant</param>
+            <param name="ip">Originating IP address of the ssrc and SdesData</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.CheckForStaleParticipants">
+            <summary>
+            Check to see if a participant is stale (has not received Rtcp Sdes packets)
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RemoveParticipant(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpParticipant)">
+            <summary>
+            Removes a participant and does all the necessary cleanup of streams and associations
+            </summary>
+            <param name="participant"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.ProcessPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpPacket,System.Net.IPAddress)">
+            <summary>
+            Converts a generic RtcpPacket into a specific RtcpPacket type and forwards it to the
+            appropriate method to be processed
+            </summary>
+            <param name="packet">Generic RtcpPacket</param>
+            <param name="ipAddress">IPAddress packet was received from</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.ProcessSDESPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SdesPacket,System.Net.IPAddress)">
+            <summary>
+            An SdesPacket can contain multiple Sdes reports (ssrc, SdesData) which we process here
+            
+            Due to our architecture with 1 RtpSession / RtpParticipant and multiple RtpSenders / 
+            RtpStreams (each of which get their own ssrc and SdesData) it is difficult to properly 
+            map the SdesData to the participant, because they all share the same CName.
+             
+            The participant properties will have a CName, Name, Email, Phone, etc plus any private 
+            extensions for the participant.  In order to conserve Rtcp bandwidth, the streams will 
+            only send out CName, Name and any private extensions for the stream. And the stream's 
+            Name may be completely different from the participant's name.  
+            
+            The problem is that we don't want the participant to be updated from the stream's 
+            properties due to sharing a CName.  So we use the private extension "Source" to 
+            distinguish between a participant's SdesData and a Stream's SdesData
+            
+            The last complication is that AccessGrid doesn't have this private extension, probably
+            because they have a 1:1 mapping between a sender and receiver.  In order to not break
+            interop, we allow for the case of the private extension not being there, in which case
+            the participant data will be updated from any and all SdesData that share that CName
+            </summary>
+            <param name="packet">Rtcp packet to process</param>
+            <param name="ipAddress">Originating IP address of the packet</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.ProcessBYEPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ByePacket,System.Net.IPAddress)">
+            <summary>
+            A ByePacket can contain multiple SSRCs so we need to process them in a loop
+            </summary>
+            <param name="packet">ByePacket</param>
+            <param name="ipAddress">IPAddress packet was received from</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.AddSsrcToIp(System.UInt32,System.Net.IPAddress)">
+            <summary>
+            Verifies that the SSRC matches the IPAddress, if this is a known SSRC, and returns the
+            associated RtpStream.  If the SSRC is new, we add the IPAddress to the lookup table.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.CheckForCNameConflict(System.String,System.Net.IPAddress[])">
+            <summary>
+            Determine if there is a CNameConflict between the local participant and a remote
+            participant or 2 remote participants.
+            
+            If the conflict involves a local participant, raise the event and then Dispose the
+            RtpSession, bringing it back to a clean state.
+            
+            If it is a remote conflict, do nothing, as we will eventually receive the Rtcp data
+            from them.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates the local perf counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.Vs#Provider#RtpLib#MSR#LST#Net#Rtp#RtcpSender#IRtpSession#RtcpReportIntervalReached">
+            <summary>
+            Called by RtcpSender when it is time to collect Rtcp data
+            </summary>
+            <returns>A CompoundPacketBuilder</returns>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.Participants">
+            <summary>
+            Returns a clone of the participants collection
+            
+            Used by Pipecleaner agent to display all the participants
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RtcpEndPoint">
+            <summary>
+            Called by RtcpSender and RtcpListener
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.SessionException">
+            <summary>
+            SessionExeption is thrown if anything goes wrong in the session object
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RtpTrafficDisabledException">
+            <summary>
+            RtpTrafficDisabledException is thrown if Rtp methods in the Session are accessed
+            while in rtpTraffic == false mode
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSession.RtcpSendingDisabledException">
+            <summary>
+            RtcpSendingDisabledException is thrown if Rtcp sender methods in the Session are accessed
+            while participant == null
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents">
+            <summary>
+            Events contains all the events raised by the Rtp/Rtcp code
+            
+            Each event consists of 4 items - an EventArgs, a Delegate, an Event and an internal method
+            Raise*Event that actually fires the event, and if the event is not hooked logs information
+            to the EventLog.
+            
+            Because all our events follow the same pattern, they have been streamlined to call a
+            single method (FireEvent) to actually fire them.  This method uses the delegate's 
+            invocation list to call the hooked methods in a non-linked list format
+            
+            Due to our use of the static EventThrower which calls all events from a single thread,
+            all methods in this class are static as well. They are not meant to be called in a 
+            multi-threaded way (although it would probably work fine since no static members are
+            touched).
+            
+            Consideration was given to breaking these down by Rtp, Rtcp and shared (Rtp + Rtcp) events
+            but due to the limited number of events it wasn't deemed necessary.
+            
+            It would be interesting to query our API users to see how many of them use the events and
+            which events they use - Rtp, Rtcp or Shared
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.FireEvent(System.Delegate,System.Object[])">
+            <summary>
+            This method is used to actually fire an event
+            
+            It returns true if it called any delegates, false otherwise (event wasn't hooked)
+            </summary>
+            <param name="method"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.DuplicateCNameDetected">
+            <summary>
+            This event is raised just prior to the RtpSession disposing itself, which will raise
+            RtpStreamRemoved and RtpParticipantRemoved events.  There is no need for external 
+            sources to try and clean up the RtpSession although it won't hurt.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.FrameOutOfSequence">
+            <summary>
+            FrameOutOfSequence occurs when packets come in out of sequence.  While this occasionally happens due to the network reordering packets,
+            it is much more likely to occur because packets were either dropped on the receiving PC (lack of CPU or a sudden performance dip is
+            the general cause) or packets were dropped on the network.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.InvalidPacket">
+            <summary>
+             When an invalid Rtp Packet is received, this event fires.
+             
+             This should really never occur and is an indication that corrupted data has made its way into the system.  Bad, bad.
+             </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.InvalidPacketInFrame">
+            <summary>
+            If a packet is processed in the RtpFrame logic that just doesn't belong, then an InvalidPacketInFrame event is thrown.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.NetworkTimeout">
+            <summary>
+            If no data comes over the network from anywhere for a period of time, this event fires.  Generally this means your modem is on fire
+            or your ISP has suspended your account due to non-payment.  It can also mean that a network connection was added (such as a dialup
+            PPP connection) which is rerouting your traffic or you've hit a bug such as multicast traffic going off into the ether once a VPN
+            connection is established.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.HiddenSocketException">
+            <summary>
+            When a socket exception is thrown inside an RTCP sender or RTP/RTCP listener, which are on
+            seperate threads, this event will fire in order to inform the class consuming the RtpSession
+            that an internal exception has occurred, and the network may be down.  Parsing the exception to
+            determine the status of the network is the job of the consuming class.  Also, in most cases, the
+            Rtp object will continue to run, ignoring the exception(s), until it is shutdown by the consuming
+            class.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.PacketOutOfSequence">
+            <summary>
+            When an RtpStream detects a packet that has arrived out of sequence, it fires this event.
+            
+            Since this is a very commonly occuring event, this event should only be hooked for
+            diagnostic applications -- rather the RtpStream.PacketOutOfSequenceEvents property or the performance counter should be used
+            in most cases.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpParticipantAdded">
+            <summary>
+            This ia a commonly used event which notifies you when a new RtpParticipant has been detected.  This event is very important if you want to
+            know who is on the network with you.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpParticipantRemoved">
+            <summary>
+            This is a commonly used event which notifies you when a Participant has gone away.  This event is very important if you want to know
+            when someone leaves the network.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpParticipantDataChanged">
+            <summary>
+            Fired when a Participant's Note property changes (a la Instant Messenger status)
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpParticipantTimeout">
+            <summary>
+            Sometimes you don't receive a BYE from a sender, they just stop transmitting.  Perhaps their BYE packets were lost due to a network,
+            glitch or perhaps their application crashed.  In this case, a RtpParticipantTimeout event will fire.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.ReceiverReport">
+            <summary>
+            If you want to analyze other computer's packet reception statistics, this event will deliver incoming Receiver Reports
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpStreamAdded">
+            <summary>
+            This is a commonly used event which notifies you when a RtpStream has been detected.  
+            This event is very important if you want to receive data from someone.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpStreamRemoved">
+            <summary>
+            This is a commonly used event which notifies you when a RtpStream has gone away.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RtpStreamTimeout">
+            <summary>
+            Sometimes you don't receive a BYE from a sender, they just stop transmitting.  Perhaps their BYE packets were lost due to a network,
+            glitch or perhaps their application crashed.  In this case, a RtpStreamTimeout event will fire.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RaiseEvent">
+            <summary>
+            There should be 2 objects in args
+            1) object sender;
+            2) EventArgs ea; (Of a specialized type for the event being raised)
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Installation">
+            <summary>
+            Installer class for Rtp, handles the tasks necessary to get Rtp up and functional.  This routine:
+            
+             * Checks to ensure an Administrator is logged in.  Installation cannot proceed in a limited account.
+             * Uninstalls first upon installation to make sure we're in a well known, reasonably clean state.
+             * Opens the firewall port for ConferenceXP, something that a limited account doesn't have privs to do.
+             * Installs the Rtp Event Log, adjusts its maximum size, and sets it to overwrite as needed.
+             * Creates Performance Counters for Rtp Listener, Rtp Stream, and Rtp Sender so we can use the Performance Monitor to track application status
+             * Sets a registry entry that says we're properly installed
+             
+             Both installation and uninstallation are handled by this class.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Installation.Install(System.Collections.IDictionary)">
+            <summary>
+            This routine should be called automatically by the MSI during setup, but it can also be called using:
+                "installutil.exe MSR.LST.Net.Rtp.dll"
+            </summary>
+            <param name="savedState">State dictionary passed in by the installer code</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Installation.Uninstall(System.Collections.IDictionary)">
+            <summary>
+            This routine should be called automatically by the MSI during Remove Programs, but it can also be called using:
+                "installutil.exe /u MSR.LST.Net.Rtp.dll"
+            </summary>
+            <param name="savedState">State dictionary passed in by the installer code</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream">
+            <summary>
+            An RtpStream represents data coming from the network
+            It could originate from a local RtpSender, or a remote RtpSender
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.HALF_UINT_MAX">
+            <summary>
+            Used in sequence checking by stream and frame
+            
+            We use "rollover" math on a ushort to determine if a packet arrived late
+            If the packets arrived 1, 2 the diff is 2 - 1 = 1 (good)
+            If the packets arrived 2, 1 the diff is 1 - 2 = 65535 (late)
+            
+            If the sequence number is more than 32K different than the last one they came in late
+            It was difficult to pick a smaller number, as a group of packets might get lost and
+            you have to work around whatever that amount is
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.ssrc">
+            <summary>
+            The unique identifier of this stream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.stale">
+            <summary>
+            A stream is considered stale if it isn't receiving Rtp traffic
+            
+            If a stream goes N Rtcp intervals (currently 5, see RtpSession.RtcpMissedIntervalsTimeout)
+            without Rtp traffic, it is timed out and cleaned up by the manager, which checks this
+            value during each RtcpSender.RtcpTransmissionInterval
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.rr">
+            <summary>
+            Used to communicate with Rtcp about what data this stream has received
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.eventLog">
+            <summary>
+            For logging interesting data to the EventLog
+            
+            TODO - Instance based or static? JVE
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.properties">
+            <summary>
+            Currently, only CName, Name and a private extension CapabilityChannelIdentifier are
+            used.  We get the CName from the Owner.  Name is passed in the constructor but can be
+            updated by the Sender, which is how ChannelID is updated.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.pt">
+            <summary>
+            The type of data this stream receives
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.isUsingNextFrame">
+            <summary>
+            Indicates whether or not the user of the RtpStream is intending to use the NextFrame
+            method (or if they will hooking the FrameReceived event)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.nextFrameEvent">
+            <summary>
+            Unblocks the caller of NextFrame so they can receive the frame
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.dataStoppedEvent">
+            <summary>
+            Flag to keep track of which event to fire next - DataStopped, DataStarted
+            We start by assuming data will arrive, and then prove it hasn't
+            This is raised for informational purposes to the caller of NextFrame
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.nextFrameTimeout">
+            <summary>
+            How many milliseconds to wait before firing the DataStoppedEvent
+            Allows control of the firing of the DataStoppedEvent for callers of NextFrame
+            
+            This is set when IsUsingNextFrame is called with true
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.nextFrameUnblocked">
+            <summary>
+            Used to throw a NextFrameUnblockedException that indicates the NextFrame event was 
+            manually Set.  This is used to unblock the caller of NextFrame if you can't control 
+            calling the thread any other way.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.frameReceived">
+            <summary>
+            Used to indicate when the lastFrame has been collected
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.ToString">
+            <summary>
+            For diagnostics.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.NextFrame">
+            <summary>
+            This method is used to receive Frames by polling the RtpStream.  This method should only be used by applications
+            that already bring a dedicated reading thread (such as DirectShow Filters and their FillBuffer method).  Most
+            applications should instead use the RtpStream.FrameReceived event to receive frames.
+            </summary>
+            <remarks>
+            The FrameReceived event causes overhead because it uses DynamicInvoke to fire the 
+            event, and it is serialized on the EventThrower thread.  NextFrame allows for more 
+            efficient retrieval of the data at the cost of needing to provide an extra thread.
+            
+            This method is meant to be called single threaded (as the DShow filters do).
+            </remarks>
+            <returns>A frame of data or a NextFrameUnblockedException</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.ProcessPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase)">
+            <summary>
+            Method that converts RtpPacketBase to an RtpPacket and forwards
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.ProcessPacket(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket)">
+            <summary>
+            newPacket is how RtpListener sends an incoming RtpPacket who's SSRC matches this
+            RtpStream into the RtpStream's queue for processing
+            
+            This method assumes there is only one thread calling newPacket
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates the local perf counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.Properties">
+            <summary>
+            Currently, only CName, Name and a private extension CapabilityChannelIdentifier are
+            used.  We get the CName from the Owner.  Name is passed in the constructor but can be
+            updated by the Sender, which is how ChannelID is updated.
+            
+            'Set' updates the local properties from those provided, but does not keep a reference
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.Stale">
+            <summary>
+            A stream is considered stale if it isn't receiving Rtp traffic
+            
+            If a stream goes N Rtcp intervals (currently 5, see RtpSession.RtcpMissedIntervalsTimeout)
+            without Rtp traffic, it is timed out and cleaned up by the manager, which checks this
+            value during each RtcpSender.RtcpTransmissionInterval
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.PacketsLostIn10000">
+            <summary>
+            How many packets are lost per 10,000 sent?  We needed to be more detailed than integer percent.
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.FramesLostIn10000">
+            <summary>
+            How many frames are lost per 10,000 sent?  We needed to be more detailed than integer percent.
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.FrameReceived">
+            <summary>
+            This is an instance based event, so that one doesn't have to listen to all 
+            FrameReceived events and pick out the desired ones per frame
+            </summary>
+        </member>
+        <member name="E:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStream.FirstFrameReceived">
+            <summary>
+            This is a static event, so that it can be hooked before the stream is created
+            And therefore prevent race conditions with hooking it in time
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamFec.fecDecoder">
+            <summary>
+            Decoder class which will handle the decoding
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamFec.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates the local perf counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamFec.ForwardDataPacketsToBase">
+            <summary>
+            Sends the data packets (original or reconstructed) to the base RtpStream to process
+            into a frame.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame">
+            <summary>
+            A collection of packets representing a frame
+            
+            From the sending side, a BufferChunk "frame" is submitted and "packetized"
+            From the receiving side, packets are submitted and "framed" when complete
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.PoolInitialSizeC">
+            <summary>
+            Initial number of pre-allocated packets for sending data
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.PoolGrowthFactorC">
+            <summary>
+            Multiplier - amount of packets to grow the frame by
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.PoolGrowsMaxC">
+            <summary>
+            How many times do we want the frame to grow by GrowthFactor before we consider
+            the situation to be out of control (unbounded)
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.#ctor(System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PayloadType,System.Collections.Hashtable,System.UInt32)">
+            <summary>
+            Constructs a frame for Sending
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.#ctor(System.UInt32,System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.ReturnBufferHandler)">
+            <summary>
+            Constructs a frame for Receiving data
+            Defaults allowDuplicatePackets to false
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.#ctor(System.UInt32,System.UInt32,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListener.ReturnBufferHandler,System.Boolean)">
+            <summary>
+            Constructs a frame for Receiving data
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.Packetize(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts frame into packets
+            
+            Note: This method does not currently take into account header extensions in the packet
+            If we re-add support for optional headers, we would need to use the MaxPayloadSize
+            property of each packet, and header extensions would have to be set before this method 
+            is called. JVE 6/28/2004
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.ApproximatePacketsInFrame">
+            <summary>
+            Approximates how many packets would be in a frame of the given length.  This is a perf
+            improvement if sending a large frame that would grow the pool multiple times
+            
+            Note: This assumes length member variable has been set already
+            </summary>
+            <param name="length">length of frame</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpFrame.ApproximatePacketsInFrame(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamPC">
+            <summary>
+            Contains the static performance counter data for the RtpStream class
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamPC.Item(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpStreamPC.ID)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderPC">
+            <summary>
+            Contains the static performance counter data for the RtpSender class
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderPC.Item(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderPC.ID)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListenerPC">
+            <summary>
+            Contains the static performance counter data for the RtpListener class
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListenerPC.Item(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpListenerPC.ID)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSessionPC">
+            <summary>
+            Contains the static performance counter data for the RtpSession class
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSessionPC.Item(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSessionPC.ID)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSenderPC">
+            <summary>
+            Contains the static performance counter data for the RtpSession class
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSenderPC.Item(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtcpSenderPC.ID)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.EventThrower">
+            <summary>
+            This class is used to fire events on a separate thread using a queue of events to fire with a First In, First Out algorithm.
+            Rather than use the ThreadPool which would not guarantee FIFO since there are 25+ threads to service the events in the queue,
+            we have a custom object that uses a single thread to service the queue and guarantees FIFO ordering.
+            
+            The reason this class exists is that two initial approaches failed.
+            
+            Approach 1:  Fire events on the thread that discovered them.  For instance, the RtcpListener thread would detect a new
+            Rtp Participant and would fire RtpParticipantAdded.  The client, upon catching the event, would draw a new Participant in the UI,
+            but to do so it would have to make a web service call to the Venue Service to get the Participant's icon.  This would take
+            up to a second and the RtcpListener thread would block while this synchronous call was occuring.  This caused a number of
+            incoming Rtcp packets to be dropped while the thread was blocked and in high stress conditions would even cause Rtp Participant
+            timeouts to occur due to a lack of received Rtcp packets for the participant.
+            
+            Approach 2:  Have the main thread forward off events to the ThreadPool for firing.  The problem here was that events would
+            get queued and then serviced by the 25 threads sitting in the thread pool.  Due to the intricacies of when threads get serviced
+            by the CPU, we couldn't guarantee the order in which the events would get serviced.  This caused freaky and very rare race
+            conditions where the client might receive an RtpStreamAdded event before the RtpParticipantAdded event for the RtpParticipant that the
+            RtpStream belonged to was received, especially prevalent under stress conditions of large numbers of streams/participants or high CPU
+            utilization.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.EventThrower.EventThread">
+            <summary>
+            Thread that services the workItems queue
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.EventThrower.QueueUserWorkItem(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEvents.RaiseEvent,System.Object[])">
+            <summary>
+            Queue a work item to be called by a background thread
+            </summary>
+            <param name="waitCallback">WaitCallback delegate to be invoked</param>
+            <param name="parameters">Array of objects to pass as parameters</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.EventThrower.WorkItem">
+            <summary>
+            A WorkItem consisting of the delegate to be called and an array of objects to pass in as parameters
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.SenderReport">
+            <summary>
+            Structure containing a SenderReport, See RFC 3550 for details of the data it contains
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport">
+            <summary>
+            Structure containing a ReceiverReport, see RFC 3550 for details on the data it contains
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport.IntToThreeBytes(System.Int32)">
+            <summary>
+            Converts the least significant 3 bytes of an integer into a byte[]
+            </summary>
+            <param name="data">Must be in big-endian format!</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport.ThreeBytesToInt(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Converts 3 bytes into a big-endian integer
+            </summary>
+            <param name="data"></param>
+            <returns>Big-endian formatted integer</returns>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.ReceiverReport.PacketsLost">
+            <summary>
+            A 24 bit signed integer - we handle conversion between 24 and 32 bits
+            
+            According to Colin's book, pg 102 - "The field saturates at the maximum positive value
+            of 0x7FFFFF if more packets than that are lost during the session"
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtp">
+            <summary>
+            This class contains statics, constants and enums used throughout the Rtcp code
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtp.VERSION">
+            <summary>
+             Current version of RTP / RTCP - 2
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtp.SSRC_SIZE">
+            <summary>
+            Size, in bytes, of an SSRC
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtp.MTU">
+            <summary>
+            Maximum size, in bytes, of an Rtp/RtcpPacket - 1452
+            
+            RFC3550, Colin's book, our network staff and the netmon properties of the local netcard
+            suggest a standard MTU (Maximum Transmission Unit) of 1500 bytes for a typical router.
+            
+            They also suggest 28 bytes for the overhead of a standard IPv4 implementation of the IP
+            (20) and UDP (8) headers.  1500 - 28 = 1472.
+            
+            There is a 14 byte overhead for the Ethernet layer, but apparently that is safe to
+            ignore in this calculation.
+            
+            In order to be IPv6 ready, we are adding an additional 20 byte overhead (or 40 for the 
+            IP layer).  1500 - 48 = 1452.
+            
+            Because Rtcp requires that all packets end on a 32 bit (4 byte) boundary, we adjust 
+            to the closest such boundary, which is still 1452.
+            
+            TODO - this should be calculated at runtime by occasionally sending a packet with the
+            DF (do not fragment) flag set.  This will cause a router to return a packet indicating
+            the maximum packet size it can handle without fragmenting the data.  For now it is a
+            constant. JVE
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PEP_SOURCE">
+            <summary>
+            SDES private extension prefix (PEP) - Source
+            
+            This was added to distinguish between streams from participants vs senders
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PED_PARTICIPANT">
+            <summary>
+            SDES private extension data (PED) - Participant
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PED_STREAM">
+            <summary>
+            SDES private extension data (PED) - Stream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PEP_PAYLOADTYPE">
+            <summary>
+            SDES private extension prefix (PEP) - PayloadType
+            
+            This was added in order to be able to create an RtpStream from Rtcp data
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PEP_FEC">
+            <summary>
+            SDES private extension prefix (PEP) - FEC
+            
+            This was added in order to be able to know the FEC characteristics of a stream
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PEP_REC">
+            <summary>
+            SDES private extension prefix (PEP) - REC
+            
+            This was added in order to indicate the stream is reliable (Reliable Error Correction)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PEP_DBP">
+            <summary>
+            SDES private extension prefix (PEP) - DBP
+            
+            This was added in order to be able to know the bandwidth throttle at the receiving side, for playback purposes.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.PacketType">
+            <summary>
+            Rtcp Packet Types, per RFC 3550 spec
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.SDESType">
+            <summary>
+            Rtcp SDES Types, per RFC 3550 spec
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.Rtcp.RtcpInterval">
+            <summary>
+            When to send an Rtcp packet
+            
+            Now or at the next scheduled interval
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL">
+            <summary>
+            Rtp EventLog helper class
+            
+            EL was preferred over EventLog because it is shorter
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL.LOG_NAME">
+            <summary>
+            Name of the EventLog log to which all entries will be written
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL.Install">
+            <summary>
+            Installs the EventLog log and all the sources
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL.Uninstall">
+            <summary>
+            Uninstalls the EventLog log and all the sources
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL.Source">
+            <summary>
+            An enumeration of the EventLog Sources for Rtp
+            
+            Count is only meant to be used to determine the length of the enum
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpEL.ID">
+            <summary>
+            ID of the event log messages in Rtp
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.PoolInitialSize">
+            <summary>
+            Initial number of pre-allocated buffers for receiving data
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.PoolGrowthFactor">
+            <summary>
+            Multiplier - amount of buffers to grow the pools by when the pool is empty
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.fecPool">
+            <summary>
+            A pool of packets for reuse
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.fecPoolPackets">
+            <summary>
+            How many packets has this sender allocated
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.cDataPx">
+            <summary>
+            How many data packets are protected by the FEC
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.cFecPx">
+            <summary>
+            How many fec packets protect the data packets
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.dataFecIndex">
+            <summary>
+            Where in the data array the current data packet belongs
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.checksumFecIndex">
+            <summary>
+            Where in the checksum array the current checksum packet belongs
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.data">
+            <summary>
+            Collection of RtpPackets (cast to BufferChunk), across which we'll generate the FEC payload
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.fecEncoder">
+            <summary>
+            Encoder class which will handle the encoding
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.checksum">
+            <summary>
+            A holder of sent packets, to be used for retransmission purposes
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.InitializeDCStorage">
+            <summary>
+            Initialize storage for Data and Checksum
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpSenderFec.UpdatePerformanceCounters(System.Int32)">
+            <summary>
+            Updates performance counters
+            </summary>
+            <param name="ms">An approximate delay in milli-seconds since the last update</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16">
+            <summary>
+            A field is a set of numbers with an addition/subtraction operations as well as multiplication/division operation.
+            The result of adding/subtracting or multiplying/dividing any two numbers of the field has to
+            be in the set as well. 
+            A finite field contains only finitely many elements. A finite field is also called Galois Field in
+            honor of Evariste Galois. The advantage of a finite-field arithmetic is that it can be done exactely by
+            computer (error-correcting code). 
+            
+            (*) Evariste Galois 1811 (Bourg-La-Reine, near Paris) - 1832 (Paris)
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.GF">
+            <summary>
+            Size of this Galois Field 2^16
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.PrimePolynomial">
+            <summary>
+            Prime polynomial for GF16
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Log">
+            <summary>
+            Global table for Log and Antilog.
+            These tables are used for multiplication and
+            division of numbers.
+            The tables are static because we need only one Log
+            and one ALog table (the table values are the same for all
+            the GF8 numbers) 
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.#ctor(System.UInt16)">
+            <summary>
+            Ctor
+            </summary>
+            <param name="i">Value</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.ToString">
+            <summary>
+            Overload of the string operator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.op_Addition(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16)">
+            <summary>
+            Overload the + operator
+            </summary>
+            <param name="a">First operande</param>
+            <param name="b">Second Operand</param>
+            <returns>Sum of the 2 Galois Fields (XOR)</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.op_Subtraction(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16)">
+            <summary>
+            Overload the - operator
+            </summary>
+            <param name="a">First operande</param>
+            <param name="b">Second operande</param>
+            <remarks>
+            The subtraction is the same as the addition
+            because with Galois fields, each number is its
+            own negative. So there is no need to have a Sub
+            method
+            </remarks>
+            <returns>Subrtraction of the 2 Galois Fields (XOR)</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.op_Multiply(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16)">
+            <summary>
+            Overload the * operator
+            </summary>
+            <param name="a">First operande</param>
+            <param name="b">Second operande</param>
+            <returns>Multiplication of the 2 Galois Fields</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.op_Division(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16,Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16)">
+            <summary>
+            Overload the / operator
+            </summary>
+            <param name="a">First operande</param>
+            <param name="b">Second operande</param>
+            <returns>a div b in Galois Fields</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Add(System.UInt16,System.UInt16)">
+            <summary>
+            Add two number in GF8
+            </summary>
+            <remarks>
+            The subtraction is the same as the addition
+            because with Galois fields, each number is its
+            own negative. So there is no need to have a Sub
+            method
+            </remarks>
+            <param name="a">First number</param>
+            <param name="b">Second number</param>
+            <returns>a + b</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.fillLogTables">
+            <summary>
+            Fill the log table. The log tables are used to facilitate
+            multiplication and division.
+            </summary>
+            <example>
+            Here is the log table that would be created with GF4 (if GF value is 16):
+            -------------------------------------------------------------------------------------
+            |   i     || 0 | 1 | 2 | 3 | 4 | 5 |  6 |  7 | 8 |  9 | 10 | 11 | 12 | 13 | 14 | 15 |
+            ====================================================================================
+            | Log[i]  || - | 0 | 1 | 4 | 2 | 8 |  5 | 10 | 3 | 14 |  9 |  7 |  6 | 13 | 11 | 12 | 
+            ------------------------------------------------------------------------------------
+            | ALog[i] || 1 | 2 | 4 | 8 | 3 | 6 | 12 | 11 | 5 | 10 |  7 | 14 | 15 | 13 |  9 |  - |
+            -------------------------------------------------------------------------------------
+            </example>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Multiply(System.UInt16,System.UInt16)">
+            <summary>
+            Multiply 2 operandes
+            </summary>
+            <param name="a">First operande</param>
+            <param name="b">Second operande</param>
+            <returns>a * b</returns>
+            <example>
+            With GF4 (if GF value is 16) and the following log table:
+            -------------------------------------------------------------------------------------
+            |   i     || 0 | 1 | 2 | 3 | 4 | 5 |  6 |  7 | 8 |  9 | 10 | 11 | 12 | 13 | 14 | 15 |
+            ====================================================================================
+            | Log[i]  || - | 0 | 1 | 4 | 2 | 8 |  5 | 10 | 3 | 14 |  9 |  7 |  6 | 13 | 11 | 12 | 
+            ------------------------------------------------------------------------------------
+            | ALog[i] || 1 | 2 | 4 | 8 | 3 | 6 | 12 | 11 | 5 | 10 |  7 | 14 | 15 | 13 |  9 |  - |
+            ------------------------------------------------------------------------------------- 
+            
+            We would have:
+            
+            4 * 5 = ALog[(Log[4] + Log[5]) % 15)] = ALog[2 + 8] = ALog[10] = 7
+            
+            This could be also verified using polynom multiplications:
+            4 -> 0100 -> x^2,  5 -> 0101 -> x^2 + 1
+            4 * 5 -> x^2 * (x^2 + 1) = x^4 + x^2 -> 10100
+            
+            </example>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Divide(System.UInt16,System.UInt16)">
+            <summary>
+            a divide by b
+            </summary>
+            <param name="a">Numerator</param>
+            <param name="b">Denominator</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Power(System.Int32)">
+            <summary>
+            Power is used to create teh Vandermonde matrix
+            </summary>
+            <param name="exponent"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16.Value">
+            <summary>
+            Property to get the value of the Galois Field
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix">
+            <summary>
+            Overview:
+            -------------------------------------------------------------------------------------------
+            FEC_Matrix is a class that implement the basic matrix calulation using
+            Galois Fields on 16 bits (GF16).
+            
+            Public Methods:
+            -------------------------------------------------------------------------------------------
+            Invert - Invert the matrix by using Gauss-Jordan using GF16 operations
+            CreateVandermondeMatrix - Create a Vandermonde matrix over GF16
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.Invert(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:])">
+            <summary>
+            Invert the matrix by using Gauss-Jordan using GF16 operations
+            </summary>
+            <remarks>
+            The inversion is done by adding the identity matrix to the right
+            and using Gauss-Jordan algorithm (elementary
+            operations on rows) until we get the identity matrix 
+            on the left. Then we strip the identity on the left
+            in order to get the reverted matrix.
+            </remarks>
+            <param name="mtxIn_GF16">The matrix to invert</param>
+            <returns>The inverted matrix</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.CreateVandermondeMatrix(System.Int32,System.Int32)">
+            <summary>
+            Create a Vandermonde matrix of size row x column over GF16
+            </summary>
+            <remarks>
+            The Vandermonde matrix is typically used to create the encoding matrix where:
+            - The number of Columns of the matrix correspond to number of checksum 
+            packets.
+            - The number of Rows of the matrix correspond to number of data packets. 
+            </remarks>
+            <param name="columns">The number of columns of the Vandermonde matrix</param>
+            <param name="rows">The number of rows of the Vandermode matrix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.AddIdentityRight(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:])">
+            <summary>
+            Add identity to the right side of a matrix
+            </summary>
+            <remarks>This is use when doing Jordan-Gauss elimination</remarks>
+            <param name="matrixIn">The matrix</param>
+            <returns>The new matrix with the identity</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.MatrixCopyTo(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:],Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:])">
+            <summary>
+            Copy a matrix to a destination matrix
+            </summary>
+            <param name="matrixIn">The matrix to copy</param>
+            <param name="matrixDestination">The destination matrix</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.GaussJordan(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:])">
+            <summary>
+            Gauss - Jordan elimination.
+            This algorithm takes a matrix and use elementary
+            row operations to put the matrix in a row echelon form. This
+            means that the result matrix will have the identity matrix at the
+            begining.  
+            This method can be used in 2 specific scenarios:
+            - To solve a linear system numerically
+            - To invert a matrix
+            </summary>
+            <example>
+            For instance the matrix:
+            0   1   1   1   0   0
+            0   1   2   0   1   0
+            1   1   4   0   0   1
+            
+            Will become (over int):
+            [   ID  ]  [  rest  ]
+            1   0   0   2  -3   1
+            0   1   0   2  -1   0
+            0   0   1  -1   1   0
+            </example>
+            <remarks>
+            For the Reed Solomon encoding, Gauss - Jordan elimination
+            is used to invert the decoding matrix. This is needed to
+            recover from packet loss.
+            Important note: The input is modified
+            </remarks>
+            <param name="matrixIn">The matrix to transform in a row echelon form</param>
+            <returns>The matrix in a row echelon from</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.FEC_Matrix.StripIdentity(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.GF16[0:,0:])">
+            <summary>
+            Remove the identity at the front of the matrix
+            </summary>
+            <param name="matrixIn">The input matrix</param>
+            <returns>Stripped Matrix without the identity at the front</returns>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.IFec">
+            <summary>
+            IFec is the root interface for dealing with encoding/decoding.  
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CFec">
+            <summary>
+            Class that implements the shared functionality between the fec implementations
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.CFec.SIZE_OVERHEAD">
+            <summary>
+            Amount of overhead, in bytes, the fec code adds to the data it encodes.  This is
+            proprietary to our implementation.  We use it to store the size of the encoded data
+            so that we know the length on the receiving end.  This should be pushed back up the API
+            instead of stored here. JVE 6/16/2004
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.XOR_Fec">
+            <summary>
+            Overview:
+            -------------------------------------------------------------------------------------------
+            XOR_Fec is a class that implement encoding/decoding using XOR algorithm.
+            XOR algorithm is faster than Reed Solomon algorithm because it has less
+            operation. However, XOR algorithm does not allow to generate more than one
+            checksum packet.
+            
+            Public Methods:
+            -------------------------------------------------------------------------------------------
+            Encode - Encode a buffer chunk array using XOR algorithm and generate an 
+                     a buffer chunk array of the checksum (one item for XOR encoding) 
+            Decode - Decode an array of rtpPackets using Reed Solomon algorithm and
+                     generate a byte stream
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.XOR_Fec.Encode(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            This method creates as many checksum buffers as exist in the checksum array
+            </summary>
+            <param name="bytes">Array of buffer chunk that represents the data to encode</param>
+            <param name="checksum">Contains 1 BufferChunk, which should be Reset() before calling</param>
+            <returns>The checksum packet</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.XOR_Fec.Decode(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Decoder: This method takes an array of BufferChunk in parameter with the data
+            and checksum received and returns the missing packets. Because it
+            is based on XOR, it can recover only from one packet lost. This method
+            is very similar than encoder, but differ in the validation part.
+            </summary>
+            <param name="bytes">Array of buffer chunk that represents the packets where
+            you might have lost a packet</param>
+            <param name="nbChecksumPackets">Should be always set to 1</param>
+            <returns>The missing packet</returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.XOR_Fec.XORData(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk,System.Int32)">
+            <summary>
+            This method creates a buffer chunk containing the XOR of all the
+            buffer chunks passed in parameter.
+            The lenght of the checksum buffer is the lenght of the larger
+            buffer chunk.
+            This method can be used for encoding to generate the checksum packet
+            as well as for decoding to generate the missing packet
+            </summary>
+            <param name="bytes">array of buffer chunk</param>
+            <returns>array of buffer chunk containing only one item: the XOR row by row
+            of all the others buffer chunks</returns>
+            <remarks>
+            This method accept null entries in the array because the decoder will
+            certainly place an array with a missing packet to recover.
+            There is no validation done in this method in order to have it generic
+            because the validation rules are different on the encoder and decoder
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.XOR_Fec.ActiveColumns(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32)">
+            <summary>
+            Allocates storage for and sorts data from longest to shortest
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RS_Fec">
+            <summary>
+            Overview:
+            -------------------------------------------------------------------------------------------
+            RS_Fec is a class that implement encoding/decoding using Reed Solomon algorithm.
+            Reed Solomon algorithm does allow to generate more than one checksum packet (unlike XOR FEC),
+            and allows to recover from #checksum packet lost in set of data packets that were used to encode.
+            
+            Public Methods:
+            -------------------------------------------------------------------------------------------
+            Encode - Encode a BufferChunk array using RS algorithm 
+                     and place the checksum(s) in a BufferChunk array
+            Decode - Recover the packet lost in the data BufferChunk array
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RS_Fec.#cctor">
+            <summary>
+            Static constructor: Create the encoding Vandermonde matrix
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RS_Fec.#ctor">
+            <summary>
+            Dynamic constructor of the RS Fec
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RS_Fec.Encode(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Encode a BufferChunk array using RS algorithm 
+            and place the checksum(s) in a BufferChunk array
+            </summary>
+            <param name="data">Array of BufferChunk that represents the data to encode</param>
+            <param name="checksum">Array of BufferChunk to store the generated checksum packets</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RS_Fec.Decode(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[],System.Int32,Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk[])">
+            <summary>
+            Decode and insert in place the recovered packet(s) lost in the data BufferChunk array
+            </summary>
+            <param name="data">Array of BufferChunk that represents the data received including
+            checksum (with a null entrie for each packet lost)</param>
+            <param name="checksum">Number of checksum used to encode</param>
+            <param name="recovery">Array of BufferChunk to store the recovered data packets</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpRetransmit">
+            <summary>
+            Summary description for RtpRetransmit.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PayloadType">
+            <summary>
+            Enumeration for Rtp PayloadTypes using values per RFC 1890.  PayloadType was previously used to tightly couple the data stream to an
+            exact data type, but this has been falling out of favor as payload types diverge and systems such as DirectShow and QuickTime carry
+            the media type in much greater detail in band with the data.
+            
+            We use the terms 'dynamicVideo' and 'dynamicAudio', specified at the end of the dynamic band of PayloadTypes and then include a
+            DirectShow AM_MEDIA_TYPE structure in the Rtp header extension of the first packet in a frame.  See the packet format on the website
+            for detailed information on how this is transmitted.
+            </summary>
+            <example>
+                  PT         encoding      audio/video    clock rate    channels
+                             name          (A/V)          (Hz)          (audio)
+                        _______________________________________________________________
+                        0          PCMU          A              8000          1
+                        1          1016          A              8000          1
+                        2          G721          A              8000          1
+                        3          GSM           A              8000          1
+                        4          unassigned    A              8000          1
+                        5          DVI4          A              8000          1
+                        6          DVI4          A              16000         1
+                        7          LPC           A              8000          1
+                        8          PCMA          A              8000          1
+                        9          G722          A              8000          1
+                        10         L16           A              44100         2
+                        11         L16           A              44100         1
+                        12         unassigned    A
+                        13         unassigned    A
+                        14         MPA           A              90000        (see text)
+                        15         G728          A              8000          1
+                        16--23     unassigned    A
+                        24         unassigned    V
+                        25         CelB          V              90000
+                        26         JPEG          V              90000
+                        27         unassigned    V
+                        28         nv            V              90000
+                        29         unassigned    V
+                        30         unassigned    V
+                        31         H261          V              90000
+                        32         MPV           V              90000
+                        33         MP2T          AV             90000
+                        34--71     unassigned    ?
+                        72--76     reserved      N/A            N/A           N/A
+                        77--95     unassigned    ?
+                        96--127    dynamic       ?
+            </example>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase">
+            <summary>
+            The standard Rtp packet
+            
+            TODO - we may need to re-add support for CSRCs and HeaderExtensions, although header
+            extensions could just as easily be implemented as payload headers
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.op_Explicit(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase)~Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk">
+            <summary>
+             Cast operator for forming a BufferChunk from an RtpPacketBase.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.op_Explicit(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)~Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase">
+            <summary>
+             Cast operator for forming a BufferChunk from an RtpPacketBase.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.buffer">
+            <summary>
+             Buffer to contain the raw data
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.#ctor">
+            <summary>
+            Creates a max size packet
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.#ctor(System.Int32)">
+            <summary>
+            Creates a packet of the given size
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Create a packet from an existing buffer
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.#ctor(Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase)">
+            <summary>
+            Create a packet from an existing packet
+            </summary>
+            <param name="packet"></param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.ReleaseBuffer">
+            <summary>
+            Release the BufferChunk held by this packet so it can be reused outside the scope of this packet.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.ValidateBuffer(Vs.Provider.RtpLib.MSR.LST.Net.BufferChunk)">
+            <summary>
+            Make sure the provided buffer might be a real Rtp Packet (version == 2)
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.Marker">
+            <summary>
+            Marker reserved for payload/protocol specific information.
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.PayloadType">
+            <summary>
+            The type of data contained in the packet
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.Sequence">
+             <summary>
+             Sequence number of the packet, used to keep track of the order packets were sent in
+             
+             public because it is used by NetworkDumper
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.TimeStamp">
+            <summary>
+            According to the spec - timestamp is the sampling instant for the first octet of the
+            media data in a packet, and is used to schedule playout of the media data.
+            
+            In our implementation, it is an incrementing counter used to group packets into a frame
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.SSRC">
+            <summary>
+            Synchronization source used to identify streams within a session
+            
+            public because it is used by NetworkDumper
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.Payload">
+            <summary>
+            Payload data of the RtpPacket
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketBase.MaxPayloadSize">
+            <summary>
+            How much payload data can this packet accept
+            
+            Be sure and set all of the header information before making this call otherwise it will
+            be incorrect.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket">
+             <summary>
+             RtpPacket is based on RFC 1889.  This class knows how to form a byte array for sending out over the network and how to turn a byte array into Rtp fields and a payload.
+             It is mean to be used as a translation mechanism from bytes to structure and vice versa.  This is a lower level class exposed only for use by
+             applications that want intiment details about an individual Rtp packet or who want to provide their own transport mechanism.  Applications
+             that simply want to send/receive real time data over IP Multicast should instead use RtpSender / RtpListener which handles all
+             aspects of network transport and framing (AKA breaking/assembling large datasets into packet sized chunks).
+             
+             There is a small amount of Rtp protocol intelligence in the class when you use the Next methods.  The Next methods assume you are working
+             on RtpPackets in a series and will perform helper functions such as compare Sequence numbers for linearness and NextPayload increments
+             the Sequence number between new packets.
+             
+             This implementation has no support for CSRC identifiers.
+             
+             
+                   The Rtp header has the following format:
+            
+            0                   1                   2                   3
+            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |V=2|P|X|  CC   |M|     PT      |       sequence number         |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |                           timestamp                           |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |           synchronization source (SSRC) identifier            |
+            +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+            |            contributing source (CSRC) identifiers             |
+            |                             ....                              |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+             </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket.HEADER_EXTENSIONS_SIZE">
+            <summary>
+            We use a fixed size header extension
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket.JPG_HAD_SIZE">
+            <summary>
+             JPEG header
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket.PacketsInFrame_Index">
+            <summary>
+            Define the number of packets in a frame
+            Not standard
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket.FrameIndex_Index">
+            <summary>
+            Define the index of each packet in a frame
+            Note standard
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacket.FecIndex_Index">
+            <summary>
+            Define the index of each fec-packet in a frame
+            Note standard
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketFec">
+             <summary>
+             RtpPacketFec is a forward error correction packet.  It is used to provide error correction
+             for data packets that may become lost.
+             
+             It has a fixed payload type PayloadType.FEC
+             The normal Rtp Timestamp has been repurposed in order to save bytes.  It is split into...
+             
+             FecIndex - the index of this packet within the fec packet[].  The size of the fec packet[]
+             is either determined by the constant fec ratio, or the percent coverage across a frame.
+             
+             DataRangeMin - the starting data packet sequence number for which this packet provides
+             coverage.
+             
+             PacketsInFrame - how many packets are in a frame.  Used in the event that no data packets
+             are received, but enough fec packets arrive to recover the data.
+             
+             0                   1                   2                   3
+             0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |V=2|P|X|  CC   |M|    PT.FEC   |       sequence number         |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |          DataRangeMin         |         PacketsInFrame        |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |           synchronization source (SSRC) identifier            |
+            +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            |           FecIndex            |
+            +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+             </summary>
+        </member>
+        <member name="F:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.RtpPacketFec.HEADER_OVERHEAD_SIZE">
+            <summary>
+            The 4 bytes of Timestamp have been re-purposed, but we needed 2 extra bytes for header
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.PacketOutOfSequenceException">
+            <summary>
+            OutOfOrder exception is thrown when issues are found with the Sequence or TimeStamp where they don't match up with the expected values an
+            individual packet in a stream of Rtp packets should have.
+            
+            Note that this exception is also thrown by the RtpPacket class when using the RtpPacket.Next() method.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.Rtp.InvalidRtpPacketException">
+            <summary>
+            InvalidRtpPacket exception is thrown when an Rtp packet has invalid contents either due to an invalid Rtp header or due to unexpected
+            data in a stream such as a HeaderExtension where none should be present or an invalid TimeStamp value in an Rtp Frame.
+            </summary>
+            <remarks>
+            This can be caused by other traffic than just Rtp on an IPEndPoint or Rtp traffic from another sending program that doesn't follow the same
+            framing rules.  It shouldn't be caused by packet data corruption on UDP streams since each UDP packet is CRC32 validated before being accepted
+            and passed up by System.Net.Sockets.  It also should only be an issue if there is SSRC &amp; PayloadType collision between different sending
+            applications, which should be rare if SSRCs are chosen according to the RFC 1889 specification.
+            
+            Perhaps we should rename this to be consistent with some form of 'streaming/framing error'.  If we get a true 'invalid Rtp Packet' error, it's
+            probably due to non-Rtp data being on the IP address and this should be filtered rather than Excepted.  Perhaps we should republish this an
+            event like was done with OutOfOrder so that non-Rtp traffic could be detected and logged.
+            </remarks>
+        </member>
+    </members>
+</doc>

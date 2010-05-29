@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.VsChannel">
+            <summary>
+            VsChannel
+            </summary>
+        </member>
+        <member name="F:Vs.Core.VsChannel.gLayoutCols">
+            <summary>
+            Grid theme definition
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsCameraCollection">
+            <summary>
+            VsCameraCollection class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsISplasher">
+            <summary>
+            interface for Splash Screen
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsSplasher.Show(System.Type)">
+            <summary>
+            Show the SplashForm
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsSplasher.Close">
+            <summary>
+            Colse the SplashForm
+            </summary>
+        </member>
+        <member name="P:Vs.Core.VsSplasher.Status">
+            <summary>
+            set the loading Status
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsAnalyzerCollection">
+            <summary>
+            VsAnalyzerCollection class - collection of Video Providers
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsCamera">
+            <summary>
+            VsCamera class
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsAppInterface.FrameIn(System.Object,Vs.Core.Image.VsImageEventArgs)">
+            <summary>
+            FrameIn
+            </summary>
+        </member>
+        <member name="M:Vs.Core.VsEventInterface.FrameIn(System.Object,Vs.Core.Image.VsMotionEventArgs)">
+            <summary>
+            FrameIn
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsProvider">
+            <summary>
+            VsProvider class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsMonitorStoppingPool">
+            <summary>
+            VsMonitorStoppingPool
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsEncoder">
+            <summary>
+            VsEncoder class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsPage">
+            <summary>
+            VsPage
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsCoreApp">
+            <summary>
+            Monitor Application Manager
+            </summary>
+        </member>
+        <member name="F:Vs.Core.VsCoreApp.vsProviders">
+            
+        </member>
+        <member name="F:Vs.Core.VsCoreApp.vsCameras">
+            
+        </member>
+        <member name="F:Vs.Core.VsCoreApp.vsRunningPool">
+            
+        </member>
+        <member name="T:Vs.Core.VsProviderCollection">
+            <summary>
+            VsProviderCollection class - collection of Video Providers
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsCryptography">
+            <summary>
+            VsCryptography class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsChannelCollection">
+            <summary>
+            ViewCollection class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsPageCollection">
+            <summary>
+            PageCollection class
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsMonitorRunningPool">
+            <summary>
+            VsMonitorRunningPool
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsEncoderCollection">
+            <summary>
+            VsEncoderCollection class - collection of Video Providers
+            </summary>
+        </member>
+        <member name="T:Vs.Core.VsAnalyzer">
+            <summary>
+            VsAnalyzer class
+            </summary>
+        </member>
+    </members>
+</doc>
