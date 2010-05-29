@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.SystemInfo</name>
+    </assembly>
+    <members>
+        <member name="F:Vs.Core.SystemInfo.VsSystemInfo.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsSystemInfo.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsSystemInfo.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Core.SystemInfo.VsDataChart">
+            <summary>
+            Summary description for DataChart.
+            </summary>
+        </member>
+        <member name="F:Vs.Core.SystemInfo.VsDataChart.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsDataChart.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsDataChart.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Core.SystemInfo.VsSystemData">
+            <summary>
+            Summary description for SystemData.
+            </summary>
+        </member>
+        <member name="T:Vs.Core.SystemInfo.VsDataBar">
+            <summary>
+            Summary description for DataBar.
+            </summary>
+        </member>
+        <member name="F:Vs.Core.SystemInfo.VsDataBar.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsDataBar.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Core.SystemInfo.VsDataBar.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

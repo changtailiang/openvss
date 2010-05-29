@@ -1,0 +1,1 @@
+VsEdgeDetection.csproj

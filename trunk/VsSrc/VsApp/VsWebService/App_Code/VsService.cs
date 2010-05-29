@@ -1,40 +1,45 @@
-// lowi	 IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING. 
-// yrtp	
-// twua	 By downloading, copying, installing or using the software you agree to this license.
-// cdrp	 If you do not agree to this license, do not download, install,
-// qfzr	 copy or use the software.
-// zgbl	
-// zgis	                          License Agreement
-// slcp	         For OpenVss - Open Source Video Surveillance System
-// cjai	
-// iqap	Copyright (C) 2007-2009, Prince of Songkla University, All rights reserved.
-// hwwy	
-// fqsb	Third party copyrights are property of their respective owners.
-// aqoc	
-// qcwe	Redistribution and use in source and binary forms, with or without modification,
-// nkjs	are permitted provided that the following conditions are met:
-// jawh	
-// tfxt	  * Redistribution's of source code must retain the above copyright notice,
-// cjha	    this list of conditions and the following disclaimer.
-// ejkc	
-// jdgi	  * Redistribution's in binary form must reproduce the above copyright notice,
-// ngsc	    this list of conditions and the following disclaimer in the documentation
-// wzya	    and/or other materials provided with the distribution.
-// mwux	
-// gigg	  * Neither the name of the copyright holders nor the names of its contributors 
-// apez	    may not be used to endorse or promote products derived from this software 
-// szzq	    without specific prior written permission.
-// ioyh	
-// suuj	This software is provided by the copyright holders and contributors "as is" and
-// eaec	any express or implied warranties, including, but not limited to, the implied
-// iult	warranties of merchantability and fitness for a particular purpose are disclaimed.
-// gxgg	In no event shall the Prince of Songkla University or contributors be liable 
-// oktw	for any direct, indirect, incidental, special, exemplary, or consequential damages
-// cecu	(including, but not limited to, procurement of substitute goods or services;
-// zgqo	loss of use, data, or profits; or business interruption) however caused
-// hbti	and on any theory of liability, whether in contract, strict liability,
-// bris	or tort (including negligence or otherwise) arising in any way out of
-// blsg	the use of this software, even if advised of the possibility of such damage.
+// wcwi	 IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING. 
+// yrav	
+// pzxx	 By downloading, copying, installing or using the software you agree to this license.
+// zjro	 If you do not agree to this license, do not download, install,
+// uyhp	 copy or use the software.
+// ijgx	
+// vfog	                          License Agreement
+// dyij	         For OpenVSS - Open Source Video Surveillance System
+// fkvf	
+// wshj	Copyright (C) 2007-2010, Prince of Songkla University, All rights reserved.
+// zxwu	
+// wlos	Third party copyrights are property of their respective owners.
+// xlps	
+// kgwm	Redistribution and use in source and binary forms, with or without modification,
+// vyms	are permitted provided that the following conditions are met:
+// ctsq	
+// rnso	  * Redistribution's of source code must retain the above copyright notice,
+// nlsb	    this list of conditions and the following disclaimer.
+// qyqk	
+// nmbk	  * Redistribution's in binary form must reproduce the above copyright notice,
+// qwis	    this list of conditions and the following disclaimer in the documentation
+// ipyy	    and/or other materials provided with the distribution.
+// ojkx	
+// fpgg	  * Neither the name of the copyright holders nor the names of its contributors 
+// fgdi	    may not be used to endorse or promote products derived from this software 
+// tael	    without specific prior written permission.
+// tocm	
+// qlzj	This software is provided by the copyright holders and contributors "as is" and
+// xcbg	any express or implied warranties, including, but not limited to, the implied
+// kzic	warranties of merchantability and fitness for a particular purpose are disclaimed.
+// otze	In no event shall the Prince of Songkla University or contributors be liable 
+// buvb	for any direct, indirect, incidental, special, exemplary, or consequential damages
+// skfh	(including, but not limited to, procurement of substitute goods or services;
+// jsrq	loss of use, data, or profits; or business interruption) however caused
+// rxzu	and on any theory of liability, whether in contract, strict liability,
+// mmid	or tort (including negligence or otherwise) arising in any way out of
+// jaad	the use of this software, even if advised of the possibility of such damage.
+// nzvf	
+// xbtz	Intelligent Systems Laboratory (iSys Lab)
+// azky	Faculty of Engineering, Prince of Songkla University, THAILAND
+// sbug	Project leader by Nikom SUVONVORN
+// fsze	Project website at http://code.google.com/p/openvss/
 
 using System;
 using System.Web;

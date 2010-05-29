@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Multisource</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Multisource.MultimodeVideoSource">
+            <summary>
+            MultimodeVideoSource - abstract class for video sources, which support
+            multiple working mode
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Multisource.MultimodeVideoSource.ExecuteCommand(System.String)">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+    </members>
+</doc>

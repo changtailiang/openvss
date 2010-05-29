@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Win32Capture">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Win32Capture.sln">
+</Property><Property Name="User Options File" Value="C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Win32Capture.suo">
+</Property><Property Name="Date" Value="Sunday, January 18, 2009">
+</Property><Property Name="Time" Value="22:57 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Win32Capture.sln" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Win32Capture.suo" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture.suo">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Win32Capture.csproj" Description="Project file successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Win32Capture.csproj">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\CaptureControl.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\CaptureControl.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Key.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Key.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Win32Defines.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Win32Defines.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Win32Functions.cs" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Win32Functions.cs">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Properties\Settings.settings" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\CaptureControl.resx" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\CaptureControl.resx">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Properties\Resources.resx" Description="File successfully backed up as C:\Documents and Settings\admin\Desktop\FLV\Win32Capture\Backup\Win32Capture\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Win32Capture.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Win32Capture" Source="Win32Capture\Win32Capture.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Win32Capture.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Win32Capture.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Win32Capture" Source="Win32Capture\Win32Capture.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

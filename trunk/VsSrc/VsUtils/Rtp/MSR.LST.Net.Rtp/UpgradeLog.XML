@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MSR.LST.Net.Rtp">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\MSR.LST.Net.Rtp.sln">
+</Property><Property Name="User Options File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\MSR.LST.Net.Rtp.suo">
+</Property><Property Name="Date" Value="Thursday, June 12, 2008">
+</Property><Property Name="Time" Value="6:01 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MSR.LST.Net.Rtp.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\MSR.LST.Net.Rtp.sln">
+</Event><Event ErrorLevel="0" Project="" Source="MSR.LST.Net.Rtp.suo" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\MSR.LST.Net.Rtp.suo">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="MSR.LST.Net.Rtp.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\MSR.LST.Net.Rtp.csproj">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="AppConfig.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\AppConfig.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Collections.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Collections.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="ConnectivityDetector.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\ConnectivityDetector.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Constants.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Constants.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="CRC32.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\CRC32.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="EventLog.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\EventLog.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Events.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Events.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="EventThrower.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\EventThrower.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Exceptions.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Exceptions.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="FEC.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\FEC.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="FEC_BufferChunk.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\FEC_BufferChunk.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="FEC_Matrix.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\FEC_Matrix.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="GF16.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\GF16.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="GF8.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\GF8.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Installation.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Installation.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="PerformanceCounters.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\PerformanceCounters.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RegistrarClient.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RegistrarClient.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtcpData.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtcpData.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtcpListener.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtcpListener.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtcpPacket.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtcpPacket.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtcpSender.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtcpSender.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpFrame.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpFrame.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpListener.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpListener.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpPacket.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpPacket.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpParticipant.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpParticipant.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpRetransmit.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpRetransmit.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpSender.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpSender.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpSession.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpSession.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="RtpStream.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\RtpStream.cs">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="Installation.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.Net.Rtp\Backup\Installation.resx">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="MSR.LST.Net.Rtp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MSR.LST.Net.Rtp" Source="MSR.LST.Net.Rtp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MSR.LST.Net.Rtp.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MSR.LST.Net.Rtp.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MSR.LST.Net.Rtp" Source="MSR.LST.Net.Rtp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

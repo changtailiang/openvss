@@ -1,0 +1,8 @@
+Visifire follows the licensing scheme as mentioned below.
+
+1. GNU GPL License:
+    You can redistribute Visifire and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. Please read the 
+    "GPL v3.txt" for further details.

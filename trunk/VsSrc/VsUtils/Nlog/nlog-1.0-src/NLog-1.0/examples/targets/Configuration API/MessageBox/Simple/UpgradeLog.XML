@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MessageBox">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\examples\targets\Configuration API\MessageBox\Simple\MessageBox.sln">
+</Property><Property Name="Date" Value="Thursday, November 13, 2008">
+</Property><Property Name="Time" Value="1:16 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MessageBox.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\examples\targets\Configuration API\MessageBox\Simple\Backup\MessageBox.sln">
+</Event><Event ErrorLevel="0" Project="MessageBox" Source="MessageBox.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\examples\targets\Configuration API\MessageBox\Simple\Backup\MessageBox.csproj">
+</Event><Event ErrorLevel="0" Project="MessageBox" Source="Example.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\nlog-1.0-src\NLog-1.0\examples\targets\Configuration API\MessageBox\Simple\Backup\Example.cs">
+</Event><Event ErrorLevel="0" Project="MessageBox" Source="MessageBox.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MessageBox" Source="MessageBox.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MessageBox.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MessageBox.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MessageBox" Source="MessageBox.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

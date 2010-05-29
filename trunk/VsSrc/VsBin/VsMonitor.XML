@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VsMonitor</name>
+    </assembly>
+    <members>
+        <member name="F:Vs.Monitor.VsTreeviewControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsTreeviewControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsTreeviewControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsPropertyControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPropertyControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPropertyControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:Vs.Monitor.VsAlarmControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAlarmControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsAlarmControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsPageDescription">
+            <summary>
+            Summary description for VsChannelDescription.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsIDialogWizard">
+            <summary>
+            VsIDialogWizard - interface of a wizard page
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsIDialogWizard.Display">
+            <summary>
+            Display - display the page
+            VsPageWizard call the method after the page was shown
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsIDialogWizard.Apply">
+            <summary>
+            Apply - check and update all variables
+            Return false if something wrong and we want to stay on the page
+            </summary>
+        </member>
+        <member name="E:Vs.Monitor.VsIDialogWizard.StateChanged">
+            <summary>
+            State changed event - notify wizard if the page is completed
+            and it can proceed to the next page
+            </summary>
+        </member>
+        <member name="E:Vs.Monitor.VsIDialogWizard.Reset">
+            <summary>
+            Reset event - notify wizard if there are such changes on the
+            page, which can lead to changing completion status of other pages
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.PageName">
+            <summary>
+            PageName property - short name
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.PageDescription">
+            <summary>
+            Description property
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.Completed">
+            <summary>
+            Completed property
+            true, if the page is completed and wizard can proceed to next page
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsPageDescription.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageDescription.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageDescription.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsPageWizard">
+            <summary>
+            Summary description for VsPageWizard.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsPageWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSplasherView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasherView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasherView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsAboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSingleViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSingleViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSingleViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsLiveviewTool.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsLiveviewTool.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsLiveviewTool.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsMultiViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsMultiViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsMultiViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsGeneralSetting.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsGeneralSetting.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsGeneralSetting.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsDialogWizard">
+            <summary>
+            Summary description for VsDialogWizard.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsDialogWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsDialogWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsDialogWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsCameraDescription">
+            <summary>
+            Summary description for VsCameraDescription.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraDescription.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraDescription.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsRecordSetting.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsRecordSetting.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsRecordSetting.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsCameraSettings">
+            <summary>
+            Summary description for CameraSettings.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsCameraSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSettingTool.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSettingTool.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSettingTool.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsMonitor">
+            <summary>
+            Main Application Class
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsMonitor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsMonitor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsMonitor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="T:Vs.Monitor.VsChannelGrid">
+            <summary>
+            VsChannelGrid
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsAnalyzerSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAnalyzerSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsAnalyzerSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.FormState">
+            <summary>
+            Class used to preserve / restore state of the form
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsChannelStructure">
+            <summary>
+            Summary description for VsChannelStructure.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsChannelStructure.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsChannelStructure.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.CameraInfo">
+            <summary>
+            Summary description for VsCameraInfo.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.CameraInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.CameraInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.CameraInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsEncoderSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsEncoderSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsEncoderSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

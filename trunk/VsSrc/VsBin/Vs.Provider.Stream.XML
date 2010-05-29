@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Stream</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Stream.StreamConfiguration">
+            <summary>
+            StreamConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stream.VideoStreamSourceDescription">
+            <summary>
+            VideoStreamSourceDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stream.VideoStream">
+            <summary>
+            VideoStream - stream downloader
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stream.VideoStream.IsPanTiltZoom">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Stream.VideoStreamSetupPage">
+            <summary>
+            Summary description for VideoStreamSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Stream.VideoStreamSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stream.VideoStreamSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Stream.VideoStreamSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

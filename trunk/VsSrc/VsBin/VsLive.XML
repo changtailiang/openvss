@@ -1,0 +1,1014 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VsLive</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Monitor.VsCameraDescription">
+            <summary>
+            Summary description for VsCameraDescription.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsIDialogWizard">
+            <summary>
+            VsIDialogWizard - interface of a wizard page
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsIDialogWizard.Display">
+            <summary>
+            Display - display the page
+            VsPageWizard call the method after the page was shown
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsIDialogWizard.Apply">
+            <summary>
+            Apply - check and update all variables
+            Return false if something wrong and we want to stay on the page
+            </summary>
+        </member>
+        <member name="E:Vs.Monitor.VsIDialogWizard.StateChanged">
+            <summary>
+            State changed event - notify wizard if the page is completed
+            and it can proceed to the next page
+            </summary>
+        </member>
+        <member name="E:Vs.Monitor.VsIDialogWizard.Reset">
+            <summary>
+            Reset event - notify wizard if there are such changes on the
+            page, which can lead to changing completion status of other pages
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.PageName">
+            <summary>
+            PageName property - short name
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.PageDescription">
+            <summary>
+            Description property
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsIDialogWizard.Completed">
+            <summary>
+            Completed property
+            true, if the page is completed and wizard can proceed to next page
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraDescription.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraDescription.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsISplasher">
+            <summary>
+            interface for Splash Screen
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasher.Show(System.Type)">
+            <summary>
+            Show the SplashForm
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasher.Close">
+            <summary>
+            Colse the SplashForm
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.VsSplasher.Status">
+            <summary>
+            set the loading Status
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPropertyControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:Vs.Monitor.VsPropertyControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPropertyControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsGeneralSetting.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsGeneralSetting.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsGeneralSetting.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsDialogWizard">
+            <summary>
+            Summary description for VsDialogWizard.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsDialogWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsDialogWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsDialogWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSingleViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSingleViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSingleViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsPageWizard">
+            <summary>
+            Summary description for VsPageWizard.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsPageWizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageWizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsLive">
+            <summary>
+            Main Application Class
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsLive.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsLive.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsLive.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="T:Vs.Monitor.VsChannelGrid">
+            <summary>
+            VsChannelGrid
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsCameraSettings">
+            <summary>
+            Summary description for CameraSettings.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsCameraSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsCameraSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsTreeviewControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsTreeviewControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsTreeviewControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsMultiViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsMultiViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsMultiViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsChannelStructure">
+            <summary>
+            Summary description for VsChannelStructure.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsChannelStructure.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsChannelStructure.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsRecordSetting.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsRecordSetting.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsRecordSetting.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsLiveviewTool.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsLiveviewTool.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsLiveviewTool.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsAlarmControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAlarmControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsAlarmControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsAnalyzerSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAnalyzerSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsAnalyzerSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSettingTool.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSettingTool.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSettingTool.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsPageDescription">
+            <summary>
+            Summary description for VsChannelDescription.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsPageDescription.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageDescription.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsPageDescription.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsEncoderSettings.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsEncoderSettings.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsEncoderSettings.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vs.Monitor.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsSplasherView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasherView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Vs.Monitor.VsSplasherView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.FormState">
+            <summary>
+            Class used to preserve / restore state of the form
+            </summary>
+        </member>
+        <member name="T:Vs.Monitor.VsService.VsService">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.add(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.addAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.addAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showFiles">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showFilesAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showFilesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showTables">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showTablesAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showTablesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.show">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.showAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.HelloWorld">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.HelloWorldAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.HelloWorldAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamAll">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamAllAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamAllAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamHasMotion(System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamHasMotionAsync(System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamHasMotionAsync(System.DateTime,System.DateTime,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.isCamHasMotion(System.String,System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.isCamHasMotionAsync(System.String,System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.isCamHasMotionAsync(System.String,System.DateTime,System.DateTime,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsPeriod(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsPeriodAsync(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsPeriodAsync(System.DateTime,System.DateTime,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfAllAsPeriod(System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfAllAsPeriodAsync(System.DateTime,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfAllAsPeriodAsync(System.DateTime,System.DateTime,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsDay(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsDayAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsDayAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsHour(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsHourAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsHourAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsLast(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsLastAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMotionOfCamAsLastAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getTimeOfLastMotion(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getTimeOfLastMotionAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getTimeOfLastMotionAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getFileUrlOfMotion(System.String,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getFileUrlOfMotionAsync(System.String,System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getFileUrlOfMotionAsync(System.String,System.DateTime,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotion(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionAsync(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionAsync(System.DateTime,System.DateTime,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInDay(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInDayAsync(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInDayAsync(System.DateTime,System.DateTime,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInMonth(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInMonthAsync(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInMonthAsync(System.DateTime,System.DateTime,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInYear(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInYearAsync(System.DateTime,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getNumberOfMotionInYearAsync(System.DateTime,System.DateTime,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToString">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToStringAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToStringAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToByte">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToByteAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getCamConfigToByteAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMyHost">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMyHostAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getMyHostAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getConfig">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getConfigAsync">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.getConfigAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Vs.Monitor.VsService.VsService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.showFilesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.showTablesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.showCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.HelloWorldCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getCamAllCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getCamHasMotionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.isCamHasMotionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMotionOfCamAsPeriodCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMotionOfAllAsPeriodCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMotionOfCamAsDayCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMotionOfCamAsHourCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMotionOfCamAsLastCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getTimeOfLastMotionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getFileUrlOfMotionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getNumberOfMotionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getNumberOfMotionInDayCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getNumberOfMotionInMonthCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getNumberOfMotionInYearCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getCamConfigToStringCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getCamConfigToByteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getMyHostCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Vs.Monitor.VsService.VsService.getConfigCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.VsFileURL">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsFileURL.FilesName">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsFileURL.FilesID">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsFileURL.FilesURL">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.VsMotion">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.MotionID">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.cameraID">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.processor">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.r_algo_name">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.timeBegin">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.timeEnd">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsMotion.r_detail">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.VsCamera">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsCamera.cameraID">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.VsCamera.location">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showFilesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showFilesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.showFilesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showTablesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showTablesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.showTablesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.showCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.showCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.HelloWorldCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.HelloWorldCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.HelloWorldCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamAllCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamAllCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getCamAllCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamHasMotionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamHasMotionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getCamHasMotionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.isCamHasMotionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.isCamHasMotionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.isCamHasMotionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsPeriodCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsPeriodCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMotionOfCamAsPeriodCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfAllAsPeriodCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfAllAsPeriodCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMotionOfAllAsPeriodCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsDayCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsDayCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMotionOfCamAsDayCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsHourCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsHourCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMotionOfCamAsHourCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsLastCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMotionOfCamAsLastCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMotionOfCamAsLastCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getTimeOfLastMotionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getTimeOfLastMotionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getTimeOfLastMotionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getFileUrlOfMotionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getFileUrlOfMotionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getFileUrlOfMotionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getNumberOfMotionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInDayCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInDayCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getNumberOfMotionInDayCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInMonthCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInMonthCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getNumberOfMotionInMonthCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInYearCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getNumberOfMotionInYearCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getNumberOfMotionInYearCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamConfigToStringCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamConfigToStringCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getCamConfigToStringCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamConfigToByteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getCamConfigToByteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getCamConfigToByteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMyHostCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getMyHostCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getMyHostCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getConfigCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.VsService.getConfigCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Vs.Monitor.VsService.getConfigCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Vs.Monitor.CameraInfo">
+            <summary>
+            Summary description for VsCameraInfo.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.CameraInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.CameraInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.CameraInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Vs.Monitor.VsAboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Monitor.VsAboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

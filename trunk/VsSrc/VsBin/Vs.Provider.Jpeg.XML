@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Provider.Jpeg</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Jpeg.JPEGSourceDescription">
+            <summary>
+            JPEGSourceDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Jpeg.JPEGSource">
+            <summary>
+            JPEGSource - JPEG downloader
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Jpeg.JPEGSource.ExecuteCommand(System.String)">
+            <summary>
+            Control Cameras Methods
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Jpeg.JPEGSourcePage">
+            <summary>
+            Summary description for JPEGSourcePage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Jpeg.JPEGSourcePage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Jpeg.JPEGSourcePage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Jpeg.JPEGSourcePage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Jpeg.JPEGConfiguration">
+            <summary>
+            JPEGConfiguration
+            </summary>
+        </member>
+    </members>
+</doc>

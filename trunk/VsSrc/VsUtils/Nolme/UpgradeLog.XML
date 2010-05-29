@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Nolme.Chart">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Nolme.Chart.sln">
+</Property><Property Name="Date" Value="Wednesday, January 14, 2009">
+</Property><Property Name="Time" Value="8:35 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Nolme.Chart.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Nolme.Chart.sln">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Nolme.WinForms.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\Nolme.WinForms.csproj">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Nolme.WinForms.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\Nolme.WinForms.csproj.user">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Chart.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\Chart.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartColumn.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartColumn.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartDescription.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartDescription.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartLegend.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartLegend.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartLegendDescription.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartLegendDescription.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartLegendItem.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartLegendItem.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\CustomPanel.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\CustomPanel.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Exceptions.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\Exceptions.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Chart.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\Chart.resx">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\ChartLegend.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\ChartLegend.resx">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\CustomPanel.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\WinForms\CustomPanel.resx">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Nolme.WinForms.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Nolme.WinForms" Source="WinForms\Nolme.WinForms.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\Nolme.Core.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\Nolme.Core.csproj">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\Nolme.Core.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\Nolme.Core.csproj.user">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\DirectoryUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\DirectoryUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\DrawingUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\DrawingUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\Exceptions.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\Exceptions.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\FileUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\FileUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\StringUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\StringUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\SystemUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Core\SystemUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\Nolme.Core.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Nolme.Core" Source="Core\Nolme.Core.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Nolme.Win32.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Nolme.Win32.csproj">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Nolme.Win32.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Nolme.Win32.csproj.user">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\ApiNativeMethods.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\ApiNativeMethods.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\OperatingSystem.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\OperatingSystem.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ApiUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ApiUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32BitmapUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32BitmapUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ButtonUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ButtonUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ConsoleUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ConsoleUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ListViewUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ListViewUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32RegistryUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32RegistryUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32RichEditUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32RichEditUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ShellApiUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ShellApiUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ShellLinkNative.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ShellLinkNative.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32ShellShortcut.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32ShellShortcut.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32TreeViewUtility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32TreeViewUtility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Win32Utility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Win32\Win32Utility.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Nolme.Win32.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Nolme.Win32" Source="Win32\Nolme.Win32.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\Nolme.Xml.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\Nolme.Xml.csproj">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\Nolme.Xml.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\Nolme.Xml.csproj.user">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\Exceptions.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\Exceptions.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\SystemErrors.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\SystemErrors.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlBrush.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlBrush.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlCollection.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlCollection.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlColor.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlColor.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlColorBlend.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlColorBlend.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlConfiguration.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlConfiguration.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlConfigurationNode.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlConfigurationNode.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlDateTime.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlDateTime.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlFont.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlFont.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlHashtable.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlHashtable.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlImage.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlImage.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlItemKeyAndValue.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlItemKeyAndValue.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlLanguage.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlLanguage.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlList.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlList.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlPen.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlPen.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlPointF2d.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlPointF2d.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlSizeF2d.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlSizeF2d.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlString.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlString.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlTranslator.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlTranslator.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlTranslatorElement.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlTranslatorElement.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\XmlTranslatorLocalizedElement.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Xml\XmlTranslatorLocalizedElement.cs">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\Nolme.Xml.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Nolme.Xml" Source="Xml\Nolme.Xml.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\Test_3dChart.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\Test_3dChart.csproj">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\Test_3dChart.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\Test_3dChart.csproj.user">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\MainForm.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\App.ico" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\App.ico">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\MainForm.resx" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_3dChart\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\Test_3dChart.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Test_3dChart" Source="Test_3dChart\Test_3dChart.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Test_XmlTranslation.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\Test_XmlTranslation.csproj">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Test_XmlTranslation.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\Test_XmlTranslation.csproj.user">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Main.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\Main.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Translation.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\Translation.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\App.ico" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlTranslation\App.ico">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Test_XmlTranslation.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Test_XmlTranslation.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Test_XmlConfiguration.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\Test_XmlConfiguration.csproj">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Test_XmlConfiguration.csproj.user" Description="Project user file successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\Test_XmlConfiguration.csproj.user">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Configuration.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\Configuration.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Main.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\Main.cs">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\App.ico" Description="File successfully backed up as D:\my_dvs\trunk\VsUtils\Nolme_Chart_src\Backup\Test_XmlConfiguration\App.ico">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Test_XmlConfiguration.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Test_XmlConfiguration.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Nolme.Chart.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Nolme.Chart.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Nolme.WinForms" Source="WinForms\Nolme.WinForms.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Nolme.Core" Source="Core\Nolme.Core.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Nolme.Win32" Source="Win32\Nolme.Win32.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Nolme.Xml" Source="Xml\Nolme.Xml.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Test_3dChart" Source="Test_3dChart\Test_3dChart.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Test_XmlTranslation" Source="Test_XmlTranslation\Test_XmlTranslation.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Test_XmlConfiguration" Source="Test_XmlConfiguration\Test_XmlConfiguration.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

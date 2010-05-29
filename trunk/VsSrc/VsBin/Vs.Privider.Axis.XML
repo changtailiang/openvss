@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Privider.Axis</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Provider.Axis.Axis2401">
+            <summary>
+            Axis2401 video server
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2400">
+            <summary>
+            Axis2400 video server
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.AxisConfiguration">
+            <summary>
+            AxisConfiguration
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2400SetupPage">
+            <summary>
+            Summary description for Axis2400SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2400SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2400SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2400SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2100">
+            <summary>
+            Axis2100 Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis206">
+            <summary>
+            Axis205 Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2460Description">
+            <summary>
+            Axis2460Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2100Description">
+            <summary>
+            Axis2100Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2110Description">
+            <summary>
+            Axis2110Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2120Description">
+            <summary>
+            Axis2120Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2130RDescription">
+            <summary>
+            Axis2130RDescription
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis205Description">
+            <summary>
+            Axis205Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis206Description">
+            <summary>
+            Axis206Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2400Description">
+            <summary>
+            Axis2400Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2401Description">
+            <summary>
+            Axis2401Description
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2110">
+            <summary>
+            Axis2110 Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis205">
+            <summary>
+            Axis205 Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2120">
+            <summary>
+            Axis2120 Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2460SetupPage">
+            <summary>
+            Summary description for Axis2460SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2460SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2460SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2460SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2460">
+            <summary>
+            Axis2460 Network DVR source
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2130R">
+            <summary>
+            Axis2130R Network camera
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis205SetupPage">
+            <summary>
+            Summary description for Axis205SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis205SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis205SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis205SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2401SetupPage">
+            <summary>
+            Summary description for Axis2401SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2401SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2401SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2401SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2130RSetupPage">
+            <summary>
+            Summary description for Axis2130RSetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2130RSetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2130RSetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2130RSetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2110SetupPage">
+            <summary>
+            Summary description for Axis2110SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2110SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2110SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2110SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2100SetupPage">
+            <summary>
+            Summary description for Axis2100SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2100SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2100SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2100SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis206SetupPage">
+            <summary>
+            Summary description for Axis206SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis206SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis206SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis206SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.Axis.Axis2120SetupPage">
+            <summary>
+            Summary description for Axis2120SetupPage.
+            </summary>
+        </member>
+        <member name="F:Vs.Provider.Axis.Axis2120SetupPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2120SetupPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.Axis.Axis2120SetupPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

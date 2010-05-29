@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Server</name>
+    </assembly>
+    <members>
+        <member name="T:Vs.Core.Server.VsCoreServer">
+            <summary>
+            Monitor Application Manager
+            </summary>
+        </member>
+    </members>
+</doc>

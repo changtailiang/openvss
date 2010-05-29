@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NetworkingBasics">
+</Property><Property Name="Solution File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\NetworkingBasics.sln">
+</Property><Property Name="User Options File" Value="D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\NetworkingBasics.suo">
+</Property><Property Name="Date" Value="Thursday, June 12, 2008">
+</Property><Property Name="Time" Value="6:14 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NetworkingBasics.sln" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\NetworkingBasics.sln">
+</Event><Event ErrorLevel="0" Project="" Source="NetworkingBasics.suo" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\NetworkingBasics.suo">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="NetworkingBasics.csproj" Description="Project file successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\NetworkingBasics.csproj">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="AssemblyInfo.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="BufferChunk.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\BufferChunk.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="NetworkingInterfaces.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\NetworkingInterfaces.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="ReflectorMessages.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\ReflectorMessages.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="Socket.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\Socket.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="UdpListener.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\UdpListener.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="UdpSender.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\UdpSender.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="Utility.cs" Description="File successfully backed up as D:\my_dvs\trunk\VsProvider\rtplib\MSR.LST.NetworkingBasics\Backup\Utility.cs">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="NetworkingBasics.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="NetworkingBasics" Source="NetworkingBasics.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="NetworkingBasics.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="NetworkingBasics.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NetworkingBasics" Source="NetworkingBasics.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

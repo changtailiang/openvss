@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.Image</name>
+    </assembly>
+    <members>
+        <member name="M:Vs.Core.Image.VsData.#ctor">
+            <summary>
+            constructor
+            </summary> 
+        </member>
+        <member name="P:Vs.Core.Image.VsData.Image">
+            <summary>
+            Image property
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Image.VsData.TableName">
+            <summary>
+            TableName property
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Image.VsDataEventArgs">
+            <summary>
+            Camera event arguments
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Image.VsEncodeEventArgs">
+            <summary>
+            Camera event arguments
+            </summary>
+        </member>
+        <member name="T:Vs.Core.Image.VsImageEventArgs">
+            <summary>
+            Camera event arguments
+            </summary>
+        </member>
+        <member name="P:Vs.Core.Image.VsMotion.TableName">
+            <summary>
+            TableName property
+            </summary>
+        </member>
+        <member name="M:Vs.Core.Image.VsEncode.#ctor">
+            <summary>
+            constructor
+            </summary> 
+        </member>
+        <member name="T:Vs.Core.Image.VsMotionEventArgs">
+            <summary>
+            Camera event arguments
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Core.EmailAlert</name>
+    </assembly>
+    <members>
+        <member name="M:Vs.Core.EmailAlert.VsEmailGenerator.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

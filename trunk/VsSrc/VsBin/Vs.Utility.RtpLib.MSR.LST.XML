@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vs.Utility.RtpLib.MSR.LST</name>
+    </assembly>
+    <members>
+        <member name="T:Win32Util.Win32Window">
+            <summary>
+            Encapsulates window functions that aren't in the framework.
+            NOTE: This class is not thread-safe. 
+            </summary>
+        </member>
+        <member name="F:Win32Util.Win32Window.GWL_EXSTYLE">
+            <summary>
+            Turn this window into a tool window, so it doesn't show up in the Alt-tab list...
+            </summary>
+            
+        </member>
+        <member name="M:Win32Util.Win32Window.GetThreadWindows(System.Int32)">
+            <summary>
+            Return all windows of a given thread
+            </summary>
+            <param name="threadId">The thread id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.FindWindow(System.String,System.String)">
+            <summary>
+            Find a window by name or class
+            </summary>
+            <param name="className">Name of the class, or null</param>
+            <param name="windowName">Name of the window, or null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.IsChild(Win32Util.Win32Window,Win32Util.Win32Window)">
+            <summary>
+            Tests whether one window is a child of another
+            </summary>
+            <param name="parent">Parent window</param>
+            <param name="window">Window to test</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.#ctor(System.IntPtr)">
+            <summary>
+            Create a Win32Window
+            </summary>
+            <param name="window">The window handle</param>
+        </member>
+        <member name="M:Win32Util.Win32Window.BringWindowToTop">
+            <summary>
+            Bring a window to the top
+            </summary>
+        </member>
+        <member name="M:Win32Util.Win32Window.FindChild(System.String,System.String)">
+            <summary>
+            Find a child of this window
+            </summary>
+            <param name="className">Name of the class, or null</param>
+            <param name="windowName">Name of the window, or null</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.SendMessage(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Send a windows message to this window
+            </summary>
+            <param name="message"></param>
+            <param name="wparam"></param>
+            <param name="lparam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.PostMessage(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Post a windows message to this window
+            </summary>
+            <param name="message"></param>
+            <param name="wparam"></param>
+            <param name="lparam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.GetWindowLong(System.Int32)">
+            <summary>
+            Get a long value for this window. See GetWindowLong()
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32Util.Win32Window.SetWindowLong(System.Int32,System.Int32)">
+            <summary>
+            Set a long value for this window. See SetWindowLong()
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Win32Util.Win32Window.TopLevelWindows">
+            <summary>
+            All top level windows 
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.DesktopWindow">
+            <summary>
+            The deskop window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.ForegroundWindow">
+            <summary>
+            The current foreground window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Window">
+            <summary>
+            Extract the window handle 
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.IsNull">
+            <summary>
+            Return true if this window is null
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Children">
+            <summary>
+            The children of this window, as an ArrayList
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Parent">
+            <summary>
+            Get the parent of this window. Null if this is a top-level window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.LastActivePopup">
+            <summary>
+            Get the last (topmost) active popup
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Text">
+            <summary>
+            The text in this window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.ThreadId">
+            <summary>
+            The id of the thread that owns this window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.ProcessId">
+            <summary>
+            The id of the process that owns this window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.WindowPlacement">
+            <summary>
+            The placement of this window
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Minimized">
+            <summary>
+            Whether the window is minimized
+            </summary>
+        </member>
+        <member name="P:Win32Util.Win32Window.Maximized">
+            <summary>
+            Whether the window is maximized
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Installation.Install(System.Collections.IDictionary)">
+            <summary>
+            This routine should be called automatically by the MSI during setup, but it can also be called using:
+                "installutil.exe UnhandledExceptionHandler.dll"
+            </summary>
+            <param name="savedState">State dictionary passed in by the installer code</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Installation.Uninstall(System.Collections.IDictionary)">
+            <summary>
+            This routine should be called automatically by the MSI during Remove Programs, but it can also be called using:
+                "installutil.exe /u UnhandledExceptionHandler.dll"
+            </summary>
+            <param name="savedState">State dictionary passed in by the installer code</param>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.ArgumentParser">
+            <summary>
+            Parses command-line arguments into a nice string dictionary to make it easier to work with.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.BasePCInstaller">
+            <summary>
+            Used by the Installer to (un)install the performance counters
+            It forwards the real work to BasePC
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.BasePC">
+            <summary>
+            This is the base class that all of the wrappers below inherit from, and provides the
+            core functionality of (un)installing and creating/removing performance counters.
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.BasePC.#ctor(System.String,System.String[],System.String)">
+            <summary>
+            Called by instances that plan to actually log perf data
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.BasePC.Item(System.Int32)">
+            <summary>
+            Update a performance counter
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility">
+            <remarks>
+            WARNING: This class does not inform the user that the firewall punchthrough is being added.  Applications
+            should always inform the user when adding punchthroughs to the firewall, for security reasons.
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.AddFirewallException(System.String,System.UInt16[],System.Net.Sockets.ProtocolType[],System.String)">
+            <summary>
+            Adds an exception(s) to either a 2003 or XP SP2 firewall.
+            </summary>
+            <param name="exceptionName">The name of the exception to be added for both types of firewalls.</param>
+            <param name="ports">The ports to be added to Win2003 firewalls.</param>
+            <param name="protocols">An array of ProtocolTypes for each port.</param>
+            <param name="appPath">The path of the application being added (for new, SP2 firewalls).</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.RemoveFirewallException(System.String,System.UInt16[],System.Net.Sockets.ProtocolType[],System.String)">
+            <summary>
+            Removes an exception(s) from either a 2003 or XP SP2 firewall.
+            </summary>
+            <param name="exceptionName">The name of the exception to be removed for both types of firewalls.</param>
+            <param name="ports">The ports to be removed to Win2003 firewalls.</param>
+            <param name="protocols">An array of ProtocolTypes for each port.</param>
+            <param name="appPath">The path of the application being removed (for new, SP2 firewalls).</param>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.AddAppToSP2Firewall(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Adds an application with specified parameters to a XP SP2-compatible firewall exception list. 
+            </summary>
+            <param name="name">Title of the rule</param>
+            <param name="imageName">Full path of the image</param>
+            <param name="strLocalSubnet">Space seperated network addresses permitted to access the application
+            (e.g. "LocalSubnet", "*", "192.168.10.0/255.255.255.0")</param>
+            <param name="enabled">If the exception rule should be enabled</param>
+            <remarks>
+            WARNING: This method does not inform the user that the firewall punchthrough is being added.  Applications
+            should always inform the user when adding punchthroughs to the firewall, for security reasons.
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.RemoveAppFromSP2Firewall(System.String)">
+            <summary>
+            Removes an application from an XP SP2-compatible firewall exception list.
+            </summary>
+            <param name="imageName">Full name of image to be removed from FW exception list</param>
+            <remarks>
+            WARNING: This method does not inform the user that the firewall punchthrough is being added.  Applications
+            should always inform the user when adding punchthroughs to the firewall, for security reasons.
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.AddOldFirewallPort(System.String,System.UInt16,System.Net.Sockets.ProtocolType)">
+            <summary>
+            Checks to find whether the Windows XP/2003 Firewall is enabled on adapters and if so it opens ports.
+            </summary>
+            <param name="portMapName">Name of the Port Map to look for</param>
+            <param name="port">Port  Number</param>
+            <param name="protocolIsTcp">true if TCP, false if UDP</param>
+            <remarks>
+            WARNING: This method does not inform the user that the firewall punchthrough is being added.  Applications
+            should always inform the user when adding punchthroughs to the firewall, for security reasons.
+            </remarks>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.RemoveOldFirewallPort(System.String,System.UInt16,System.Net.Sockets.ProtocolType)">
+            <summary>
+            Checks to find whether the Windows XP/2003 Firewall is enabled on adapters and if so it opens ports.
+            </summary>
+            <param name="portMapName">Name of the Port Map to look for (must be the same as when it was added)</param>
+            <param name="port">Port  Number</param>
+            <param name="protocolIsTcp">true if TCP, false if UDP</param>
+            <remarks>
+            WARNING: This method does not inform the user that the firewall punchthrough is being added.  Applications
+            should always inform the user when adding punchthroughs to the firewall, for security reasons.
+            </remarks>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.HasSp2Firewall">
+            <summary>
+            Attempts to determine if the computer has a Windows XP SP2 compatible firewall.
+            </summary>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.Sp2FirewallEnabled">
+            <summary>
+            Returns true if the comptuer's SP2 firewall is enabled.
+            </summary>
+            <remarks>
+            Throws if this computer does not have an SP2 firewall.
+            </remarks>
+        </member>
+        <member name="P:Vs.Provider.RtpLib.MSR.LST.Net.FirewallUtility.OldFirewallEnabled">
+            <summary>
+            Returns true if this computer has a Pre-SP2 firewall enabled on any connection.
+            </summary>
+            <remarks>
+            This value may or may not be true, even if the computer has an SP2 firewall.  If this
+            computer has an SP2-compatible firewall, this value should be ignored.
+            </remarks>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.LstEventLog">
+             <summary>
+             This wrapper class was created in order to simplify the code using event
+             logs, as well as provide a central location for adding enhancements or debug code.
+             </summary>
+             <remarks>
+             This class is meant to be overrided such that it is extremely easy to use throughout
+             your entire application (or for a single assembly, depending on your app's design).
+             See the example below.
+             </remarks>
+             <example>
+                internal class ArchiveServiceEventLog: MSR.LST.LstEventLog
+                {
+                    /// <summary>
+                    /// Name of the EventLog log to which all entries will be written
+                    /// </summary>
+                    private static string LOG_NAME = "Archive Service";
+            
+                    /// <summary>
+                    /// An enumeration of the EventLog Sources.
+                    /// </summary>
+                    public enum Source
+                    {
+                        ConferenceRecorder,
+                        StreamManager,
+                        BufferManager,
+                        DBHelper,
+                        ConferencePlayer,
+                        StreamPlayer,
+                        BufferPlayer
+                    }
+            
+                    
+                    /// <summary>
+                    /// ID of the event log messages.
+                    /// </summary>
+                    public enum ID
+                    {
+                        BufferNotAvailable,
+                        BadStreamInDB,
+                        DBOpFailed,
+                        IndiciesFailedToSave,
+                        FrameDropped,
+                        GrowingBuffers,
+                        EmptyBuffersInPlayback,
+                        ImproperPopulateCall,
+                        BufferTooSmall,
+                    }
+            
+                    public ArchiveServiceEventLog(Source source)
+                        :base(LOG_NAME, ".", source.ToString())
+                    { }
+            
+                    public void WriteEntry(string message, EventLogEntryType type, ID eventID)
+                    {
+                        base.WriteEntry(message, type, (int)eventID);
+                    }
+            
+                    #region Install/Uninstall
+                    /// <summary>
+                    /// Installs the EventLog log and all the sources
+                    /// </summary>
+                    internal static void Install()
+                    {
+                         Install(LOG_NAME, Enum.GetNames(typeof(Source)));
+                    }
+            
+            
+                    /// <summary>
+                    /// Uninstalls the EventLog log and all the sources
+                    /// </summary>
+                    internal static void Uninstall()
+                    {
+                        Uninstall(LOG_NAME, Enum.GetNames(typeof(Source)));
+                    }
+                    #endregion
+            
+                }
+             </example>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.LstEventLog.Install(System.String,System.String[])">
+            <summary>
+            Installs the EventLog log and all the sources
+            </summary>
+        </member>
+        <member name="M:Vs.Provider.RtpLib.MSR.LST.LstEventLog.Uninstall(System.String,System.String[])">
+            <summary>
+            Uninstalls the EventLog log and all the sources
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.TimeCheck">
+            <summary>
+            Summary description for TimeCheck.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.LSTQueue">
+            <summary>
+            There is a nasty bug in framework 1.1
+            If you Enqueue some items, and then Dequeue an item, followed by cloning the Q the, clone
+            will not contain the correct data, so we have to clone a Q manually until the next version.
+            </summary>
+        </member>
+        <member name="T:Vs.Provider.RtpLib.MSR.LST.MemCheck">
+            <summary>
+            A class for tracking memory usage between call points
+            It works like a stack - push when you want to start a reading
+            and pop when you want to compare the difference in memory
+            The methods are static so that a class instance doesn't have to be
+            global or passed around - not thread safe
+            
+            There were 2 models available, the second one yielded more accurate results...
+            
+            Model 1
+            Push - Read Memory, New Alloc, Push
+            Pop  - Pop, Del Alloc, Read Memory
+            
+            Model 2
+            Push - New Alloc, Push, Read Memory
+            Pop  - Read Memory, Pop, Del Alloc
+            </summary>
+        </member>
+    </members>
+</doc>
