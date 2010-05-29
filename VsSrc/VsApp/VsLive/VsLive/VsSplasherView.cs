@@ -56,15 +56,21 @@ namespace Vs.Monitor
         public bool Blocked = true;
         public bool Connected = false;
 
+        private string configPath;
+
         public VsSplasherView()
         {
             InitializeComponent();
 
             ConfigData config = new ConfigData();
 
+            configPath =Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"OpenVss\\VsClient") ;
+
+            copyAllconfig();
+
             try
             {
-                config.LoadSettings("ServerConn.config");
+                config.LoadSettings(Path.Combine(configPath,"ServerConn.config"));
 
                 textBox1.Text = config.data["server"];
                 textBox2.Text = config.data["user"];
@@ -109,9 +115,10 @@ namespace Vs.Monitor
 
                 service.Url = "http://" + textBox1.Text + "/vsservice/service.asmx";
 
+                service.getCamConfigToStringAsync();
                 setCamConfig(service.getCamConfigToString());
-
                 setIntervalToAllCam(100);
+
                 //setServer();
                 //allcam();
                 Connected = true;
@@ -123,7 +130,7 @@ namespace Vs.Monitor
                 config.data["user"] = textBox2.Text;
                 config.data["pass"] = textBox3.Text;
 
-                config.saveSetting("ServerConn.config");
+                config.saveSetting(Path.Combine(configPath, "ServerConn.config"));
 
                 // setCamConfig();
 
@@ -133,14 +140,16 @@ namespace Vs.Monitor
 
                 Connected = false;
                 Blocked = false;
-                //  Application.Exit();
-                // logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
+                  Application.Exit();
+                 //logger.Log(LogLevel.Error, err.Message + " " + err.Source + " " + err.StackTrace); ;
             }
         }
 
         private void setIntervalToAllCam(int interval)
         {
-            Dictionary<string, string>[] data = loadSettings("cameras.config");
+            string fullFileName = Path.Combine(configPath, "cameras.config");
+
+            Dictionary<string, string>[] data = loadSettings(fullFileName);
 
             foreach (Dictionary<string, string> cam in data)
             {
@@ -154,7 +163,7 @@ namespace Vs.Monitor
                 }
             }
 
-            savaSetting("cameras.config", data);
+            savaSetting(Path.Combine(configPath, "cameras.config"), data);
         }
 
 
@@ -261,7 +270,9 @@ namespace Vs.Monitor
         private void setCamConfig(string camConfig)
         {
 
-            TextWriter tw = new StreamWriter(new FileStream("cameras.config", FileMode.Create));
+            string fullFileName = Path.Combine(configPath,"cameras.config");
+
+            TextWriter tw = new StreamWriter(new FileStream(fullFileName, FileMode.Create));
 
             // write a line of text to the file
             tw.Write(camConfig);
@@ -270,7 +281,30 @@ namespace Vs.Monitor
             tw.Close();
         }
 
+        private void copyAllconfig()
+        {
+            string vsAppPath = Path.GetDirectoryName(Application.ExecutablePath);
 
+            string vsSettingsFile = Path.Combine(vsAppPath, "app.config");
+           // string vsCamerasFile = Path.Combine(vsAppPath, "cameras.config");
+           // string vsChannelsFile = Path.Combine(vsAppPath, "channels.config");
+           // string vsPagesFile = Path.Combine(vsAppPath, "pages.config");
+
+            if (!Directory.Exists(configPath))
+            {
+                Directory.CreateDirectory(configPath);
+            }
+
+            string vsSettingsDestFile = Path.Combine(configPath, "app.config");
+            //string vsCamerasDestFile = Path.Combine(configPath, "cameras.config");
+            //string vsChannelsDestFile = Path.Combine(configPath, "channels.config");
+            //string vsPagesDestFile = Path.Combine(configPath, "pages.config");
+
+            File.Copy(vsSettingsFile, vsSettingsDestFile,true);
+            //File.Copy(vsCamerasFile, vsCamerasDestFile,true);
+            //File.Copy(vsChannelsFile, vsChannelsDestFile,true);
+           // File.Copy(vsPagesFile, vsPagesDestFile,true);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

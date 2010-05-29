@@ -89,9 +89,9 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <Reference Include="Vs.Utility.Nolme.Core, Version=1.0.3582.18076, Culture=neutral, PublicKeyToken=a1de16ef1ed02851, processorArchitecture=MSIL" />
-    <Reference Include="Vs.Utility.Nolme.Win32, Version=1.0.3582.18220, Culture=neutral, PublicKeyToken=b714ddfe5ea17292, processorArchitecture=MSIL" />
-    <Reference Include="Vs.Utility.Nolme.Xml, Version=1.0.3582.18276, Culture=neutral, PublicKeyToken=e333186505a5d0be, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.Nolme.Core, Version=1.0.3594.26868, Culture=neutral, PublicKeyToken=a1de16ef1ed02851, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.Nolme.Win32, Version=1.0.3594.26906, Culture=neutral, PublicKeyToken=b714ddfe5ea17292, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.Nolme.Xml, Version=1.0.3594.26722, Culture=neutral, PublicKeyToken=e333186505a5d0be, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs">

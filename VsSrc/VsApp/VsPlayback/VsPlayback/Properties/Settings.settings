@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vs.Playback.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="VsClient_VsService_VsService" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="VsPlayback_VsService_VsService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost/vsservice/Service.asmx</Value>
     </Setting>
   </Settings>

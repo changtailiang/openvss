@@ -51,8 +51,7 @@
     </StartProgram>
     <StartURL>
     </StartURL>
-    <StartWorkingDirectory>
-    </StartWorkingDirectory>
+    <StartWorkingDirectory>D:\work\TRUNK_\VsSrc\VsBin\</StartWorkingDirectory>
     <StartWithIE>false</StartWithIE>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Pro|AnyCPU' ">

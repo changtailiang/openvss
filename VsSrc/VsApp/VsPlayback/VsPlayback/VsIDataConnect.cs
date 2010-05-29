@@ -43,7 +43,7 @@ using Vs.Playback.VsService;
 
 namespace Vs.Playback
 {
-    interface VsIDataConnect
+   public interface VsIDataConnect
     {
         List<VsCamera> getCamAll();
     }

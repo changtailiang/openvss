@@ -98,7 +98,7 @@ namespace Vs.Playback.VsService {
         
         /// <remarks/>
         public VsService() {
-            this.Url = global::Vs.Playback.Properties.Settings.Default.VsClient_VsService_VsService;
+            this.Url = global::Vs.Playback.Properties.Settings.Default.VsPlayback_VsService_VsService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

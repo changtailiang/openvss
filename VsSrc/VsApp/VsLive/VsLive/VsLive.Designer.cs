@@ -61,12 +61,15 @@ namespace Vs.Monitor
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProgramToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowAllCamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.vsLiveviewTool1 = new Vs.Monitor.VsLiveviewTool();
             this.vsSettingTool1 = new Vs.Monitor.VsSettingTool();
             this.vsToolStrip = new System.Windows.Forms.ToolStrip();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vsMainMenu.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -79,7 +82,8 @@ namespace Vs.Monitor
             this.vsMainMenu.BackColor = System.Drawing.SystemColors.Desktop;
             this.vsMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.ProgramToolStripMenuItem1});
             this.vsMainMenu.Location = new System.Drawing.Point(0, 0);
             this.vsMainMenu.Name = "vsMainMenu";
             this.vsMainMenu.Size = new System.Drawing.Size(1016, 24);
@@ -94,13 +98,13 @@ namespace Vs.Monitor
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.fileToolStripMenuItem.Text = "????";
+            this.fileToolStripMenuItem.Text = "ไฟล์";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.exitToolStripMenuItem.Text = "??????????";
+            this.exitToolStripMenuItem.Text = "ออกโปรแกรม";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
@@ -112,20 +116,38 @@ namespace Vs.Monitor
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.aboutToolStripMenuItem.Text = "?????????";
+            this.aboutToolStripMenuItem.Text = "เกี่ยวกับ";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.helpToolStripMenuItem.Text = "?????????";
+            this.helpToolStripMenuItem.Text = "ช่วยเหลือ";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
-            this.aboutToolStripMenuItem1.Text = "?????????";
+            this.aboutToolStripMenuItem1.Text = "เกี่ยวกับ";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+            // 
+            // ProgramToolStripMenuItem1
+            // 
+            this.ProgramToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ShowAllCamToolStripMenuItem,
+            this.closeAllToolStripMenuItem});
+            this.ProgramToolStripMenuItem1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ProgramToolStripMenuItem1.Name = "ProgramToolStripMenuItem1";
+            this.ProgramToolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.ProgramToolStripMenuItem1.Text = "โปรแกรม";
+            // 
+            // ShowAllCamToolStripMenuItem
+            // 
+            this.ShowAllCamToolStripMenuItem.Name = "ShowAllCamToolStripMenuItem";
+            this.ShowAllCamToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.ShowAllCamToolStripMenuItem.Text = "แสดงกล้องทั้งหมด";
+            this.ShowAllCamToolStripMenuItem.Click += new System.EventHandler(this.ShowAllCamToolStripMenuItem_Click);
             // 
             // toolStripContainer
             // 
@@ -200,6 +222,13 @@ namespace Vs.Monitor
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // closeAllToolStripMenuItem
+            // 
+            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.closeAllToolStripMenuItem.Text = "Close All";
+            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
+            // 
             // VsLive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +242,6 @@ namespace Vs.Monitor
             this.Text = "VsLive";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.VsLive_Load);
-        
             this.vsMainMenu.ResumeLayout(false);
             this.vsMainMenu.PerformLayout();
             this.toolStripContainer.ContentPanel.ResumeLayout(false);
@@ -260,6 +288,9 @@ namespace Vs.Monitor
         private VsLiveviewTool vsLiveviewTool1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ProgramToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ShowAllCamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
     }
 }
 

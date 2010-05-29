@@ -99,17 +99,19 @@ namespace Vs.Monitor
                     this.FormClosing += new FormClosingEventHandler(VsMonitor_FormClosing);
 
 
+                    //Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
                     // new object
+                    string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "OpenVss\\VsClient\\"); ;
                     vsCoreMonitor = new VsCoreServer(Path.GetDirectoryName(Application.ExecutablePath));
 
                     // allow to save all configs to files
                     vsCoreMonitor.SaveConfigToFile = true;
 
                     // Initial application core
-                    vsCoreMonitor.VsMonitorInitial();
+                    vsCoreMonitor.VsMonitorInitial(configPath);
                 }
-                 VsSplasher.Close();
+                VsSplasher.Close();
             }
             catch (Exception err)
             {
@@ -117,7 +119,7 @@ namespace Vs.Monitor
             }
         }
 
-    
+
 
         void VsMonitor_Load(object sender, EventArgs e)
         {
@@ -254,7 +256,68 @@ namespace Vs.Monitor
             }
         }
 
-      
+        private void ShowAllCamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowAll();
+        }
+
+        private void ShowAll()
+        {
+            List<string> sendStr = new List<string>();
+
+            foreach (TreeNode tn in vsLiveviewTool1.VsApplicationControl1.CamerasNode.Nodes)
+            {
+                sendStr.Add(vsLiveviewTool1.VsApplicationControl1.CamerasNode.Text+"\\"+tn.Text);
+                
+            }
+            foreach (TreeNode tn in vsLiveviewTool1.VsApplicationControl1.ChannelsNode.Nodes)
+            {
+                sendStr.Add(vsLiveviewTool1.VsApplicationControl1.ChannelsNode.Text + "\\" + tn.Text);
+
+            }
+
+            for (int i = sendStr.Count - 1; i >= 0; i--)
+            {
+                VsSingleViewer viewer = vsLiveviewTool1.VsMultiViewer1.VsSingleViewers[i];
+                viewer.CloseCameraView();
+
+                viewer.connectDevice(sendStr[i]);
+            }
+        }
+
+        private void closeAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAll();
+        }  
+        
+        private void CloseAll()
+        {
+            foreach (TreeNode tn in vsLiveviewTool1.VsApplicationControl1.CamerasNode.Nodes)
+            {           
+                VsCamera vsCamera = vsCoreMonitor.GetCameraByName(tn.Text);
+
+                if (vsCamera == null) continue;
+                if (vsCamera.Running)
+                    vsCoreMonitor.DisconnectCamera(tn.Text);
+               // else vsCoreMonitor.ConnectCamera(vsTypeName, false);      
+
+            }
+            foreach (TreeNode tn in vsLiveviewTool1.VsApplicationControl1.ChannelsNode.Nodes)
+            {
+                VsChannel vsChannel = vsCoreMonitor.GetChannelByName( tn.Text);
+                if (vsChannel == null) continue;
+                if (vsChannel.Running)
+                    vsCoreMonitor.DisconnectChannel(tn.Text);
+                //else vsCoreMonitor.ConnectChannel(vsTypeName, false);
+            }
+
+            for (int i =24 ; i >= 0; i--)
+            {
+                VsSingleViewer viewer = vsLiveviewTool1.VsMultiViewer1.VsSingleViewers[i];
+                viewer.CloseCameraView();
+
+            }
+        }
     }
 
     public class WinApi

@@ -45,7 +45,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using NLog;
-using System.Configuration; 
+using System.Configuration;
+using System.IO; 
 
 namespace Vs.Playback
 {
@@ -60,14 +61,17 @@ namespace Vs.Playback
         public bool Blocked = true;
         public bool Connected = false;
 
+        private string configPath;
+
         public VsLogin()
         {
             InitializeComponent();
             ConfigData config = new ConfigData();
 
+            configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "OpenVss\\VsPlayback");
             try
             {
-                config.LoadSettings("ServerConn.config");
+                config.LoadSettings(Path.Combine(configPath, "ServerConn.config"));
 
                 textBox1.Text = config.data["server"];
                 textBox2.Text = config.data["user"];
@@ -118,7 +122,7 @@ namespace Vs.Playback
                 config.data["user"] = textBox2.Text;
                 config.data["pass"] = textBox3.Text;
 
-                config.saveSetting("ServerConn.config");
+                config.saveSetting(Path.Combine(configPath, "ServerConn.config"));
 
             }
             catch (Exception err)

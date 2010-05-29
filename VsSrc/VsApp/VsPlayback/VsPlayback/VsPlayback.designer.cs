@@ -38,7 +38,7 @@
 
 namespace Vs.Playback
 {
-    partial class VsClient
+    partial class VsPlayback
     {
         /// <summary>
         /// Required designer variable.
@@ -67,7 +67,7 @@ namespace Vs.Playback
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VsClient));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VsPlayback));
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -80,17 +80,17 @@ namespace Vs.Playback
             this.label2 = new System.Windows.Forms.Label();
             this.listCameras = new System.Windows.Forms.ListBox();
             this.listSelectedCameras = new System.Windows.Forms.ListBox();
+            this.panelTimeLine = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.chartPresent1 = new Vs.Playback.VsChartPresent();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButtonDay = new System.Windows.Forms.RadioButton();
             this.radioButtonYear = new System.Windows.Forms.RadioButton();
             this.radioButtonMonth = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.vlCplayer1 = new Vs.Playback.VsVlcPlayer();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -120,6 +120,7 @@ namespace Vs.Playback
             this.checkBoxUpdate = new System.Windows.Forms.CheckBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButtonTimeLine = new System.Windows.Forms.RadioButton();
             this.radioButtonVideo = new System.Windows.Forms.RadioButton();
             this.radioButtonGraph = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -136,6 +137,12 @@ namespace Vs.Playback
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.camListDControl = new Vs.Playback.CamList();
+            this.vsVlcPlayerQuart1 = new Vs.Playback.Player.VsVlcPlayerQuart();
+            this.vsTimeLine1 = new Vs.Playback.TimeLine.VsTimeLine();
+            this.vlCplayer1 = new Vs.Playback.VsVlcPlayer();
+            this.chartPresent1 = new Vs.Playback.VsChartPresent();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -147,15 +154,17 @@ namespace Vs.Playback
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelTimeLine.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -214,6 +223,7 @@ namespace Vs.Playback
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.panelTimeLine);
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
             this.splitContainer2.Size = new System.Drawing.Size(1016, 638);
             this.splitContainer2.SplitterDistance = 175;
@@ -252,6 +262,7 @@ namespace Vs.Playback
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel7.Controls.Add(this.camListDControl);
             this.panel7.Controls.Add(this.tableLayoutPanel3);
             this.panel7.Controls.Add(this.listSelectedCameras);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -274,6 +285,8 @@ namespace Vs.Playback
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(172, 623);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
@@ -290,6 +303,7 @@ namespace Vs.Playback
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(172, 58);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
@@ -336,11 +350,30 @@ namespace Vs.Playback
             // 
             this.listSelectedCameras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listSelectedCameras.FormattingEnabled = true;
-            this.listSelectedCameras.Location = new System.Drawing.Point(42, 20);
+            this.listSelectedCameras.Location = new System.Drawing.Point(20, 20);
             this.listSelectedCameras.Name = "listSelectedCameras";
-            this.listSelectedCameras.Size = new System.Drawing.Size(113, 65);
+            this.listSelectedCameras.Size = new System.Drawing.Size(135, 91);
             this.listSelectedCameras.TabIndex = 9;
             this.listSelectedCameras.Visible = false;
+            // 
+            // panelTimeLine
+            // 
+            this.panelTimeLine.Controls.Add(this.panel6);
+            this.panelTimeLine.Controls.Add(this.vsTimeLine1);
+            this.panelTimeLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTimeLine.Location = new System.Drawing.Point(0, 0);
+            this.panelTimeLine.Name = "panelTimeLine";
+            this.panelTimeLine.Size = new System.Drawing.Size(837, 638);
+            this.panelTimeLine.TabIndex = 47;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.vsVlcPlayerQuart1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(837, 504);
+            this.panel6.TabIndex = 3;
             // 
             // splitContainer4
             // 
@@ -350,8 +383,8 @@ namespace Vs.Playback
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.panel5);
             this.splitContainer4.Panel1.Controls.Add(this.panel2);
+            this.splitContainer4.Panel1.Controls.Add(this.panel5);
             // 
             // splitContainer4.Panel2
             // 
@@ -359,6 +392,26 @@ namespace Vs.Playback
             this.splitContainer4.Size = new System.Drawing.Size(837, 638);
             this.splitContainer4.SplitterDistance = 649;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.vlCplayer1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(649, 638);
+            this.panel2.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox3.ForeColor = System.Drawing.Color.Green;
+            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(649, 20);
+            this.textBox3.TabIndex = 1;
             // 
             // panel5
             // 
@@ -386,14 +439,6 @@ namespace Vs.Playback
             this.splitContainer5.Size = new System.Drawing.Size(649, 638);
             this.splitContainer5.SplitterDistance = 590;
             this.splitContainer5.TabIndex = 0;
-            // 
-            // chartPresent1
-            // 
-            this.chartPresent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartPresent1.Location = new System.Drawing.Point(0, 0);
-            this.chartPresent1.Name = "chartPresent1";
-            this.chartPresent1.Size = new System.Drawing.Size(649, 590);
-            this.chartPresent1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -458,35 +503,6 @@ namespace Vs.Playback
             this.radioButtonMonth.Text = "รอบเดือน (ช่วง 31 วัน)";
             this.radioButtonMonth.UseVisualStyleBackColor = true;
             this.radioButtonMonth.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.vlCplayer1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(649, 638);
-            this.panel2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox3.ForeColor = System.Drawing.Color.Green;
-            this.textBox3.Location = new System.Drawing.Point(0, 0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(649, 20);
-            this.textBox3.TabIndex = 1;
-            // 
-            // vlCplayer1
-            // 
-            this.vlCplayer1.BackColor = System.Drawing.Color.Black;
-            this.vlCplayer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vlCplayer1.Location = new System.Drawing.Point(0, 0);
-            this.vlCplayer1.Name = "vlCplayer1";
-            this.vlCplayer1.Size = new System.Drawing.Size(649, 638);
-            this.vlCplayer1.TabIndex = 0;
             // 
             // panel10
             // 
@@ -616,6 +632,7 @@ namespace Vs.Playback
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel8.Controls.Add(this.textBox4);
             this.panel8.Controls.Add(this.groupBoxDateSelect);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.radioButtonToday);
@@ -705,6 +722,7 @@ namespace Vs.Playback
             this.trackBar6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.trackBar6.Size = new System.Drawing.Size(207, 45);
             this.trackBar6.TabIndex = 44;
+            this.trackBar6.Value = 48;
             this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
             // 
             // label8
@@ -800,7 +818,7 @@ namespace Vs.Playback
             // 
             this.checkBoxUpdate.AutoSize = true;
             this.checkBoxUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.checkBoxUpdate.Location = new System.Drawing.Point(647, 7);
+            this.checkBoxUpdate.Location = new System.Drawing.Point(729, 39);
             this.checkBoxUpdate.Name = "checkBoxUpdate";
             this.checkBoxUpdate.Size = new System.Drawing.Size(86, 17);
             this.checkBoxUpdate.TabIndex = 5;
@@ -812,11 +830,11 @@ namespace Vs.Playback
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.buttonOk.Location = new System.Drawing.Point(749, 7);
+            this.buttonOk.Location = new System.Drawing.Point(645, 3);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(76, 54);
+            this.buttonOk.Size = new System.Drawing.Size(53, 58);
             this.buttonOk.TabIndex = 2;
             this.buttonOk.Text = "ตกลง";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -825,6 +843,7 @@ namespace Vs.Playback
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel4.Controls.Add(this.radioButtonTimeLine);
             this.panel4.Controls.Add(this.radioButtonVideo);
             this.panel4.Controls.Add(this.radioButtonGraph);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -833,11 +852,25 @@ namespace Vs.Playback
             this.panel4.Size = new System.Drawing.Size(184, 67);
             this.panel4.TabIndex = 7;
             // 
+            // radioButtonTimeLine
+            // 
+            this.radioButtonTimeLine.AutoSize = true;
+            this.radioButtonTimeLine.Checked = true;
+            this.radioButtonTimeLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButtonTimeLine.Location = new System.Drawing.Point(10, 44);
+            this.radioButtonTimeLine.Name = "radioButtonTimeLine";
+            this.radioButtonTimeLine.Size = new System.Drawing.Size(169, 17);
+            this.radioButtonTimeLine.TabIndex = 7;
+            this.radioButtonTimeLine.TabStop = true;
+            this.radioButtonTimeLine.Text = "แสดงภาพวิดีโอ (TimeLine)";
+            this.radioButtonTimeLine.UseVisualStyleBackColor = true;
+            this.radioButtonTimeLine.CheckedChanged += new System.EventHandler(this.radioButtonTimeLine_CheckedChanged);
+            // 
             // radioButtonVideo
             // 
             this.radioButtonVideo.AutoSize = true;
             this.radioButtonVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.radioButtonVideo.Location = new System.Drawing.Point(15, 37);
+            this.radioButtonVideo.Location = new System.Drawing.Point(10, 24);
             this.radioButtonVideo.Name = "radioButtonVideo";
             this.radioButtonVideo.Size = new System.Drawing.Size(106, 17);
             this.radioButtonVideo.TabIndex = 5;
@@ -848,13 +881,11 @@ namespace Vs.Playback
             // radioButtonGraph
             // 
             this.radioButtonGraph.AutoSize = true;
-            this.radioButtonGraph.Checked = true;
             this.radioButtonGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.radioButtonGraph.Location = new System.Drawing.Point(15, 10);
+            this.radioButtonGraph.Location = new System.Drawing.Point(9, 3);
             this.radioButtonGraph.Name = "radioButtonGraph";
             this.radioButtonGraph.Size = new System.Drawing.Size(130, 17);
             this.radioButtonGraph.TabIndex = 6;
-            this.radioButtonGraph.TabStop = true;
             this.radioButtonGraph.Text = "แสดงสรุปเหตุการณ์";
             this.radioButtonGraph.UseVisualStyleBackColor = true;
             this.radioButtonGraph.CheckedChanged += new System.EventHandler(this.radioButtonGraph_CheckedChanged);
@@ -1000,7 +1031,58 @@ namespace Vs.Playback
             this.label5.Text = "Your Security!";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // VsClient
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.Location = new System.Drawing.Point(704, 7);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.TabIndex = 47;
+            this.textBox4.Text = "ยังไม่กำหนดช่วงเวลา";
+            // 
+            // camListDControl
+            // 
+            this.camListDControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.camListDControl.Location = new System.Drawing.Point(0, 0);
+            this.camListDControl.Name = "camListDControl";
+            this.camListDControl.Size = new System.Drawing.Size(172, 623);
+            this.camListDControl.TabIndex = 45;
+            // 
+            // vsVlcPlayerQuart1
+            // 
+            this.vsVlcPlayerQuart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vsVlcPlayerQuart1.Location = new System.Drawing.Point(0, 0);
+            this.vsVlcPlayerQuart1.Name = "vsVlcPlayerQuart1";
+            this.vsVlcPlayerQuart1.Size = new System.Drawing.Size(837, 504);
+            this.vsVlcPlayerQuart1.TabIndex = 2;
+            // 
+            // vsTimeLine1
+            // 
+            this.vsTimeLine1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.vsTimeLine1.Location = new System.Drawing.Point(0, 504);
+            this.vsTimeLine1.Name = "vsTimeLine1";
+            this.vsTimeLine1.Size = new System.Drawing.Size(837, 134);
+            this.vsTimeLine1.TabIndex = 0;
+            // 
+            // vlCplayer1
+            // 
+            this.vlCplayer1.BackColor = System.Drawing.Color.Black;
+            this.vlCplayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vlCplayer1.Location = new System.Drawing.Point(0, 0);
+            this.vlCplayer1.Name = "vlCplayer1";
+            this.vlCplayer1.Size = new System.Drawing.Size(649, 638);
+            this.vlCplayer1.TabIndex = 0;
+            // 
+            // chartPresent1
+            // 
+            this.chartPresent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartPresent1.Location = new System.Drawing.Point(0, 0);
+            this.chartPresent1.Name = "chartPresent1";
+            this.chartPresent1.Size = new System.Drawing.Size(649, 590);
+            this.chartPresent1.TabIndex = 0;
+            // 
+            // VsPlayback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1008,7 +1090,7 @@ namespace Vs.Playback
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "VsClient";
+            this.Name = "VsPlayback";
             this.Text = "VsPlayback";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
@@ -1025,17 +1107,19 @@ namespace Vs.Playback
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelTimeLine.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             this.splitContainer5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -1090,12 +1174,6 @@ namespace Vs.Playback
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.SplitContainer splitContainer5;
-        private VsChartPresent chartPresent1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.RadioButton radioButtonDay;
-        private System.Windows.Forms.RadioButton radioButtonYear;
-        private System.Windows.Forms.RadioButton radioButtonMonth;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox3;
         private VsVlcPlayer vlCplayer1;
@@ -1129,10 +1207,23 @@ namespace Vs.Playback
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ListBox listCameras;
-        private System.Windows.Forms.ListBox listSelectedCameras;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private VsChartPresent chartPresent1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.RadioButton radioButtonDay;
+        private System.Windows.Forms.RadioButton radioButtonYear;
+        private System.Windows.Forms.RadioButton radioButtonMonth;
+        private System.Windows.Forms.ListBox listSelectedCameras;
+        private Vs.Playback.TimeLine.VsTimeLine vsTimeLine1;
+        private System.Windows.Forms.Panel panelTimeLine;
+        private Vs.Playback.Player.VsVlcPlayerQuart vsVlcPlayerQuart1;
+        private System.Windows.Forms.Panel panel6;
+        private CamList camListDControl;
+        private System.Windows.Forms.RadioButton radioButtonTimeLine;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

@@ -135,7 +135,7 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <Reference Include="Vs.Utility.Nolme.Core, Version=1.0.3582.18076, Culture=neutral, PublicKeyToken=a1de16ef1ed02851, processorArchitecture=MSIL" />
+    <Reference Include="Vs.Utility.Nolme.Core, Version=1.0.3594.26868, Culture=neutral, PublicKeyToken=a1de16ef1ed02851, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiNativeMethods.cs">
