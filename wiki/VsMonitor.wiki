@@ -1,4 +1,4 @@
-#summary Video config
+#summary Video monitoring
 = Introduction =
 
 Add your content here.
