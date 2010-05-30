@@ -1,4 +1,4 @@
-#summary Video analyzer server.
+#summary Setup video analyzer server.
 
 = Introduction =
 
